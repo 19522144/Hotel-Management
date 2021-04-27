@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel_Management
 {
-    public partial class fMainMenu : Form
+    public partial class fQuanLyPhieuThue : Form
     {
-        public fMainMenu()
+        public fQuanLyPhieuThue()
         {
             InitializeComponent();
         }
-
-        
     }
 }
