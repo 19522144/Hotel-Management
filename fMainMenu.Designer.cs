@@ -29,72 +29,72 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMainMenu));
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnExit = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.PnIntroduction = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnInfo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbInfo = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.imgAvatar = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.picBookRoom = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.picRoomManagement = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.picRentalCoupon = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.picCustomer = new System.Windows.Forms.PictureBox();
+            this.picReport = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.picCustomerType = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.picRoomType = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.picAddEmloyee = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.picChangeRegulation = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel4.SuspendLayout();
+            this.pnExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.PnIntroduction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pnInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBookRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomManagement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRentalCoupon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomerType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddEmloyee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChangeRegulation)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel4
+            // pnExit
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = global::Hotel_Management.Properties.Resources.opacity_background_dark;
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(10, 576);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(169, 50);
-            this.panel4.TabIndex = 5;
+            this.pnExit.BackColor = System.Drawing.Color.Transparent;
+            this.pnExit.BackgroundImage = global::Hotel_Management.Properties.Resources.opacity_background_dark;
+            this.pnExit.Controls.Add(this.pictureBox3);
+            this.pnExit.Controls.Add(this.label2);
+            this.pnExit.Location = new System.Drawing.Point(10, 576);
+            this.pnExit.Name = "pnExit";
+            this.pnExit.Size = new System.Drawing.Size(169, 50);
+            this.pnExit.TabIndex = 5;
             // 
             // pictureBox3
             // 
@@ -117,16 +117,16 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Thoát";
             // 
-            // panel3
+            // PnIntroduction
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::Hotel_Management.Properties.Resources.opacity_background_dark;
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(10, 511);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(169, 50);
-            this.panel3.TabIndex = 4;
+            this.PnIntroduction.BackColor = System.Drawing.Color.Transparent;
+            this.PnIntroduction.BackgroundImage = global::Hotel_Management.Properties.Resources.opacity_background_dark;
+            this.PnIntroduction.Controls.Add(this.pictureBox2);
+            this.PnIntroduction.Controls.Add(this.label1);
+            this.PnIntroduction.Location = new System.Drawing.Point(10, 511);
+            this.PnIntroduction.Name = "PnIntroduction";
+            this.PnIntroduction.Size = new System.Drawing.Size(169, 50);
+            this.PnIntroduction.TabIndex = 4;
             // 
             // pictureBox2
             // 
@@ -149,16 +149,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Giới thiệu";
             // 
-            // panel2
+            // pnInfo
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::Hotel_Management.Properties.Resources.opacity_background_dark;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.lbInfo);
-            this.panel2.Location = new System.Drawing.Point(10, 446);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(169, 50);
-            this.panel2.TabIndex = 3;
+            this.pnInfo.BackColor = System.Drawing.Color.Transparent;
+            this.pnInfo.BackgroundImage = global::Hotel_Management.Properties.Resources.opacity_background_dark;
+            this.pnInfo.Controls.Add(this.pictureBox1);
+            this.pnInfo.Controls.Add(this.lbInfo);
+            this.pnInfo.Location = new System.Drawing.Point(10, 446);
+            this.pnInfo.Name = "pnInfo";
+            this.pnInfo.Size = new System.Drawing.Size(169, 50);
+            this.pnInfo.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -214,15 +214,15 @@
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox5
+            // picBookRoom
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(208, 78);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(534, 165);
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
+            this.picBookRoom.BackColor = System.Drawing.Color.Transparent;
+            this.picBookRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picBookRoom.Location = new System.Drawing.Point(208, 78);
+            this.picBookRoom.Name = "picBookRoom";
+            this.picBookRoom.Size = new System.Drawing.Size(534, 165);
+            this.picBookRoom.TabIndex = 2;
+            this.picBookRoom.TabStop = false;
             // 
             // label3
             // 
@@ -236,15 +236,15 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Lập phiếu thuê phòng";
             // 
-            // pictureBox6
+            // picRoomManagement
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(208, 268);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(249, 174);
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.picRoomManagement.BackColor = System.Drawing.Color.Transparent;
+            this.picRoomManagement.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picRoomManagement.Location = new System.Drawing.Point(208, 268);
+            this.picRoomManagement.Name = "picRoomManagement";
+            this.picRoomManagement.Size = new System.Drawing.Size(249, 174);
+            this.picRoomManagement.TabIndex = 4;
+            this.picRoomManagement.TabStop = false;
             // 
             // label4
             // 
@@ -270,15 +270,15 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Quản lí phiếu thuê";
             // 
-            // pictureBox7
+            // picRentalCoupon
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(477, 268);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(265, 174);
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
+            this.picRentalCoupon.BackColor = System.Drawing.Color.Transparent;
+            this.picRentalCoupon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picRentalCoupon.Location = new System.Drawing.Point(477, 268);
+            this.picRentalCoupon.Name = "picRentalCoupon";
+            this.picRentalCoupon.Size = new System.Drawing.Size(265, 174);
+            this.picRentalCoupon.TabIndex = 6;
+            this.picRentalCoupon.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -313,25 +313,25 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Quản lí khách hàng";
             // 
-            // pictureBox10
+            // picCustomer
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Location = new System.Drawing.Point(208, 466);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(534, 165);
-            this.pictureBox10.TabIndex = 10;
-            this.pictureBox10.TabStop = false;
+            this.picCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.picCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picCustomer.Location = new System.Drawing.Point(208, 466);
+            this.picCustomer.Name = "picCustomer";
+            this.picCustomer.Size = new System.Drawing.Size(534, 165);
+            this.picCustomer.TabIndex = 10;
+            this.picCustomer.TabStop = false;
             // 
-            // pictureBox11
+            // picReport
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox11.Location = new System.Drawing.Point(760, 78);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(135, 553);
-            this.pictureBox11.TabIndex = 12;
-            this.pictureBox11.TabStop = false;
+            this.picReport.BackColor = System.Drawing.Color.Transparent;
+            this.picReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picReport.Location = new System.Drawing.Point(760, 78);
+            this.picReport.Name = "picReport";
+            this.picReport.Size = new System.Drawing.Size(135, 553);
+            this.picReport.TabIndex = 12;
+            this.picReport.TabStop = false;
             // 
             // label7
             // 
@@ -381,15 +381,15 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "Loại khách hàng";
             // 
-            // pictureBox12
+            // picCustomerType
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox12.Location = new System.Drawing.Point(914, 78);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(253, 129);
-            this.pictureBox12.TabIndex = 16;
-            this.pictureBox12.TabStop = false;
+            this.picCustomerType.BackColor = System.Drawing.Color.Transparent;
+            this.picCustomerType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picCustomerType.Location = new System.Drawing.Point(914, 78);
+            this.picCustomerType.Name = "picCustomerType";
+            this.picCustomerType.Size = new System.Drawing.Size(253, 129);
+            this.picCustomerType.TabIndex = 16;
+            this.picCustomerType.TabStop = false;
             // 
             // label11
             // 
@@ -403,15 +403,15 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "Danh mục phòng";
             // 
-            // pictureBox13
+            // picRoomType
             // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox13.Location = new System.Drawing.Point(914, 221);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(253, 129);
-            this.pictureBox13.TabIndex = 18;
-            this.pictureBox13.TabStop = false;
+            this.picRoomType.BackColor = System.Drawing.Color.Transparent;
+            this.picRoomType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picRoomType.Location = new System.Drawing.Point(914, 221);
+            this.picRoomType.Name = "picRoomType";
+            this.picRoomType.Size = new System.Drawing.Size(253, 129);
+            this.picRoomType.TabIndex = 18;
+            this.picRoomType.TabStop = false;
             // 
             // label12
             // 
@@ -425,15 +425,15 @@
             this.label12.TabIndex = 21;
             this.label12.Text = "Thêm nhân viên";
             // 
-            // pictureBox14
+            // picAddEmloyee
             // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox14.Location = new System.Drawing.Point(914, 362);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(253, 129);
-            this.pictureBox14.TabIndex = 20;
-            this.pictureBox14.TabStop = false;
+            this.picAddEmloyee.BackColor = System.Drawing.Color.Transparent;
+            this.picAddEmloyee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picAddEmloyee.Location = new System.Drawing.Point(914, 362);
+            this.picAddEmloyee.Name = "picAddEmloyee";
+            this.picAddEmloyee.Size = new System.Drawing.Size(253, 129);
+            this.picAddEmloyee.TabIndex = 20;
+            this.picAddEmloyee.TabStop = false;
             // 
             // label13
             // 
@@ -447,15 +447,15 @@
             this.label13.TabIndex = 23;
             this.label13.Text = "Thay đổi quy định";
             // 
-            // pictureBox15
+            // picChangeRegulation
             // 
-            this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox15.Location = new System.Drawing.Point(914, 502);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(253, 129);
-            this.pictureBox15.TabIndex = 22;
-            this.pictureBox15.TabStop = false;
+            this.picChangeRegulation.BackColor = System.Drawing.Color.Transparent;
+            this.picChangeRegulation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picChangeRegulation.Location = new System.Drawing.Point(914, 502);
+            this.picChangeRegulation.Name = "picChangeRegulation";
+            this.picChangeRegulation.Size = new System.Drawing.Size(253, 129);
+            this.picChangeRegulation.TabIndex = 22;
+            this.picChangeRegulation.TabStop = false;
             // 
             // label14
             // 
@@ -480,60 +480,60 @@
             this.ClientSize = new System.Drawing.Size(1183, 640);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.pictureBox15);
+            this.Controls.Add(this.picChangeRegulation);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.pictureBox14);
+            this.Controls.Add(this.picAddEmloyee);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.pictureBox13);
+            this.Controls.Add(this.picRoomType);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.pictureBox12);
+            this.Controls.Add(this.picCustomerType);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.picReport);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.picCustomer);
+            this.Controls.Add(this.pnExit);
+            this.Controls.Add(this.PnIntroduction);
+            this.Controls.Add(this.pnInfo);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.imgAvatar);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.picRentalCoupon);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.picRoomManagement);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.picBookRoom);
             this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí khách sạn";
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnExit.ResumeLayout(false);
+            this.pnExit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.PnIntroduction.ResumeLayout(false);
+            this.PnIntroduction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnInfo.ResumeLayout(false);
+            this.pnInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBookRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomManagement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRentalCoupon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomerType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddEmloyee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChangeRegulation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,38 +542,38 @@
         #endregion
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.PictureBox imgAvatar;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnInfo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbInfo;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnExit;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel PnIntroduction;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox picBookRoom;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox picRoomManagement;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox picRentalCoupon;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox picCustomer;
+        private System.Windows.Forms.PictureBox picReport;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox picCustomerType;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox picRoomType;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox picAddEmloyee;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox picChangeRegulation;
         private System.Windows.Forms.Label label14;
     }
 }

@@ -16,7 +16,7 @@ namespace Hotel_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fQuanLyPhieuThue());
+            Application.Run(new fBookRoom());
         }
     }
 }

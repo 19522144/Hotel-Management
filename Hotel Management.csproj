@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fBookRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBookRoom.Designer.cs">
+      <DependentUpon>fBookRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCustomerManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fBookRoom.resx">
+      <DependentUpon>fBookRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fCustomerManagement.resx">
       <DependentUpon>fCustomerManagement.cs</DependentUpon>
     </EmbeddedResource>
