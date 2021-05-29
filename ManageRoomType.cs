@@ -10,16 +10,12 @@ using System.Windows.Forms;
 
 namespace Hotel_Management
 {
-    public partial class fBookRoom : Form
+    public partial class ManageRoomType : Form
     {
-        public fBookRoom()
+        public ManageRoomType()
         {
             InitializeComponent();
         }
 
-        private void txtTotal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
