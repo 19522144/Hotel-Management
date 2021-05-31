@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -148,7 +148,6 @@
       <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.cs">
-<<<<<<< HEAD
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
@@ -156,15 +155,6 @@
     <Compile Include="QuanLiKhachSan.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-=======
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLiKhachSan.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
->>>>>>> c2a643fd433e4d5ec05ced1692a9d1e5a49896da
       <DependentUpon>QuanLiKhachSan.edmx</DependentUpon>
     </Compile>
     <Compile Include="NGUOIDUNG.cs">
@@ -184,15 +174,12 @@
     <Compile Include="RoomManagement.Designer.cs">
       <DependentUpon>RoomManagement.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SignIn.Designer.cs">
       <DependentUpon>SignIn.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> c2a643fd433e4d5ec05ced1692a9d1e5a49896da
     <Compile Include="THAMSO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -230,12 +217,6 @@
     <EmbeddedResource Include="RoomManagement.resx">
       <DependentUpon>RoomManagement.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="SignIn.resx">
-      <DependentUpon>SignIn.cs</DependentUpon>
-    </EmbeddedResource>
-=======
->>>>>>> c2a643fd433e4d5ec05ced1692a9d1e5a49896da
     <EntityDeploy Include="QuanLiKhachSan.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QuanLiKhachSan.Designer.cs</LastGenOutput>
@@ -290,7 +271,6 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="QuanLiKhachSan.sql" />
-    <None Include="Resources\129954733_382558116339869_1736420653847065478_n.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
