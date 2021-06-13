@@ -88,6 +88,12 @@
     <Compile Include="CHITIETPHIEUTHUE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DangKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKi.Designer.cs">
+      <DependentUpon>DangKi.cs</DependentUpon>
+    </Compile>
     <Compile Include="fBillManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,12 @@
     <Compile Include="HOADON.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="InHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InHoaDon.Designer.cs">
+      <DependentUpon>InHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="KHACHHANG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -169,6 +181,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersionalInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersionalInformation.Designer.cs">
+      <DependentUpon>PersionalInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="QuanLiKhachSan.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -201,6 +224,9 @@
     <Compile Include="THAMSO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DangKi.resx">
+      <DependentUpon>DangKi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fBillManagement.resx">
       <DependentUpon>fBillManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,24 +251,28 @@
     <EmbeddedResource Include="fReport.resx">
       <DependentUpon>fReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InHoaDon.resx">
+      <DependentUpon>InHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageRoomType.resx">
       <DependentUpon>ManageRoomType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageCustomerType.resx">
       <DependentUpon>ManageCustomerType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PersionalInformation.resx">
+      <DependentUpon>PersionalInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RoomManagement.resx">
       <DependentUpon>RoomManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="QuanLiKhachSan.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -298,9 +328,15 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="QuanLiKhachSan.sql" />
+    <None Include="Resources\Show 16px.png" />
+    <None Include="Resources\Hide.png" />
+    <None Include="Resources\Eye.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

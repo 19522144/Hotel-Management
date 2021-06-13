@@ -117,35 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnHideNewPass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHYAAAB2AU57JggAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAA/0lEQVQ4T9XSz0pCQRTH8YHcRCStAsFEBEmSNoJKunAXuNJF27YtchFE0sJ3sCIQsYJ04UL88wK+
+        SvYqfX9Xj0xwdX9/8IGZi2fOmUEXySQxWy93J4dnfOIbbSSg4iXSCM0lJujiCsc4QgUl/KKG0DxiiNNg
+        tz7sDS1Y5zJGeMA2B9APNbJFxXOoUH5wDcs9+lCt+0JDCy860IrVWdfRNz83GGihkapaeNHYKdiDneEV
+        fppQ8+CRFqhrs4mNrc4q1nXysNyhh1iwI4f4wC1sbN1ZY6uzFWcwxr9H9HOOFV5QwAni0BXfMcUFQmOd
+        deciOtBU8oQs9kZ/Tx0SqTj3By+EKMHjh1IsAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="opacity_background_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\opacity_background_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnHideConfirmNewPass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHYAAAB2AU57JggAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAA/0lEQVQ4T9XSz0pCQRTH8YHcRCStAsFEBEmSNoJKunAXuNJF27YtchFE0sJ3sCIQsYJ04UL88wK+
+        SvYqfX9Xj0xwdX9/8IGZi2fOmUEXySQxWy93J4dnfOIbbSSg4iXSCM0lJujiCsc4QgUl/KKG0DxiiNNg
+        tz7sDS1Y5zJGeMA2B9APNbJFxXOoUH5wDcs9+lCt+0JDCy860IrVWdfRNz83GGihkapaeNHYKdiDneEV
+        fppQ8+CRFqhrs4mNrc4q1nXysNyhh1iwI4f4wC1sbN1ZY6uzFWcwxr9H9HOOFV5QwAni0BXfMcUFQmOd
+        deciOtBU8oQs9kZ/Tx0SqTj3By+EKMHjh1IsAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\avatar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnShowConfirmNewPass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHYAAAB2AU57JggAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAA20lEQVQ4T93QvWoCQRSG4cUfUhhTWxgwhUFixFqs00bEe7AVQ0LAItegCGmiIojaJW0uL++7uyMW
+        i6b2gwfOGXbOzGx0uWngHQss8YEucjiZFn4wQwdllNCGA38xQGZesEUt7pJhDtKjC6SICda4csHk4Uee
+        EOLmb1RT1mGIeYI3vbZZ4dniKA50Y8gtpkl5iP9kY+FP6lkc5T8D+viyyHqC1/XabpR1EyFDfKIQd2nG
+        2OEu7pIhnqqwuQKvPYq7jPihp83hG29S1g7a4wFnc483+Ea9oo7LSxT9AaMcIcOiBJLmAAAAAElFTkSu
+        QmCC
+</value>
   </data>
-  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="avatar_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\avatar_default.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="opacity_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\opacity_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Show 16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Show 16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background_mainmenu_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_mainmenu_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnShowNewPass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHYAAAB2AU57JggAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAA20lEQVQ4T93QvWoCQRSG4cUfUhhTWxgwhUFixFqs00bEe7AVQ0LAItegCGmiIojaJW0uL++7uyMW
+        i6b2gwfOGXbOzGx0uWngHQss8YEucjiZFn4wQwdllNCGA38xQGZesEUt7pJhDtKjC6SICda4csHk4Uee
+        EOLmb1RT1mGIeYI3vbZZ4dniKA50Y8gtpkl5iP9kY+FP6lkc5T8D+viyyHqC1/XabpR1EyFDfKIQd2nG
+        2OEu7pIhnqqwuQKvPYq7jPihp83hG29S1g7a4wFnc483+Ea9oo7LSxT9AaMcIcOiBJLmAAAAAElFTkSu
+        QmCC
+</value>
   </data>
 </root>

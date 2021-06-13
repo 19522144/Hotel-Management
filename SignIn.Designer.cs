@@ -44,8 +44,7 @@ namespace Hotel_Management
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(232, 188);
+            this.btnLogin.Location = new System.Drawing.Point(232, 166);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(223, 32);
@@ -56,8 +55,7 @@ namespace Hotel_Management
             // 
             // btnExit
             // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(232, 235);
+            this.btnExit.Location = new System.Drawing.Point(232, 210);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(223, 30);
@@ -86,7 +84,7 @@ namespace Hotel_Management
             this.labelPassword.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.labelPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.labelPassword.ForeColor = System.Drawing.Color.Teal;
-            this.labelPassword.Location = new System.Drawing.Point(232, 114);
+            this.labelPassword.Location = new System.Drawing.Point(232, 108);
             this.labelPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(68, 19);
@@ -95,7 +93,7 @@ namespace Hotel_Management
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(232, 142);
+            this.txbPassword.Location = new System.Drawing.Point(232, 135);
             this.txbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(224, 20);
@@ -126,7 +124,7 @@ namespace Hotel_Management
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(433, 141);
+            this.btnShow.Location = new System.Drawing.Point(433, 133);
             this.btnShow.Margin = new System.Windows.Forms.Padding(2);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(22, 19);
@@ -136,7 +134,7 @@ namespace Hotel_Management
             // 
             // btnHide
             // 
-            this.btnHide.Location = new System.Drawing.Point(432, 142);
+            this.btnHide.Location = new System.Drawing.Point(432, 133);
             this.btnHide.Margin = new System.Windows.Forms.Padding(2);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(23, 19);
@@ -148,12 +146,11 @@ namespace Hotel_Management
             // 
             this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = global::Hotel_Management.Properties.Resources._129954733_382558116339869_1736420653847065478_n;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 12);
+            this.pictureBox1.Image = global::Hotel_Management.Properties.Resources.avatar_default;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 30);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 253);
+            this.pictureBox1.Size = new System.Drawing.Size(175, 199);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -163,7 +160,7 @@ namespace Hotel_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(468, 301);
+            this.ClientSize = new System.Drawing.Size(494, 256);
             this.Controls.Add(this.btnHide);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.labelLogin);
@@ -176,7 +173,7 @@ namespace Hotel_Management
             this.Controls.Add(this.btnLogin);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SignIn";
-            this.Text = "SignIn";
+            this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

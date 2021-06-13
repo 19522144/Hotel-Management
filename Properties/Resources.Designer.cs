@@ -63,9 +63,9 @@ namespace Hotel_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _129954733_382558116339869_1736420653847065478_n {
+        internal static System.Drawing.Bitmap avatar {
             get {
-                object obj = ResourceManager.GetObject("129954733_382558116339869_1736420653847065478_n", resourceCulture);
+                object obj = ResourceManager.GetObject("avatar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Hotel_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap avatar {
+        internal static System.Drawing.Bitmap avatar_default {
             get {
-                object obj = ResourceManager.GetObject("avatar", resourceCulture);
+                object obj = ResourceManager.GetObject("avatar_default", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Hotel_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap info {
+        internal static System.Drawing.Bitmap Eye {
             get {
-                object obj = ResourceManager.GetObject("info", resourceCulture);
+                object obj = ResourceManager.GetObject("Eye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,19 @@ namespace Hotel_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap introduction {
+        internal static System.Drawing.Bitmap Hide {
             get {
-                object obj = ResourceManager.GetObject("introduction", resourceCulture);
+                object obj = ResourceManager.GetObject("Hide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info {
+            get {
+                object obj = ResourceManager.GetObject("info", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +146,16 @@ namespace Hotel_Management.Properties {
         internal static System.Drawing.Bitmap opacity_background_dark {
             get {
                 object obj = ResourceManager.GetObject("opacity_background_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Show_16px {
+            get {
+                object obj = ResourceManager.GetObject("Show 16px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
