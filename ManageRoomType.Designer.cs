@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dvgData = new System.Windows.Forms.DataGridView();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,11 +38,11 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnExti = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgData)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,13 +57,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lí loại phòng";
             // 
-            // dataGridView1
+            // dvgData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(340, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(318, 341);
-            this.dataGridView1.TabIndex = 1;
+            this.dvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgData.Location = new System.Drawing.Point(340, 86);
+            this.dvgData.Name = "dvgData";
+            this.dvgData.Size = new System.Drawing.Size(318, 341);
+            this.dvgData.TabIndex = 1;
             // 
             // txtID
             // 
@@ -135,7 +135,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnExti);
+            this.groupBox2.Controls.Add(this.btnExit);
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnAdd);
@@ -147,14 +147,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
-            // btnExti
+            // btnExit
             // 
-            this.btnExti.Location = new System.Drawing.Point(167, 96);
-            this.btnExti.Name = "btnExti";
-            this.btnExti.Size = new System.Drawing.Size(96, 35);
-            this.btnExti.TabIndex = 3;
-            this.btnExti.Text = "Thoát";
-            this.btnExti.UseVisualStyleBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(167, 96);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(96, 35);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
@@ -190,11 +190,11 @@
             this.ClientSize = new System.Drawing.Size(670, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dvgData);
             this.Controls.Add(this.label1);
             this.Name = "ManageRoomType";
             this.Text = "ManageRoomType";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgData)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -206,7 +206,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dvgData;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -215,7 +215,7 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnExti;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;

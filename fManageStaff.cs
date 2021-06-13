@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel_Management
 {
-    public partial class fBookRoom : Form
+    public partial class fManageStaff : Form
     {
-        public fBookRoom()
+        public fManageStaff()
         {
             InitializeComponent();
         }
-
     }
 }

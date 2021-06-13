@@ -112,6 +112,12 @@
     <Compile Include="fMainMenu.Designer.cs">
       <DependentUpon>fMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="fManageStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fManageStaff.Designer.cs">
+      <DependentUpon>fManageStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="fParameterUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="ManageRoomType.Designer.cs">
       <DependentUpon>ManageRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCustomerType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCustomerType.Designer.cs">
+      <DependentUpon>ManageCustomerType.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -201,6 +213,9 @@
     <EmbeddedResource Include="fMainMenu.resx">
       <DependentUpon>fMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fManageStaff.resx">
+      <DependentUpon>fManageStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fParameterUpdate.resx">
       <DependentUpon>fParameterUpdate.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageRoomType.resx">
       <DependentUpon>ManageRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCustomerType.resx">
+      <DependentUpon>ManageCustomerType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
