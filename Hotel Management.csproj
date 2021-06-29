@@ -89,6 +89,8 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Controller\BillController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\CustomerTypeController.cs" />
     <Compile Include="Controller\RentalController.cs" />
     <Compile Include="DangKi.cs">
       <SubType>Form</SubType>
