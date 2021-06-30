@@ -16,6 +16,13 @@ namespace Hotel_Management.Controller
             var data = entities.KHACHHANGs;
             return data.ToList();
         }
+        public void insertCustomer(LOAIKHACH lk, KHACHHANG kh)
+        {
+            entities.KHACHHANGs.Add(kh);
+            entities.SaveChanges();
+            entities.LOAIKHACHes.Add(lk);
+            entities.SaveChanges();
+        }
         public void updateCustomer(LOAIKHACH lk, KHACHHANG kh)
         {
             KHACHHANG k = entities.KHACHHANGs.Find(kh.MAKHACHHANG);
