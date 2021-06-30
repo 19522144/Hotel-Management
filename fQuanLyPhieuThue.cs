@@ -33,11 +33,13 @@ namespace Hotel_Management
             txtTenKhachHang.DataBindings.Clear();
             txtCMND.DataBindings.Clear();
             txtDiaChi.DataBindings.Clear();
+            txtTenPhong.DataBindings.Clear();
 
             txtMaPhieuThue.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "ID", true, DataSourceUpdateMode.Never);
             txtTenKhachHang.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "CustomerName", true, DataSourceUpdateMode.Never);
             txtCMND.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "CMND", true, DataSourceUpdateMode.Never);
             txtDiaChi.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "Address", true, DataSourceUpdateMode.Never);
+            txtTenPhong.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "RoomName", true, DataSourceUpdateMode.Never);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

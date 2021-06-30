@@ -1,5 +1,5 @@
 ﻿
-namespace InHoaDon
+namespace Hotel_Management
 {
     partial class InHoaDon
     {
