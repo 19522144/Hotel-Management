@@ -93,6 +93,8 @@
     <Compile Include="Controller\CustomerTypeController.cs" />
     <Compile Include="Controller\ParameterController.cs" />
     <Compile Include="Controller\RentalController.cs" />
+    <Compile Include="Controller\RoomController.cs" />
+    <Compile Include="Controller\RoomTypeController.cs" />
     <Compile Include="DangKi.cs">
       <SubType>Form</SubType>
     </Compile>
