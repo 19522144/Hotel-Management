@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel_Management.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,27 @@ namespace Hotel_Management
 {
     public partial class fBookRoom : Form
     {
+        RentalController RentalController = new RentalController();
+
         public fBookRoom()
         {
             InitializeComponent();
         }
 
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            PHIEUTHUE pt = new PHIEUTHUE()
+            {
+                MAPHONG = 1,
+                NGAYBDTHUE = dtpDayRecieve.Value,
+            };
+
+            CHITIETPHIEUTHUE ctpt = new CHITIETPHIEUTHUE()
+            {
+                MAKHACHHANG = 1
+            };
+
+            RentalController.addRental(pt, ctpt);
+        }
     }
 }

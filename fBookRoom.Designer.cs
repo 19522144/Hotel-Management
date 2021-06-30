@@ -300,6 +300,7 @@
             this.btnBook.TabIndex = 3;
             this.btnBook.Text = "Đặt phòng";
             this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
             // btnCancel
             // 
