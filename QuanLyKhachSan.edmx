@@ -89,13 +89,9 @@
           <Property Name="TINHTRANG" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MALOAIPHONG" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'QUANLIKHACHSAN.dbo.THAMSO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="THAMSO">
           <Key>
             <PropertyRef Name="SOKHTOIDA1PHONG" />
-            <PropertyRef Name="PHUTHU" />
-            <PropertyRef Name="HESOKHNUOCNGOAI" />
           </Key>
           <Property Name="SOKHTOIDA1PHONG" Type="int" Nullable="false" />
           <Property Name="PHUTHU" Type="money" Nullable="false" />
@@ -207,13 +203,7 @@ warning 6002: The table/view 'QUANLIKHACHSAN.dbo.THAMSO' does not have a primary
           <EntitySet Name="NGUOIDUNG" EntityType="Self.NGUOIDUNG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUTHUE" EntityType="Self.PHIEUTHUE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHONG" EntityType="Self.PHONG" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="THAMSO" EntityType="Self.THAMSO" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [THAMSO].[SOKHTOIDA1PHONG] AS [SOKHTOIDA1PHONG], 
-    [THAMSO].[PHUTHU] AS [PHUTHU], 
-    [THAMSO].[HESOKHNUOCNGOAI] AS [HESOKHNUOCNGOAI]
-    FROM [dbo].[THAMSO] AS [THAMSO]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__CHITIETHO__MAHOA__45F365D3" Association="Self.FK__CHITIETHO__MAHOA__45F365D3">
             <End Role="HOADON" EntitySet="HOADON" />
             <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
@@ -355,8 +345,6 @@ warning 6002: The table/view 'QUANLIKHACHSAN.dbo.THAMSO' does not have a primary
         <EntityType Name="THAMSO">
           <Key>
             <PropertyRef Name="SOKHTOIDA1PHONG" />
-            <PropertyRef Name="PHUTHU" />
-            <PropertyRef Name="HESOKHNUOCNGOAI" />
           </Key>
           <Property Name="SOKHTOIDA1PHONG" Type="Int32" Nullable="false" />
           <Property Name="PHUTHU" Type="Decimal" Precision="19" Scale="4" Nullable="false" />

@@ -1,5 +1,4 @@
-﻿
-namespace Hotel_Management
+﻿namespace Hotel_Management
 {
     partial class fParameterUpdate
     {

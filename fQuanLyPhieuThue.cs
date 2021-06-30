@@ -32,14 +32,22 @@ namespace Hotel_Management
             txtMaPhieuThue.DataBindings.Clear();
             txtTenKhachHang.DataBindings.Clear();
             txtCMND.DataBindings.Clear();
+<<<<<<< HEAD
             txtDiaChi.DataBindings.Clear();
             txtTenPhong.DataBindings.Clear();
+=======
+            //txtDiaChi.DataBindings.Clear();
+>>>>>>> 000c209b5aab4fb167aae0e026ebe54a519ce32e
 
             txtMaPhieuThue.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "ID", true, DataSourceUpdateMode.Never);
             txtTenKhachHang.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "CustomerName", true, DataSourceUpdateMode.Never);
             txtCMND.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "CMND", true, DataSourceUpdateMode.Never);
+<<<<<<< HEAD
             txtDiaChi.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "Address", true, DataSourceUpdateMode.Never);
             txtTenPhong.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "RoomName", true, DataSourceUpdateMode.Never);
+=======
+            //txtDiaChi.DataBindings.Add("Text", dgvDanhSachPhieuThue.DataSource, "Address", true, DataSourceUpdateMode.Never);
+>>>>>>> 000c209b5aab4fb167aae0e026ebe54a519ce32e
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
