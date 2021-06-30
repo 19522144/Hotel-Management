@@ -25,7 +25,7 @@ namespace Hotel_Management
                 PHUTHU = 1
             };
             controller.updateParameter(thamso);
-            dataGridView1.DataSource = controller.getAll();
+            dgvDanhSachQuyDinh.DataSource = controller.getAll();
         }
     }
 }

@@ -43,8 +43,7 @@ namespace Hotel_Management.Controller
             CHITIETPHIEUTHUE c = entities.CHITIETPHIEUTHUEs.Where(x => x.MAPHIEUTHUE == pt.MAPHIEUTHUE).SingleOrDefault();
             p.NGAYBDTHUE = pt.NGAYBDTHUE;
             p.MAPHONG = pt.MAPHONG;
-            c.MAKHACHHANG = ctpt.MAKHACHHANG;
-            //MessageBox.Show("Here");
+            c.MAKHACHHANG = ctpt.MAKHACHHANG;           
             entities.SaveChanges();
         }
 
