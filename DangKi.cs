@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ManHinhDangKi
+namespace Hotel_Management
 {
-    public partial class ĐăngKí : Form
+    public partial class DangKi : Form
     {
-        public ĐăngKí()
+        public DangKi()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
-namespace ManHinhDangKi
+namespace Hotel_Management
 {
-    partial class ĐăngKí
+    partial class DangKi
     {
         /// <summary>
         /// Required designer variable.
@@ -64,9 +64,9 @@ namespace ManHinhDangKi
             this.groupBoxTTCN.Controls.Add(this.labelTĐN);
             this.groupBoxTTCN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxTTCN.Location = new System.Drawing.Point(119, 57);
-            this.groupBoxTTCN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTTCN.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxTTCN.Name = "groupBoxTTCN";
-            this.groupBoxTTCN.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTTCN.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxTTCN.Size = new System.Drawing.Size(329, 162);
             this.groupBoxTTCN.TabIndex = 0;
             this.groupBoxTTCN.TabStop = false;
@@ -77,7 +77,7 @@ namespace ManHinhDangKi
             // 
             this.comboBoxQTC.FormattingEnabled = true;
             this.comboBoxQTC.Location = new System.Drawing.Point(143, 131);
-            this.comboBoxQTC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxQTC.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxQTC.Name = "comboBoxQTC";
             this.comboBoxQTC.Size = new System.Drawing.Size(168, 25);
             this.comboBoxQTC.TabIndex = 8;
@@ -85,7 +85,7 @@ namespace ManHinhDangKi
             // textBoxNLMK
             // 
             this.textBoxNLMK.Location = new System.Drawing.Point(143, 104);
-            this.textBoxNLMK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNLMK.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNLMK.Name = "textBoxNLMK";
             this.textBoxNLMK.Size = new System.Drawing.Size(168, 23);
             this.textBoxNLMK.TabIndex = 10;
@@ -118,7 +118,7 @@ namespace ManHinhDangKi
             // textBoxMK
             // 
             this.textBoxMK.Location = new System.Drawing.Point(143, 76);
-            this.textBoxMK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMK.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMK.Name = "textBoxMK";
             this.textBoxMK.Size = new System.Drawing.Size(168, 23);
             this.textBoxMK.TabIndex = 7;
@@ -127,7 +127,7 @@ namespace ManHinhDangKi
             // textBoxTND
             // 
             this.textBoxTND.Location = new System.Drawing.Point(143, 49);
-            this.textBoxTND.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxTND.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTND.Name = "textBoxTND";
             this.textBoxTND.Size = new System.Drawing.Size(168, 23);
             this.textBoxTND.TabIndex = 6;
@@ -135,7 +135,7 @@ namespace ManHinhDangKi
             // textBoxTĐN
             // 
             this.textBoxTĐN.Location = new System.Drawing.Point(143, 23);
-            this.textBoxTĐN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxTĐN.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTĐN.Name = "textBoxTĐN";
             this.textBoxTĐN.Size = new System.Drawing.Size(168, 23);
             this.textBoxTĐN.TabIndex = 5;
@@ -194,7 +194,7 @@ namespace ManHinhDangKi
             this.buttonĐK.BackColor = System.Drawing.Color.CadetBlue;
             this.buttonĐK.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonĐK.Location = new System.Drawing.Point(140, 236);
-            this.buttonĐK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonĐK.Margin = new System.Windows.Forms.Padding(2);
             this.buttonĐK.Name = "buttonĐK";
             this.buttonĐK.Size = new System.Drawing.Size(90, 36);
             this.buttonĐK.TabIndex = 5;
@@ -206,7 +206,7 @@ namespace ManHinhDangKi
             this.buttonĐ.BackColor = System.Drawing.Color.CadetBlue;
             this.buttonĐ.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonĐ.Location = new System.Drawing.Point(321, 236);
-            this.buttonĐ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonĐ.Margin = new System.Windows.Forms.Padding(2);
             this.buttonĐ.Name = "buttonĐ";
             this.buttonĐ.Size = new System.Drawing.Size(94, 36);
             this.buttonĐ.TabIndex = 6;
@@ -222,7 +222,7 @@ namespace ManHinhDangKi
             this.panel1.Controls.Add(this.groupBoxTTCN);
             this.panel1.Controls.Add(this.buttonĐK);
             this.panel1.Location = new System.Drawing.Point(10, 11);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(490, 292);
             this.panel1.TabIndex = 7;
@@ -231,7 +231,7 @@ namespace ManHinhDangKi
             // 
             this.pictureBoxAĐD.Image = global::Hotel_Management.Properties.Resources.avatar_default;
             this.pictureBoxAĐD.Location = new System.Drawing.Point(2, 80);
-            this.pictureBoxAĐD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxAĐD.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxAĐD.Name = "pictureBoxAĐD";
             this.pictureBoxAĐD.Size = new System.Drawing.Size(104, 114);
             this.pictureBoxAĐD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -243,9 +243,9 @@ namespace ManHinhDangKi
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(817, 544);
+            this.ClientSize = new System.Drawing.Size(510, 311);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ĐăngKí";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangKi";

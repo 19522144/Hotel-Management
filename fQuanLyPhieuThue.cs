@@ -63,6 +63,7 @@ namespace Hotel_Management
             rentalController.updateRental(pt, ct);
 
             LoadData();
+            //InHoaDon inHoaDon = new InHoaDon();
         }
     }
 }
