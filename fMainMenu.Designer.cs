@@ -182,7 +182,7 @@
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1183, 640);
+            this.pictureBox4.Size = new System.Drawing.Size(1180, 638);
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
@@ -275,7 +275,7 @@
             this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox9.Location = new System.Drawing.Point(0, 0);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(191, 640);
+            this.pictureBox9.Size = new System.Drawing.Size(191, 638);
             this.pictureBox9.TabIndex = 9;
             this.pictureBox9.TabStop = false;
             // 
@@ -458,7 +458,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(191, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(992, 60);
+            this.label14.Size = new System.Drawing.Size(989, 60);
             this.label14.TabIndex = 24;
             this.label14.Text = "Quản lý khách sạn";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -493,7 +493,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1183, 640);
+            this.ClientSize = new System.Drawing.Size(1180, 638);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.picBill);
             this.Controls.Add(this.label14);

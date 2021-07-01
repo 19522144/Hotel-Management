@@ -14,6 +14,14 @@ namespace Hotel_Management.Controller
             var data = entities.LOAIKHACHes;
             return data.ToList();
         }
+        public void insertCustomerType(LOAIKHACH lk, KHACHHANG kh)
+        {
+            entities.LOAIKHACHes.Add(lk);
+            entities.SaveChanges();
+            kh.MALOAIKHACH = lk.MALOAIKHACH;
+            entities.KHACHHANGs.Add(kh);
+            entities.SaveChanges();
+        }
         public void updateCustomerType(LOAIKHACH lk)
         {
             LOAIKHACH k = entities.LOAIKHACHes.Find(lk.MALOAIKHACH);
