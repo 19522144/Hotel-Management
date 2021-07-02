@@ -27,8 +27,10 @@ namespace Hotel_Management.Controller
             var data = entities.LOAIPHONGs;
             return data.ToList();
         }
-        public void AddRoom(PHONG p)
+        public void AddRoom(PHONG p, LOAIPHONG lp)
         {
+            entities.LOAIPHONGs.Add(lp);
+            entities.SaveChanges();
             entities.PHONGs.Add(p);
             entities.SaveChanges();
         }

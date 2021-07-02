@@ -24,6 +24,15 @@ namespace Hotel_Management
         {
             dgvDanhSachPhong.DataSource = roomController.getAll();
             addBlinding();
+
+            cbLoaiPhong.DataSource = roomController.All();
+            cbLoaiPhong.DisplayMember = "TENLOAIPHONG";
+            cbLoaiPhong.ValueMember = "MALOAIPHONG";
+
+            cbTimLoaiPhong.DataSource = roomController.All();
+            cbTimLoaiPhong.DisplayMember = "TENLOAIPHONG";
+            cbTimLoaiPhong.ValueMember = "MALOAIPHONG";
+
         }
         void addBlinding()
         {
@@ -43,6 +52,33 @@ namespace Hotel_Management
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXoaPhong_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                roomController.DeleteRoom(Int32.Parse(txbMaPhong.Text));
+                LoadData();
+            }
+
+        }
+
+        private void btnThemPhong_Click(object sender, EventArgs e)
+        {
+            PHONG p = new PHONG()
+            {
+                TENPHONG = txbTenPhong.Text,
+                MAPHONG = Int32.Parse(txbMaPhong.Text),
+                TINHTRANG=cbTrangThai.Text,
+                GHICHU=txbGhiChu.Text,
+            };
+            LOAIPHONG lp = new LOAIPHONG()
+            {
+                TENLOAIPHONG = cbLoaiPhong.Text,
+            };
+            roomController.AddRoom(p,lp);
+            LoadData();
         }
     }
 }
