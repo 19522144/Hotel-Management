@@ -17,8 +17,9 @@ namespace Hotel_Management.Controller
                            ID = c.MAPHONG,
                            Name = c.TENPHONG,
                            RoomType = c.LOAIPHONG.TENLOAIPHONG,
+                           Price = c.LOAIPHONG.DONGIA,
                            Status = c.TINHTRANG,
-                           Note = c.GHICHU,
+                           Note = c.GHICHU
                        };
             return data.ToList();
         }
@@ -53,6 +54,23 @@ namespace Hotel_Management.Controller
             ph.GHICHU = p.GHICHU;
             ph.TINHTRANG = p.TINHTRANG;
             entities.SaveChanges();
+        }
+
+        public dynamic findRoom(string roomName)
+        {
+            var value = from c in entities.PHONGs
+                        where c.TENPHONG == roomName
+                        select new
+                        {
+                            ID = c.MAPHONG,
+                            Name = c.TENPHONG,
+                            RoomType = c.LOAIPHONG.TENLOAIPHONG,
+                            Price = c.LOAIPHONG.DONGIA,
+                            Status = c.TINHTRANG,
+                            Note = c.GHICHU
+                        };
+
+            return value.ToList().FirstOrDefault();
         }
     }
 }

@@ -525,10 +525,12 @@
             this.Controls.Add(this.picBookRoom);
             this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "fMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí khách sạn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fMainMenu_FormClosing);
             this.pnExit.ResumeLayout(false);
             this.pnExit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
