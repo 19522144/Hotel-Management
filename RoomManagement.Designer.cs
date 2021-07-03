@@ -169,6 +169,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnCapNhatPhong, "btnCapNhatPhong");
             this.btnCapNhatPhong.Name = "btnCapNhatPhong";
             this.btnCapNhatPhong.UseVisualStyleBackColor = true;
+            this.btnCapNhatPhong.Click += new System.EventHandler(this.btnCapNhatPhong_Click);
             // 
             // btnXoaPhong
             // 
@@ -290,6 +291,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnTimKiem, "btnTimKiem");
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label12
             // 

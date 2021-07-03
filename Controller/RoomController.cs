@@ -27,10 +27,8 @@ namespace Hotel_Management.Controller
             var data = entities.LOAIPHONGs;
             return data.ToList();
         }
-        public void AddRoom(PHONG p, LOAIPHONG lp)
+        public void AddRoom(PHONG p)
         {
-            entities.LOAIPHONGs.Add(lp);
-            entities.SaveChanges();
             entities.PHONGs.Add(p);
             entities.SaveChanges();
         }
@@ -39,22 +37,34 @@ namespace Hotel_Management.Controller
             PHONG p = entities.PHONGs.Find(ID);
             if (p != null)
             {
-                LOAIPHONG lp = entities.LOAIPHONGs.Where(x => x.MALOAIPHONG == ID).SingleOrDefault();
-                //entities.LOAIPHONGs.Remove(lp);
                 entities.PHONGs.Remove(p);
                 entities.SaveChanges();
             }
         }
-        public void UpdateRoom(PHONG p, LOAIPHONG lp)
+        public void UpdateRoom(PHONG p)
         {
-            PHONG ph = entities.PHONGs.Find(p.MAPHONG);
-            LOAIPHONG l = entities.LOAIPHONGs.Where(x => x.MALOAIPHONG == p.MALOAIPHONG).SingleOrDefault();
+            PHONG ph= entities.PHONGs.Find(p.MAPHONG);
+            entities.Entry(p).State = System.Data.Entity.EntityState.Modified;
+            //LOAIPHONG l = entities.LOAIPHONGs.Where(x => x.MALOAIPHONG == p.MALOAIPHONG).SingleOrDefault();
             //l.TENLOAIPHONG = lp.TENLOAIPHONG;
-            ph.MAPHONG = p.MAPHONG;
-            ph.TENPHONG = p.TENPHONG;
-            ph.GHICHU = p.GHICHU;
-            ph.TINHTRANG = p.TINHTRANG;
+            //ph.MAPHONG = p.MAPHONG;
+            //ph.TENPHONG = p.TENPHONG;
+            //l.TENLOAIPHONG = lp.TENLOAIPHONG;
+            //ph.GHICHU = p.GHICHU;
+            //ph.TINHTRANG = p.TINHTRANG;
             entities.SaveChanges();
+        }
+        public dynamic Search(string keyword)
+        {
+            var data = entities.PHONGs.Where(x => x.TENPHONG.Contains(keyword)).Select(y => new
+            {
+                ID = y.MAPHONG,
+                Name = y.TENPHONG,
+                RoomType = y.LOAIPHONG.TENLOAIPHONG,
+                Status = y.TINHTRANG,
+                Note = y.GHICHU,
+            });
+            return data.ToList();
         }
     }
 }

@@ -19,12 +19,6 @@ namespace Hotel_Management
         {
             InitializeComponent();
             LoadData();
-        }
-        void LoadData()
-        {
-            dgvDanhSachPhong.DataSource = roomController.getAll();
-            addBlinding();
-
             cbLoaiPhong.DataSource = roomController.All();
             cbLoaiPhong.DisplayMember = "TENLOAIPHONG";
             cbLoaiPhong.ValueMember = "MALOAIPHONG";
@@ -32,6 +26,13 @@ namespace Hotel_Management
             cbTimLoaiPhong.DataSource = roomController.All();
             cbTimLoaiPhong.DisplayMember = "TENLOAIPHONG";
             cbTimLoaiPhong.ValueMember = "MALOAIPHONG";
+        }
+        void LoadData()
+        {
+            dgvDanhSachPhong.DataSource = roomController.getAll();
+            addBlinding();
+
+           
 
         }
         void addBlinding()
@@ -48,6 +49,7 @@ namespace Hotel_Management
             txbGhiChu.DataBindings.Add("Text", dgvDanhSachPhong.DataSource, "Note", true, DataSourceUpdateMode.Never);
 
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -70,14 +72,37 @@ namespace Hotel_Management
             {
                 TENPHONG = txbTenPhong.Text,
                 MAPHONG = Int32.Parse(txbMaPhong.Text),
-                TINHTRANG=cbTrangThai.Text,
-                GHICHU=txbGhiChu.Text,
+                MALOAIPHONG=(int)cbLoaiPhong.SelectedValue,
+                TINHTRANG = cbTrangThai.Text,
+                GHICHU = txbGhiChu.Text,
             };
-            LOAIPHONG lp = new LOAIPHONG()
+            roomController.AddRoom(p);
+            LoadData();
+        }
+
+      
+        
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string keyword = txbTimTenPhong.Text;
+            dgvDanhSachPhong.DataSource = roomController.Search(keyword);
+            //LoadData();
+
+
+        }
+
+        private void btnCapNhatPhong_Click(object sender, EventArgs e)
+        {
+            PHONG p = new PHONG()
             {
-                TENLOAIPHONG = cbLoaiPhong.Text,
+                MAPHONG=Int32.Parse(txbMaPhong.Text),
+                TENPHONG = txbTenPhong.Text,
+                MALOAIPHONG = (int)cbLoaiPhong.SelectedValue,
+                TINHTRANG = cbTrangThai.Text,
+                GHICHU = txbGhiChu.Text,
             };
-            roomController.AddRoom(p,lp);
+           
+            roomController.UpdateRoom(p);
             LoadData();
         }
     }

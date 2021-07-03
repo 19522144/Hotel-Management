@@ -17,7 +17,7 @@ namespace Hotel_Management.Controller
                        select new
                        {
                            ID = c.MAPHIEUTHUE,
-                           Room = c.PHIEUTHUE.PHONG.TENPHONG,
+                           RoomName = c.PHIEUTHUE.PHONG.TENPHONG,
                            CustomerID = c.KHACHHANG.MAKHACHHANG,
                            CustomerName = c.KHACHHANG.TENKHACHHANG,
                            CMND = c.KHACHHANG.CMND,
