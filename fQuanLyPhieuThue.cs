@@ -162,6 +162,8 @@ namespace Hotel_Management
             }
             dgvDanhSachPhieuThue.DataSource = rentalController
                 .findRental(ID, txtTimTenKH.Text, txtTimTenPhong.Text);
+
+            addBinding();
         }
 
         private void KeyPress(object sender, KeyPressEventArgs e)

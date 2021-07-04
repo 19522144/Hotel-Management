@@ -65,7 +65,7 @@ namespace Hotel_Management
             this.labelPersionalInformation.ForeColor = System.Drawing.Color.Teal;
             this.labelPersionalInformation.Location = new System.Drawing.Point(27, 9);
             this.labelPersionalInformation.Name = "labelPersionalInformation";
-            this.labelPersionalInformation.Size = new System.Drawing.Size(181, 25);
+            this.labelPersionalInformation.Size = new System.Drawing.Size(139, 20);
             this.labelPersionalInformation.TabIndex = 0;
             this.labelPersionalInformation.Text = "Thông tin cá nhân";
             // 
@@ -84,7 +84,7 @@ namespace Hotel_Management
             // 
             this.txbUserName.Location = new System.Drawing.Point(311, 226);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(240, 24);
+            this.txbUserName.Size = new System.Drawing.Size(240, 21);
             this.txbUserName.TabIndex = 2;
             // 
             // cbBoxAccessRights
@@ -92,7 +92,7 @@ namespace Hotel_Management
             this.cbBoxAccessRights.FormattingEnabled = true;
             this.cbBoxAccessRights.Location = new System.Drawing.Point(633, 298);
             this.cbBoxAccessRights.Name = "cbBoxAccessRights";
-            this.cbBoxAccessRights.Size = new System.Drawing.Size(220, 26);
+            this.cbBoxAccessRights.Size = new System.Drawing.Size(220, 23);
             this.cbBoxAccessRights.TabIndex = 3;
             // 
             // labelUserCode
@@ -102,7 +102,7 @@ namespace Hotel_Management
             this.labelUserCode.ForeColor = System.Drawing.Color.Teal;
             this.labelUserCode.Location = new System.Drawing.Point(307, 119);
             this.labelUserCode.Name = "labelUserCode";
-            this.labelUserCode.Size = new System.Drawing.Size(119, 20);
+            this.labelUserCode.Size = new System.Drawing.Size(92, 15);
             this.labelUserCode.TabIndex = 5;
             this.labelUserCode.Text = "Mã người dùng:";
             // 
@@ -113,7 +113,7 @@ namespace Hotel_Management
             this.labelUserName.ForeColor = System.Drawing.Color.Teal;
             this.labelUserName.Location = new System.Drawing.Point(307, 194);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(115, 20);
+            this.labelUserName.Size = new System.Drawing.Size(89, 15);
             this.labelUserName.TabIndex = 6;
             this.labelUserName.Text = "Tên đăng nhập:";
             // 
@@ -124,7 +124,7 @@ namespace Hotel_Management
             this.labelYourName.ForeColor = System.Drawing.Color.Teal;
             this.labelYourName.Location = new System.Drawing.Point(307, 266);
             this.labelYourName.Name = "labelYourName";
-            this.labelYourName.Size = new System.Drawing.Size(121, 20);
+            this.labelYourName.Size = new System.Drawing.Size(94, 15);
             this.labelYourName.TabIndex = 7;
             this.labelYourName.Text = "Tên người dùng:";
             // 
@@ -132,14 +132,14 @@ namespace Hotel_Management
             // 
             this.txbUserCode.Location = new System.Drawing.Point(311, 153);
             this.txbUserCode.Name = "txbUserCode";
-            this.txbUserCode.Size = new System.Drawing.Size(240, 24);
+            this.txbUserCode.Size = new System.Drawing.Size(240, 21);
             this.txbUserCode.TabIndex = 8;
             // 
             // txbYourName
             // 
             this.txbYourName.Location = new System.Drawing.Point(311, 300);
             this.txbYourName.Name = "txbYourName";
-            this.txbYourName.Size = new System.Drawing.Size(243, 24);
+            this.txbYourName.Size = new System.Drawing.Size(243, 21);
             this.txbYourName.TabIndex = 9;
             // 
             // listBoxAcountInformation
@@ -147,10 +147,10 @@ namespace Hotel_Management
             this.listBoxAcountInformation.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.listBoxAcountInformation.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.listBoxAcountInformation.FormattingEnabled = true;
-            this.listBoxAcountInformation.ItemHeight = 18;
+            this.listBoxAcountInformation.ItemHeight = 15;
             this.listBoxAcountInformation.Location = new System.Drawing.Point(288, 86);
             this.listBoxAcountInformation.Name = "listBoxAcountInformation";
-            this.listBoxAcountInformation.Size = new System.Drawing.Size(291, 328);
+            this.listBoxAcountInformation.Size = new System.Drawing.Size(291, 319);
             this.listBoxAcountInformation.TabIndex = 10;
             // 
             // labelSecurity
@@ -160,7 +160,7 @@ namespace Hotel_Management
             this.labelSecurity.ForeColor = System.Drawing.Color.Teal;
             this.labelSecurity.Location = new System.Drawing.Point(709, 74);
             this.labelSecurity.Name = "labelSecurity";
-            this.labelSecurity.Size = new System.Drawing.Size(77, 23);
+            this.labelSecurity.Size = new System.Drawing.Size(64, 19);
             this.labelSecurity.TabIndex = 11;
             this.labelSecurity.Text = "Bảo mật";
             // 
@@ -171,7 +171,7 @@ namespace Hotel_Management
             this.labelAcountInformation.ForeColor = System.Drawing.Color.Teal;
             this.labelAcountInformation.Location = new System.Drawing.Point(342, 74);
             this.labelAcountInformation.Name = "labelAcountInformation";
-            this.labelAcountInformation.Size = new System.Drawing.Size(167, 23);
+            this.labelAcountInformation.Size = new System.Drawing.Size(135, 19);
             this.labelAcountInformation.TabIndex = 12;
             this.labelAcountInformation.Text = "Thông tin tài khoản";
             // 
@@ -180,10 +180,10 @@ namespace Hotel_Management
             this.listBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.listBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
+            this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(602, 86);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(276, 328);
+            this.listBox1.Size = new System.Drawing.Size(276, 319);
             this.listBox1.TabIndex = 13;
             // 
             // btnSaveSecurity
@@ -204,7 +204,7 @@ namespace Hotel_Management
             this.labelNewPass.ForeColor = System.Drawing.Color.Teal;
             this.labelNewPass.Location = new System.Drawing.Point(629, 119);
             this.labelNewPass.Name = "labelNewPass";
-            this.labelNewPass.Size = new System.Drawing.Size(108, 20);
+            this.labelNewPass.Size = new System.Drawing.Size(84, 15);
             this.labelNewPass.TabIndex = 15;
             this.labelNewPass.Text = "Mật khẩu mới:";
             // 
@@ -215,7 +215,7 @@ namespace Hotel_Management
             this.labelConfirmNewPass.ForeColor = System.Drawing.Color.Teal;
             this.labelConfirmNewPass.Location = new System.Drawing.Point(629, 194);
             this.labelConfirmNewPass.Name = "labelConfirmNewPass";
-            this.labelConfirmNewPass.Size = new System.Drawing.Size(174, 20);
+            this.labelConfirmNewPass.Size = new System.Drawing.Size(136, 15);
             this.labelConfirmNewPass.TabIndex = 16;
             this.labelConfirmNewPass.Text = "Xác nhận mật khẩu mới:";
             // 
@@ -223,14 +223,14 @@ namespace Hotel_Management
             // 
             this.txbConfirmNewPass.Location = new System.Drawing.Point(633, 226);
             this.txbConfirmNewPass.Name = "txbConfirmNewPass";
-            this.txbConfirmNewPass.Size = new System.Drawing.Size(220, 24);
+            this.txbConfirmNewPass.Size = new System.Drawing.Size(220, 21);
             this.txbConfirmNewPass.TabIndex = 17;
             // 
             // txbNewPass
             // 
             this.txbNewPass.Location = new System.Drawing.Point(633, 153);
             this.txbNewPass.Name = "txbNewPass";
-            this.txbNewPass.Size = new System.Drawing.Size(220, 24);
+            this.txbNewPass.Size = new System.Drawing.Size(220, 21);
             this.txbNewPass.TabIndex = 18;
             // 
             // btnExit
@@ -251,7 +251,7 @@ namespace Hotel_Management
             this.labelAccessRights.ForeColor = System.Drawing.Color.Teal;
             this.labelAccessRights.Location = new System.Drawing.Point(629, 266);
             this.labelAccessRights.Name = "labelAccessRights";
-            this.labelAccessRights.Size = new System.Drawing.Size(118, 20);
+            this.labelAccessRights.Size = new System.Drawing.Size(91, 15);
             this.labelAccessRights.TabIndex = 20;
             this.labelAccessRights.Text = "Quyền truy cập:";
             // 
@@ -307,7 +307,7 @@ namespace Hotel_Management
             // 
             // PersionalInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 506);
             this.Controls.Add(this.btnShowConfirmNewPass);
@@ -336,6 +336,9 @@ namespace Hotel_Management
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelPersionalInformation);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PersionalInformation";
             this.Text = "PersionalInformation";
             this.Load += new System.EventHandler(this.PersionalInformation_Load);

@@ -29,6 +29,7 @@ namespace Hotel_Management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBillManagement));
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -95,7 +96,7 @@ namespace Hotel_Management
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(540, 19);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(249, 29);
+            this.label14.Size = new System.Drawing.Size(201, 24);
             this.label14.TabIndex = 12;
             this.label14.Text = "QUẢN LÝ HÓA ĐƠN";
             // 
@@ -105,7 +106,7 @@ namespace Hotel_Management
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(478, 64);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(154, 20);
+            this.label13.Size = new System.Drawing.Size(132, 17);
             this.label13.TabIndex = 6;
             this.label13.Text = "Danh sách hóa đơn";
             // 
@@ -227,7 +228,7 @@ namespace Hotel_Management
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(34, 274);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.Size = new System.Drawing.Size(111, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Thông tin chung";
             // 
@@ -265,7 +266,7 @@ namespace Hotel_Management
             this.txtThanhTien.Location = new System.Drawing.Point(207, 272);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(159, 22);
+            this.txtThanhTien.Size = new System.Drawing.Size(159, 19);
             this.txtThanhTien.TabIndex = 34;
             // 
             // txtDonGia
@@ -273,14 +274,14 @@ namespace Hotel_Management
             this.txtDonGia.Location = new System.Drawing.Point(22, 272);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.ReadOnly = true;
-            this.txtDonGia.Size = new System.Drawing.Size(159, 22);
+            this.txtDonGia.Size = new System.Drawing.Size(159, 19);
             this.txtDonGia.TabIndex = 33;
             // 
             // txtTenPhong
             // 
             this.txtTenPhong.Location = new System.Drawing.Point(207, 214);
             this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(157, 22);
+            this.txtTenPhong.Size = new System.Drawing.Size(157, 19);
             this.txtTenPhong.TabIndex = 32;
             // 
             // txtMaPhong
@@ -288,14 +289,14 @@ namespace Hotel_Management
             this.txtMaPhong.Location = new System.Drawing.Point(22, 214);
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.ReadOnly = true;
-            this.txtMaPhong.Size = new System.Drawing.Size(160, 22);
+            this.txtMaPhong.Size = new System.Drawing.Size(160, 19);
             this.txtMaPhong.TabIndex = 31;
             // 
             // txtTenKhachHang
             // 
             this.txtTenKhachHang.Location = new System.Drawing.Point(206, 156);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(158, 22);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(158, 19);
             this.txtTenKhachHang.TabIndex = 30;
             // 
             // txtMaKhachHang
@@ -303,21 +304,21 @@ namespace Hotel_Management
             this.txtMaKhachHang.Location = new System.Drawing.Point(22, 156);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
             this.txtMaKhachHang.ReadOnly = true;
-            this.txtMaKhachHang.Size = new System.Drawing.Size(159, 22);
+            this.txtMaKhachHang.Size = new System.Drawing.Size(159, 19);
             this.txtMaKhachHang.TabIndex = 29;
             // 
             // nudSoNgayThue
             // 
             this.nudSoNgayThue.Location = new System.Drawing.Point(206, 99);
             this.nudSoNgayThue.Name = "nudSoNgayThue";
-            this.nudSoNgayThue.Size = new System.Drawing.Size(159, 22);
+            this.nudSoNgayThue.Size = new System.Drawing.Size(159, 19);
             this.nudSoNgayThue.TabIndex = 28;
             // 
             // txtTriGia
             // 
             this.txtTriGia.Location = new System.Drawing.Point(23, 98);
             this.txtTriGia.Name = "txtTriGia";
-            this.txtTriGia.Size = new System.Drawing.Size(159, 22);
+            this.txtTriGia.Size = new System.Drawing.Size(159, 19);
             this.txtTriGia.TabIndex = 27;
             // 
             // label19
@@ -325,7 +326,7 @@ namespace Hotel_Management
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(203, 252);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(80, 17);
+            this.label19.Size = new System.Drawing.Size(61, 13);
             this.label19.TabIndex = 26;
             this.label19.Text = "Thành tiền:";
             // 
@@ -334,7 +335,7 @@ namespace Hotel_Management
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(20, 252);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(61, 17);
+            this.label18.Size = new System.Drawing.Size(47, 13);
             this.label18.TabIndex = 25;
             this.label18.Text = "Đơn giá:";
             // 
@@ -343,7 +344,7 @@ namespace Hotel_Management
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(204, 194);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 17);
+            this.label15.Size = new System.Drawing.Size(62, 13);
             this.label15.TabIndex = 24;
             this.label15.Text = "Tên phòng:";
             // 
@@ -352,7 +353,7 @@ namespace Hotel_Management
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(20, 194);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 17);
+            this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 23;
             this.label11.Text = "Mã phòng:";
             // 
@@ -361,7 +362,7 @@ namespace Hotel_Management
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(203, 136);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 17);
+            this.label10.Size = new System.Drawing.Size(89, 13);
             this.label10.TabIndex = 22;
             this.label10.Text = "Tên khách hàng:";
             // 
@@ -370,7 +371,7 @@ namespace Hotel_Management
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(20, 136);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 17);
+            this.label9.Size = new System.Drawing.Size(85, 13);
             this.label9.TabIndex = 21;
             this.label9.Text = "Mã khách hàng:";
             // 
@@ -379,7 +380,7 @@ namespace Hotel_Management
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(204, 78);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 17);
+            this.label8.Size = new System.Drawing.Size(73, 13);
             this.label8.TabIndex = 20;
             this.label8.Text = "Số ngày thuê:";
             // 
@@ -388,7 +389,7 @@ namespace Hotel_Management
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(20, 78);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 17);
+            this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 19;
             this.label7.Text = "Trị giá:";
             // 
@@ -396,7 +397,7 @@ namespace Hotel_Management
             // 
             this.dtpkNgayThanhToan.Location = new System.Drawing.Point(206, 42);
             this.dtpkNgayThanhToan.Name = "dtpkNgayThanhToan";
-            this.dtpkNgayThanhToan.Size = new System.Drawing.Size(159, 22);
+            this.dtpkNgayThanhToan.Size = new System.Drawing.Size(159, 19);
             this.dtpkNgayThanhToan.TabIndex = 18;
             // 
             // label5
@@ -404,7 +405,7 @@ namespace Hotel_Management
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(204, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 17);
+            this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 17;
             this.label5.Text = "Ngày thanh toán:";
             // 
@@ -413,7 +414,7 @@ namespace Hotel_Management
             this.txtMaHoaDon.Location = new System.Drawing.Point(23, 42);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
             this.txtMaHoaDon.ReadOnly = true;
-            this.txtMaHoaDon.Size = new System.Drawing.Size(159, 22);
+            this.txtMaHoaDon.Size = new System.Drawing.Size(159, 19);
             this.txtMaHoaDon.TabIndex = 16;
             // 
             // label4
@@ -422,7 +423,7 @@ namespace Hotel_Management
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(20, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 17);
+            this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã hóa đơn:";
             // 
@@ -432,7 +433,7 @@ namespace Hotel_Management
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(34, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Tìm kiếm";
             // 
@@ -458,7 +459,7 @@ namespace Hotel_Management
             // 
             this.txtTimMaHoaDon.Location = new System.Drawing.Point(23, 49);
             this.txtTimMaHoaDon.Name = "txtTimMaHoaDon";
-            this.txtTimMaHoaDon.Size = new System.Drawing.Size(158, 22);
+            this.txtTimMaHoaDon.Size = new System.Drawing.Size(158, 19);
             this.txtTimMaHoaDon.TabIndex = 9;
             // 
             // label6
@@ -466,7 +467,7 @@ namespace Hotel_Management
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(20, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 17);
+            this.label6.Size = new System.Drawing.Size(68, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Mã hóa đơn:";
             // 
@@ -484,14 +485,14 @@ namespace Hotel_Management
             // 
             this.txtTimTenLoaiPhong.Location = new System.Drawing.Point(207, 106);
             this.txtTimTenLoaiPhong.Name = "txtTimTenLoaiPhong";
-            this.txtTimTenLoaiPhong.Size = new System.Drawing.Size(159, 22);
+            this.txtTimTenLoaiPhong.Size = new System.Drawing.Size(159, 19);
             this.txtTimTenLoaiPhong.TabIndex = 7;
             // 
             // txtTimTenPhong
             // 
             this.txtTimTenPhong.Location = new System.Drawing.Point(22, 106);
             this.txtTimTenPhong.Name = "txtTimTenPhong";
-            this.txtTimTenPhong.Size = new System.Drawing.Size(160, 22);
+            this.txtTimTenPhong.Size = new System.Drawing.Size(160, 19);
             this.txtTimTenPhong.TabIndex = 6;
             // 
             // label17
@@ -499,7 +500,7 @@ namespace Hotel_Management
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(204, 82);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(107, 17);
+            this.label17.Size = new System.Drawing.Size(81, 13);
             this.label17.TabIndex = 5;
             this.label17.Text = "Tên loại phòng:";
             // 
@@ -508,7 +509,7 @@ namespace Hotel_Management
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(20, 82);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 17);
+            this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 4;
             this.label16.Text = "Tên phòng:";
             // 
@@ -516,7 +517,7 @@ namespace Hotel_Management
             // 
             this.txtTimTenKhachHang.Location = new System.Drawing.Point(207, 49);
             this.txtTimTenKhachHang.Name = "txtTimTenKhachHang";
-            this.txtTimTenKhachHang.Size = new System.Drawing.Size(159, 22);
+            this.txtTimTenKhachHang.Size = new System.Drawing.Size(159, 19);
             this.txtTimTenKhachHang.TabIndex = 1;
             // 
             // label2
@@ -524,7 +525,7 @@ namespace Hotel_Management
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(203, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 17);
+            this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên khách hàng:";
             // 
@@ -534,7 +535,7 @@ namespace Hotel_Management
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(35, 609);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 20);
+            this.label12.Size = new System.Drawing.Size(76, 17);
             this.label12.TabIndex = 14;
             this.label12.Text = "Chức năng";
             // 
@@ -571,9 +572,9 @@ namespace Hotel_Management
             // 
             // fBillManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1407, 714);
+            this.ClientSize = new System.Drawing.Size(1366, 714);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label14);
@@ -584,6 +585,9 @@ namespace Hotel_Management
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "fBillManagement";
             this.Text = "Quản lý hóa đơn";
             this.panel4.ResumeLayout(false);

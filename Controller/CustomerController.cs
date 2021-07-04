@@ -13,8 +13,18 @@ namespace Hotel_Management.Controller
 
         public dynamic getAll()
         {
-            var data = entities.KHACHHANGs;
-            return data.ToList();
+            var kh = from c in entities.KHACHHANGs
+                     select new
+                     {
+                         ID = c.MAKHACHHANG,
+                         Name = c.TENKHACHHANG,
+                         CMND = c.CMND,
+                         Nationality = c.QUOCTICH,
+                         Phone = c.SODIENTHOAI,
+                         Type = c.LOAIKHACH.TENLOAIKHACH,
+                         Address = c.DIACHI
+                     };
+            return kh.ToList();
         }
         public int insertCustomer(KHACHHANG kh)
         {
@@ -30,7 +40,7 @@ namespace Hotel_Management.Controller
             k.SODIENTHOAI = kh.SODIENTHOAI;
             k.CMND = kh.CMND;
             k.DIACHI = kh.DIACHI; 
-            //MessageBox.Show("Here");
+
             entities.SaveChanges();
         }
         public void deleteCustomer(int ID)
@@ -38,8 +48,6 @@ namespace Hotel_Management.Controller
             KHACHHANG kh = entities.KHACHHANGs.Find(ID);
             if (kh != null)
             {
-                LOAIKHACH lk = entities.LOAIKHACHes.Where(x => x.MALOAIKHACH == ID).SingleOrDefault();
-                entities.LOAIKHACHes.Remove(lk);
                 entities.KHACHHANGs.Remove(kh);
                 entities.SaveChanges();
             }
@@ -65,6 +73,34 @@ namespace Hotel_Management.Controller
         public KHACHHANG findKhachHangByID(int ID)
         {
             return entities.KHACHHANGs.Find(ID);
+        }
+
+        public dynamic findCustomer(string customerName, string CMND)
+        {
+            var result = from c in entities.KHACHHANGs
+                         select c;
+            if (customerName != "")
+                result = from c in result
+                         where c.TENKHACHHANG.Contains(customerName)
+                         select c;
+            if (CMND != "")
+                result = from c in result
+                         where c.CMND.Contains(CMND)
+                         select c;
+
+            var data = from c in result
+                       select new
+                       {
+                           ID = c.MAKHACHHANG,
+                           Name = c.TENKHACHHANG,
+                           CMND = c.CMND,
+                           Nationality = c.QUOCTICH,
+                           Phone = c.SODIENTHOAI,
+                           Type = c.LOAIKHACH.TENLOAIKHACH,
+                           Address = c.DIACHI
+                       };
+
+            return data.ToList();
         }
     }
 }
