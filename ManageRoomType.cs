@@ -36,6 +36,12 @@ namespace Hotel_Management
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!checkEmpty())
+            {
+                MessageBox.Show("Vui lòng điền đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             LOAIPHONG lp = new LOAIPHONG()
             {
                 TENLOAIPHONG = txtName.Text,
@@ -56,6 +62,11 @@ namespace Hotel_Management
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (!checkEmpty())
+            {
+                MessageBox.Show("Vui lòng điền đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             LOAIPHONG lp = new LOAIPHONG()
             {
@@ -65,6 +76,27 @@ namespace Hotel_Management
             };
             roomTypeController.UpdateRoomType(lp);
             LoadData();
+        }
+
+        private bool checkEmpty()
+        {
+            foreach (Control item in groupBoxRoom.Controls)
+            {
+                if (item is TextBox && item.Text == "")
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

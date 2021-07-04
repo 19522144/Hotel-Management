@@ -113,16 +113,17 @@ namespace Hotel_Management
                 txtNationality.Text = value.Nationality;
                 txtSDT.Text = value.Phone;
                 txtAddress.Text = value.Address;
-                foreach (dynamic item in cmbCustomerType.Items)
-                {
-                    //MessageBox.Show(item.Name + " " + value.Type);
-                    if (item.Name == value.Type)
-                    {
-                        cmbCustomerType.SelectedItem = item;
-                        //MessageBox.Show("TRUE");
-                        break;
-                    }
-                }
+                cmbCustomerType.Text = value.Type;
+                //foreach (dynamic item in cmbCustomerType.Items)
+                //{
+                //    //MessageBox.Show(item.Name + " " + value.Type);
+                //    if (item.Name == value.Type)
+                //    {
+                //        cmbCustomerType.SelectedItem = item;
+                //        //MessageBox.Show("TRUE");
+                //        break;
+                //    }
+                //}
             }
             else MessageBox.Show("Không tìm thấy, vui lòng kiểm tra lại thông tin",
                 "Thông báo",
