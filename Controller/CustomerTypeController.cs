@@ -22,12 +22,12 @@ namespace Hotel_Management.Controller
             entities.KHACHHANGs.Add(kh);
             entities.SaveChanges();
         }
-        public void updateCustomerType(LOAIKHACH lk)
+        public void updateCustomerType(LOAIKHACH lk, KHACHHANG kh)
         {
-            LOAIKHACH k = entities.LOAIKHACHes.Find(lk.MALOAIKHACH);
-            k.MALOAIKHACH = lk.MALOAIKHACH;
-            k.TENLOAIKHACH = lk.TENLOAIKHACH; 
-            //MessageBox.Show("Here");
+            LOAIKHACH l = entities.LOAIKHACHes.Find(lk.MALOAIKHACH);
+            KHACHHANG k = entities.KHACHHANGs.Where(x => x.MALOAIKHACH == lk.MALOAIKHACH).SingleOrDefault();
+            l.TENLOAIKHACH = lk.TENLOAIKHACH;
+            k.MALOAIKHACH = kh.MALOAIKHACH;
             entities.SaveChanges();
         }
         public void deleteCustomer(int ID)

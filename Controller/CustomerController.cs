@@ -16,23 +16,29 @@ namespace Hotel_Management.Controller
             var data = entities.KHACHHANGs;
             return data.ToList();
         }
-        public void insertCustomer(LOAIKHACH lk, KHACHHANG kh)
+        public void insertCustomer(KHACHHANG kh, HOADON hd, CHITIETPHIEUTHUE ctpt)
         {
             entities.KHACHHANGs.Add(kh);
             entities.SaveChanges();
-            entities.LOAIKHACHes.Add(lk);
+            hd.MAKHACHHANG = kh.MAKHACHHANG;
+            entities.HOADONs.Add(hd);
+            entities.SaveChanges();
+            ctpt.MAKHACHHANG = kh.MAKHACHHANG;
+            entities.CHITIETPHIEUTHUEs.Add(ctpt);
             entities.SaveChanges();
         }
-        public void updateCustomer(LOAIKHACH lk, KHACHHANG kh)
+        public void updateCustomer(KHACHHANG kh, HOADON hd, CHITIETPHIEUTHUE ctpt)
         {
             KHACHHANG k = entities.KHACHHANGs.Find(kh.MAKHACHHANG);
-            LOAIKHACH l = entities.LOAIKHACHes.Where(x => x.MALOAIKHACH == kh.MALOAIKHACH).SingleOrDefault();
+            HOADON h = entities.HOADONs.Where(x => x.MAKHACHHANG == kh.MAKHACHHANG ).SingleOrDefault();
+            CHITIETPHIEUTHUE c = entities.CHITIETPHIEUTHUEs.Where(x => x.MAKHACHHANG == kh.MAKHACHHANG).SingleOrDefault();
             k.TENKHACHHANG = kh.TENKHACHHANG;
-            k.MAKHACHHANG = kh.MAKHACHHANG;
-            k.QUOCTICH = kh.QUOCTICH;
             k.SODIENTHOAI = kh.SODIENTHOAI;
+            k.QUOCTICH = kh.QUOCTICH;
             k.CMND = kh.CMND;
-            k.DIACHI = kh.DIACHI; 
+            k.DIACHI = kh.DIACHI;
+            h.MAKHACHHANG = hd.MAKHACHHANG;
+            c.MAKHACHHANG = ctpt.MAKHACHHANG;
             //MessageBox.Show("Here");
             entities.SaveChanges();
         }
@@ -41,8 +47,10 @@ namespace Hotel_Management.Controller
             KHACHHANG kh = entities.KHACHHANGs.Find(ID);
             if (kh != null)
             {
-                LOAIKHACH lk = entities.LOAIKHACHes.Where(x => x.MALOAIKHACH == ID).SingleOrDefault();
-                entities.LOAIKHACHes.Remove(lk);
+                HOADON h = entities.HOADONs.Where(x => x.MAKHACHHANG == kh.MAKHACHHANG).SingleOrDefault();
+                CHITIETPHIEUTHUE c = entities.CHITIETPHIEUTHUEs.Where(x => x.MAKHACHHANG == kh.MAKHACHHANG).SingleOrDefault();
+                entities.HOADONs.Remove(h);
+                entities.CHITIETPHIEUTHUEs.Remove(c);
                 entities.KHACHHANGs.Remove(kh);
                 entities.SaveChanges();
             }
