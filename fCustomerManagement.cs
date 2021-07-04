@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Hotel_Management.Controller;
+using System.Data.SqlClient;
+//using Hotel_Management.Controller;
 
 namespace Hotel_Management
-{
+{ 
     public partial class fCustomerManagement : Form
     {
+
         CustomerController CustomerController = new CustomerController();
         CustomerTypeController CustomerTypeController = new CustomerTypeController();
 
@@ -24,11 +26,6 @@ namespace Hotel_Management
             cmbLoai.DataSource = CustomerTypeController.getAll();
             cmbLoai.DisplayMember = "Name";
             cmbLoai.ValueMember = "ID";
-            addBinding();
-
-            //cbLoai.DataSource = CustomerTypeController.getAll();
-            //cbLoai.DisplayMember = "Name";
-            //cbLoai.Select
         }
 
         void LoadData()
@@ -55,17 +52,10 @@ namespace Hotel_Management
             cmbLoai.DataBindings.Add("Text", dgvData.DataSource, "Type", true, DataSourceUpdateMode.Never);
         }
 
-        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
             {
                 e.Handled = true;
             }

@@ -38,9 +38,9 @@ namespace Hotel_Management.Controller
             k.TENKHACHHANG = kh.TENKHACHHANG;
             k.QUOCTICH = kh.QUOCTICH;
             k.SODIENTHOAI = kh.SODIENTHOAI;
+            k.QUOCTICH = kh.QUOCTICH;
             k.CMND = kh.CMND;
             k.DIACHI = kh.DIACHI; 
-
             entities.SaveChanges();
         }
         public void deleteCustomer(int ID)

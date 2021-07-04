@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace Hotel_Management
 {
     public partial class ManageCustomerType : Form
@@ -48,7 +48,6 @@ namespace Hotel_Management
             controller.insertCustomerType(loaiKhach);
             LoadData();
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
