@@ -34,11 +34,6 @@ namespace Hotel_Management
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvDanhSachPhong = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -65,6 +60,7 @@ namespace Hotel_Management
             this.label12 = new System.Windows.Forms.Label();
             this.txbTimTenPhong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhong)).BeginInit();
             this.panel3.SuspendLayout();
@@ -94,45 +90,10 @@ namespace Hotel_Management
             // 
             this.dgvDanhSachPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column6,
-            this.Column4});
             resources.ApplyResources(this.dgvDanhSachPhong, "dgvDanhSachPhong");
             this.dgvDanhSachPhong.Name = "dgvDanhSachPhong";
             this.dgvDanhSachPhong.RowTemplate.Height = 24;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column1, "Column1");
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column2, "Column2");
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column3, "Column3");
-            this.Column3.Name = "Column3";
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column6, "Column6");
-            this.Column6.Name = "Column6";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column4, "Column4");
-            this.Column4.Name = "Column4";
+            this.dgvDanhSachPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachPhong_CellClick);
             // 
             // btnXuatExcel
             // 
@@ -140,6 +101,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnXuatExcel, "btnXuatExcel");
             this.btnXuatExcel.Name = "btnXuatExcel";
             this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // label10
             // 
@@ -162,6 +124,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnDong, "btnDong");
             this.btnDong.Name = "btnDong";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnCapNhatPhong
             // 
@@ -245,7 +208,8 @@ namespace Hotel_Management
             resources.ApplyResources(this.cbTrangThai, "cbTrangThai");
             this.cbTrangThai.FormattingEnabled = true;
             this.cbTrangThai.Items.AddRange(new object[] {
-            resources.GetString("cbTrangThai.Items")});
+            resources.GetString("cbTrangThai.Items"),
+            resources.GetString("cbTrangThai.Items1")});
             this.cbTrangThai.Name = "cbTrangThai";
             // 
             // label6
@@ -271,6 +235,7 @@ namespace Hotel_Management
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.cbTimLoaiPhong);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.label12);
@@ -308,6 +273,13 @@ namespace Hotel_Management
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
+            // btnReset
+            // 
+            resources.ApplyResources(this.btnReset, "btnReset");
+            this.btnReset.Name = "btnReset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // RoomManagement
             // 
             resources.ApplyResources(this, "$this");
@@ -342,11 +314,6 @@ namespace Hotel_Management
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvDanhSachPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button btnXuatExcel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel3;
@@ -373,5 +340,6 @@ namespace Hotel_Management
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txbTimTenPhong;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnReset;
     }
 }

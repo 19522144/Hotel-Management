@@ -11,6 +11,27 @@ namespace Hotel_Management.Controller
     {
         KHACHSANEntities entities = new KHACHSANEntities();
 
+        public int HESOKHNUOCNGOAI()
+        {
+            var value =  from c in entities.THAMSOes
+                        select c.HESOKHNUOCNGOAI;
+            return value.FirstOrDefault();
+        }
+
+        public decimal PHUTHU()
+        {
+            var value = from c in entities.THAMSOes
+                        select c.PHUTHU;
+            return value.FirstOrDefault();
+        }
+
+        public int SOKHTOIDA1PHONG()
+        {
+            var value = from c in entities.THAMSOes
+                        select c.SOKHTOIDA1PHONG;
+            return value.FirstOrDefault();
+        }
+
         public dynamic getAll()
         {
             return entities.THAMSOes.ToList();

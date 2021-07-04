@@ -17,8 +17,9 @@ namespace Hotel_Management.Controller
                            ID = c.MAPHONG,
                            Name = c.TENPHONG,
                            RoomType = c.LOAIPHONG.TENLOAIPHONG,
+                           Price = c.LOAIPHONG.DONGIA,
                            Status = c.TINHTRANG,
-                           Note = c.GHICHU,
+                           Note = c.GHICHU
                        };
             return data.ToList();
         }
@@ -43,28 +44,46 @@ namespace Hotel_Management.Controller
         }
         public void UpdateRoom(PHONG p)
         {
-            PHONG ph= entities.PHONGs.Find(p.MAPHONG);
-            entities.Entry(p).State = System.Data.Entity.EntityState.Modified;
-            //LOAIPHONG l = entities.LOAIPHONGs.Where(x => x.MALOAIPHONG == p.MALOAIPHONG).SingleOrDefault();
-            //l.TENLOAIPHONG = lp.TENLOAIPHONG;
-            //ph.MAPHONG = p.MAPHONG;
-            //ph.TENPHONG = p.TENPHONG;
-            //l.TENLOAIPHONG = lp.TENLOAIPHONG;
-            //ph.GHICHU = p.GHICHU;
-            //ph.TINHTRANG = p.TINHTRANG;
+            PHONG ph = entities.PHONGs.Find(p.MAPHONG);
+            ph.MALOAIPHONG = p.MALOAIPHONG;
+            ph.TENPHONG = p.TENPHONG;
+            ph.GHICHU = p.GHICHU;
+            ph.TINHTRANG = p.TINHTRANG;
             entities.SaveChanges();
         }
-        public dynamic Search(string keyword)
+
+       
+
+        public dynamic findRoom(string roomName, string roomTypeName)
         {
-            var data = entities.PHONGs.Where(x => x.TENPHONG.Contains(keyword)).Select(y => new
+            var result = from c in entities.PHONGs
+                         select c;
+            if(roomName!="")
             {
-                ID = y.MAPHONG,
-                Name = y.TENPHONG,
-                RoomType = y.LOAIPHONG.TENLOAIPHONG,
-                Status = y.TINHTRANG,
-                Note = y.GHICHU,
-            });
-            return data.ToList();
+                result = from c in result
+                         where c.TENPHONG.Contains(roomName)
+                         select c;
+            }
+            if (roomTypeName != "")
+            {
+                result = from c in result
+                         where c.LOAIPHONG.TENLOAIPHONG.Contains(roomTypeName)
+                         select c;
+            }
+            var value = from c in result
+                        select new
+                        {
+                            ID = c.MAPHONG,
+                            Name = c.TENPHONG,
+                            RoomType = c.LOAIPHONG.TENLOAIPHONG,
+                            Price = c.LOAIPHONG.DONGIA,
+                            Status = c.TINHTRANG,
+                            Note = c.GHICHU
+                        };
+
+            return value.ToList();
+
         }
     }
 }
+

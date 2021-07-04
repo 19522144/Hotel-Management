@@ -16,19 +16,16 @@ namespace Hotel_Management.Controller
             var data = entities.KHACHHANGs;
             return data.ToList();
         }
-        public void insertCustomer(LOAIKHACH lk, KHACHHANG kh)
+        public int insertCustomer(KHACHHANG kh)
         {
             entities.KHACHHANGs.Add(kh);
             entities.SaveChanges();
-            entities.LOAIKHACHes.Add(lk);
-            entities.SaveChanges();
+            return kh.MAKHACHHANG;
         }
-        public void updateCustomer(LOAIKHACH lk, KHACHHANG kh)
+        public void updateCustomer(KHACHHANG kh)
         {
             KHACHHANG k = entities.KHACHHANGs.Find(kh.MAKHACHHANG);
-            LOAIKHACH l = entities.LOAIKHACHes.Where(x => x.MALOAIKHACH == kh.MALOAIKHACH).SingleOrDefault();
             k.TENKHACHHANG = kh.TENKHACHHANG;
-            k.MAKHACHHANG = kh.MAKHACHHANG;
             k.QUOCTICH = kh.QUOCTICH;
             k.SODIENTHOAI = kh.SODIENTHOAI;
             k.CMND = kh.CMND;
@@ -46,6 +43,28 @@ namespace Hotel_Management.Controller
                 entities.KHACHHANGs.Remove(kh);
                 entities.SaveChanges();
             }
+        }
+
+        public dynamic findKhachHangByCMND(String CMND)
+        {
+            var kh = from c in entities.KHACHHANGs
+                     where c.CMND.Contains(CMND)
+                     select new
+                     {
+                         ID = c.MAKHACHHANG,
+                         Name = c.TENKHACHHANG,
+                         CMND = c.CMND,
+                         Nationality = c.QUOCTICH,
+                         Phone = c.SODIENTHOAI,
+                         Type = c.LOAIKHACH.TENLOAIKHACH,
+                         Address = c.DIACHI
+                     };
+            return kh.ToList().FirstOrDefault();
+        }
+
+        public KHACHHANG findKhachHangByID(int ID)
+        {
+            return entities.KHACHHANGs.Find(ID);
         }
     }
 }

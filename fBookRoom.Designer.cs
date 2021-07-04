@@ -37,29 +37,32 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nudPeople = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbRoom = new System.Windows.Forms.ComboBox();
+            this.cmbRoom = new System.Windows.Forms.ComboBox();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCustomer = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbCustomerType = new System.Windows.Forms.ComboBox();
-            this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
+            this.cmbCustomerType = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNationality = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbGender = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeople)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxCustomer.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -72,7 +75,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.nudPeople);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbRoom);
+            this.groupBox1.Controls.Add(this.cmbRoom);
             this.groupBox1.Location = new System.Drawing.Point(14, 70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(485, 168);
@@ -115,7 +118,7 @@
             // 
             // dtpDayRecieve
             // 
-            this.dtpDayRecieve.Location = new System.Drawing.Point(268, 43);
+            this.dtpDayRecieve.Location = new System.Drawing.Point(268, 46);
             this.dtpDayRecieve.Name = "dtpDayRecieve";
             this.dtpDayRecieve.Size = new System.Drawing.Size(200, 20);
             this.dtpDayRecieve.TabIndex = 4;
@@ -146,13 +149,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Phòng";
             // 
-            // cbRoom
+            // cmbRoom
             // 
-            this.cbRoom.FormattingEnabled = true;
-            this.cbRoom.Location = new System.Drawing.Point(13, 46);
-            this.cbRoom.Name = "cbRoom";
-            this.cbRoom.Size = new System.Drawing.Size(202, 21);
-            this.cbRoom.TabIndex = 0;
+            this.cmbRoom.FormattingEnabled = true;
+            this.cmbRoom.Location = new System.Drawing.Point(13, 46);
+            this.cmbRoom.Name = "cmbRoom";
+            this.cmbRoom.Size = new System.Drawing.Size(202, 21);
+            this.cmbRoom.TabIndex = 0;
+            this.cmbRoom.SelectedIndexChanged += new System.EventHandler(this.cmbRoom_SelectedIndexChanged);
             // 
             // monthCalendar
             // 
@@ -162,49 +166,99 @@
             this.monthCalendar.TitleBackColor = System.Drawing.Color.Turquoise;
             this.monthCalendar.TitleForeColor = System.Drawing.Color.DarkOrange;
             this.monthCalendar.TrailingForeColor = System.Drawing.Color.PaleGreen;
+            this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
             // 
-            // groupBox2
+            // groupBoxCustomer
             // 
-            this.groupBox2.Controls.Add(this.btnFind);
-            this.groupBox2.Controls.Add(this.txtCMND);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.cbCustomerType);
-            this.groupBox2.Controls.Add(this.dtpBirthDay);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtNationality);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.cbGender);
-            this.groupBox2.Controls.Add(this.txtName);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(11, 250);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(586, 223);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin khách hàng";
+            this.groupBoxCustomer.Controls.Add(this.label8);
+            this.groupBoxCustomer.Controls.Add(this.txtAddress);
+            this.groupBoxCustomer.Controls.Add(this.btnReset);
+            this.groupBoxCustomer.Controls.Add(this.label5);
+            this.groupBoxCustomer.Controls.Add(this.txtSDT);
+            this.groupBoxCustomer.Controls.Add(this.label3);
+            this.groupBoxCustomer.Controls.Add(this.txtMaKhachHang);
+            this.groupBoxCustomer.Controls.Add(this.btnFind);
+            this.groupBoxCustomer.Controls.Add(this.txtCMND);
+            this.groupBoxCustomer.Controls.Add(this.label7);
+            this.groupBoxCustomer.Controls.Add(this.label11);
+            this.groupBoxCustomer.Controls.Add(this.cmbCustomerType);
+            this.groupBoxCustomer.Controls.Add(this.label9);
+            this.groupBoxCustomer.Controls.Add(this.txtNationality);
+            this.groupBoxCustomer.Controls.Add(this.txtName);
+            this.groupBoxCustomer.Controls.Add(this.label6);
+            this.groupBoxCustomer.Location = new System.Drawing.Point(11, 250);
+            this.groupBoxCustomer.Name = "groupBoxCustomer";
+            this.groupBoxCustomer.Size = new System.Drawing.Size(559, 252);
+            this.groupBoxCustomer.TabIndex = 2;
+            this.groupBoxCustomer.TabStop = false;
+            this.groupBoxCustomer.Text = "Thông tin khách hàng";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(439, 107);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(52, 23);
+            this.btnReset.TabIndex = 20;
+            this.btnReset.Text = "Đặt lại";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(285, 138);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Số điện thoại";
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(288, 164);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(203, 20);
+            this.txtSDT.TabIndex = 18;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(288, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Mã khách hàng";
+            // 
+            // txtMaKhachHang
+            // 
+            this.txtMaKhachHang.Location = new System.Drawing.Point(288, 108);
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.ReadOnly = true;
+            this.txtMaKhachHang.Size = new System.Drawing.Size(145, 20);
+            this.txtMaKhachHang.TabIndex = 16;
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(180, 66);
+            this.btnFind.Location = new System.Drawing.Point(177, 50);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(74, 23);
             this.btnFind.TabIndex = 15;
             this.btnFind.Text = "Tìm kiếm";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtCMND
             // 
-            this.txtCMND.Location = new System.Drawing.Point(10, 68);
+            this.txtCMND.Location = new System.Drawing.Point(7, 52);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(150, 20);
             this.txtCMND.TabIndex = 14;
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 45);
+            this.label7.Location = new System.Drawing.Point(7, 29);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 13);
             this.label7.TabIndex = 13;
@@ -213,40 +267,24 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(293, 156);
+            this.label11.Location = new System.Drawing.Point(285, 197);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 13);
             this.label11.TabIndex = 12;
             this.label11.Text = "Loại khách hàng";
             // 
-            // label10
+            // cmbCustomerType
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(293, 99);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Ngày sinh";
-            // 
-            // cbCustomerType
-            // 
-            this.cbCustomerType.FormattingEnabled = true;
-            this.cbCustomerType.Location = new System.Drawing.Point(296, 180);
-            this.cbCustomerType.Name = "cbCustomerType";
-            this.cbCustomerType.Size = new System.Drawing.Size(154, 21);
-            this.cbCustomerType.TabIndex = 10;
-            // 
-            // dtpBirthDay
-            // 
-            this.dtpBirthDay.Location = new System.Drawing.Point(296, 121);
-            this.dtpBirthDay.Name = "dtpBirthDay";
-            this.dtpBirthDay.Size = new System.Drawing.Size(200, 20);
-            this.dtpBirthDay.TabIndex = 9;
+            this.cmbCustomerType.FormattingEnabled = true;
+            this.cmbCustomerType.Location = new System.Drawing.Point(288, 221);
+            this.cmbCustomerType.Name = "cmbCustomerType";
+            this.cmbCustomerType.Size = new System.Drawing.Size(203, 21);
+            this.cmbCustomerType.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 156);
+            this.label9.Location = new System.Drawing.Point(7, 140);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 8;
@@ -254,31 +292,14 @@
             // 
             // txtNationality
             // 
-            this.txtNationality.Location = new System.Drawing.Point(9, 182);
+            this.txtNationality.Location = new System.Drawing.Point(6, 166);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(245, 20);
             this.txtNationality.TabIndex = 7;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(293, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Giới tính";
-            // 
-            // cbGender
-            // 
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.Location = new System.Drawing.Point(296, 63);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(121, 21);
-            this.cbGender.TabIndex = 5;
-            // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(9, 124);
+            this.txtName.Location = new System.Drawing.Point(6, 108);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(245, 20);
             this.txtName.TabIndex = 1;
@@ -286,7 +307,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 99);
+            this.label6.Location = new System.Drawing.Point(7, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 0;
@@ -294,7 +315,7 @@
             // 
             // btnBook
             // 
-            this.btnBook.Location = new System.Drawing.Point(641, 279);
+            this.btnBook.Location = new System.Drawing.Point(629, 284);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(75, 55);
             this.btnBook.TabIndex = 3;
@@ -304,12 +325,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(641, 374);
+            this.btnCancel.Location = new System.Drawing.Point(629, 390);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 51);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label13
             // 
@@ -321,15 +343,31 @@
             this.label13.TabIndex = 6;
             this.label13.Text = "Đặt phòng";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 195);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Địa chỉ";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(10, 221);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(241, 20);
+            this.txtAddress.TabIndex = 21;
+            // 
             // fBookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 490);
+            this.ClientSize = new System.Drawing.Size(755, 514);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnBook);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBoxCustomer);
             this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.groupBox1);
             this.Name = "fBookRoom";
@@ -338,8 +376,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeople)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxCustomer.ResumeLayout(false);
+            this.groupBoxCustomer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,20 +390,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudPeople;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbRoom;
+        private System.Windows.Forms.ComboBox cmbRoom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MonthCalendar monthCalendar;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxCustomer;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cbCustomerType;
-        private System.Windows.Forms.DateTimePicker dtpBirthDay;
+        private System.Windows.Forms.ComboBox cmbCustomerType;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNationality;
         private System.Windows.Forms.Button btnFind;
@@ -375,5 +409,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtRoomTpye;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMaKhachHang;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtAddress;
     }
 }

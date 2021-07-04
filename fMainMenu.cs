@@ -14,7 +14,7 @@ namespace Hotel_Management
     public partial class fMainMenu : Form
     {
         fBillManagement billManagement;
-        fBookRoom bookRoom;
+        public static fBookRoom bookRoom;
         fCustomerManagement customerManagement;
         fManageStaff manageStaff;
         fQuanLyPhieuThue quanLyPhieuThue;
@@ -26,10 +26,13 @@ namespace Hotel_Management
         ManageRoomType manageRoomType;
         PersionalInformation persionalInformation;
         RoomManagement roomManagement;
+        public static fMainMenu MainInstance;
 
         public fMainMenu()
         {
             InitializeComponent();
+            if (MainInstance == null)
+                MainInstance = this;
         }
         
         private void gotoPersonnalInformation(object sender, EventArgs e)
@@ -43,11 +46,7 @@ namespace Hotel_Management
 
         private void exit(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn thoát ứng dung", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                Close();
-            }
+            Close();
         }
 
         private void gotoBookRoom(object sender, EventArgs e)
@@ -139,5 +138,15 @@ namespace Hotel_Management
             }
             parameterUpdate.Show();
         }
+
+        private void fMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát ứng dung", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
     }
 }

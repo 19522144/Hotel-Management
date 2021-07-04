@@ -39,7 +39,7 @@ namespace Hotel_Management
             LOAIPHONG lp = new LOAIPHONG()
             {
                 TENLOAIPHONG = txtName.Text,
-                DONGIA = Int32.Parse(txtPrice.Text)
+                DONGIA = Decimal.Parse(txtPrice.Text)
             };
             roomTypeController.AddRoomType(lp);
             LoadData();
@@ -61,7 +61,7 @@ namespace Hotel_Management
             {
                 MALOAIPHONG = Int32.Parse(txtID.Text),
                 TENLOAIPHONG = txtName.Text,
-                DONGIA = Int32.Parse(txtPrice.Text)
+                DONGIA = Decimal.Parse(txtPrice.Text)
             };
             roomTypeController.UpdateRoomType(lp);
             LoadData();
