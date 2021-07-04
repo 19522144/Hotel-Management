@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,7 +18,7 @@ namespace Hotel_Management.Controller
                        select new
                        {
                            ID = c.MAPHIEUTHUE,
-                           Room = c.PHIEUTHUE.PHONG.TENPHONG,
+                           RoomName = c.PHIEUTHUE.PHONG.TENPHONG,
                            CustomerID = c.KHACHHANG.MAKHACHHANG,
                            CustomerName = c.KHACHHANG.TENKHACHHANG,
                            CMND = c.KHACHHANG.CMND,
@@ -58,6 +59,38 @@ namespace Hotel_Management.Controller
                 entities.PHIEUTHUEs.Remove(pt);
                 entities.SaveChanges();
             }
+        }
+
+        public dynamic findRental(int ID, string customerName, string roomName)
+        {
+            var result = from c in entities.CHITIETPHIEUTHUEs
+                         select c;
+            if (ID != -1)
+                result =  from c in entities.CHITIETPHIEUTHUEs
+                         where c.MAPHIEUTHUE == ID
+                         select c;
+            if (customerName != "")
+                result =  from c in result
+                     where c.KHACHHANG.TENKHACHHANG.Contains(customerName)
+                     select c;
+            if (roomName != "")
+                result = from c in result
+                     where c.PHIEUTHUE.PHONG.TENPHONG.Contains(roomName)
+                     select c;
+
+            var data = from c in result
+                       select new
+                       {
+                           ID = c.MAPHIEUTHUE,
+                           RoomName = c.PHIEUTHUE.PHONG.TENPHONG,
+                           CustomerID = c.KHACHHANG.MAKHACHHANG,
+                           CustomerName = c.KHACHHANG.TENKHACHHANG,
+                           CMND = c.KHACHHANG.CMND,
+                           DayStart = c.PHIEUTHUE.NGAYBDTHUE,
+                           Address = c.KHACHHANG.DIACHI
+                       };
+
+            return data.ToList();
         }
     }
 }

@@ -30,18 +30,10 @@ namespace Hotel_Management
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvDanhSachPhong = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -68,6 +60,7 @@ namespace Hotel_Management
             this.label12 = new System.Windows.Forms.Label();
             this.txbTimTenPhong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhong)).BeginInit();
             this.panel3.SuspendLayout();
@@ -96,70 +89,11 @@ namespace Hotel_Management
             // dgvDanhSachPhong
             // 
             this.dgvDanhSachPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column6,
-            this.Column4});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSachPhong.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.dgvDanhSachPhong, "dgvDanhSachPhong");
             this.dgvDanhSachPhong.Name = "dgvDanhSachPhong";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachPhong.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachPhong.RowTemplate.Height = 24;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column1, "Column1");
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column2, "Column2");
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column3, "Column3");
-            this.Column3.Name = "Column3";
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column6, "Column6");
-            this.Column6.Name = "Column6";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Column4, "Column4");
-            this.Column4.Name = "Column4";
+            this.dgvDanhSachPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachPhong_CellClick);
             // 
             // btnXuatExcel
             // 
@@ -167,6 +101,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnXuatExcel, "btnXuatExcel");
             this.btnXuatExcel.Name = "btnXuatExcel";
             this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // label10
             // 
@@ -189,6 +124,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnDong, "btnDong");
             this.btnDong.Name = "btnDong";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnCapNhatPhong
             // 
@@ -196,6 +132,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnCapNhatPhong, "btnCapNhatPhong");
             this.btnCapNhatPhong.Name = "btnCapNhatPhong";
             this.btnCapNhatPhong.UseVisualStyleBackColor = true;
+            this.btnCapNhatPhong.Click += new System.EventHandler(this.btnCapNhatPhong_Click);
             // 
             // btnXoaPhong
             // 
@@ -203,6 +140,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnXoaPhong, "btnXoaPhong");
             this.btnXoaPhong.Name = "btnXoaPhong";
             this.btnXoaPhong.UseVisualStyleBackColor = true;
+            this.btnXoaPhong.Click += new System.EventHandler(this.btnXoaPhong_Click);
             // 
             // btnThemPhong
             // 
@@ -210,6 +148,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnThemPhong, "btnThemPhong");
             this.btnThemPhong.Name = "btnThemPhong";
             this.btnThemPhong.UseVisualStyleBackColor = true;
+            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click);
             // 
             // label3
             // 
@@ -269,7 +208,8 @@ namespace Hotel_Management
             resources.ApplyResources(this.cbTrangThai, "cbTrangThai");
             this.cbTrangThai.FormattingEnabled = true;
             this.cbTrangThai.Items.AddRange(new object[] {
-            resources.GetString("cbTrangThai.Items")});
+            resources.GetString("cbTrangThai.Items"),
+            resources.GetString("cbTrangThai.Items1")});
             this.cbTrangThai.Name = "cbTrangThai";
             // 
             // label6
@@ -295,6 +235,7 @@ namespace Hotel_Management
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.cbTimLoaiPhong);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.label12);
@@ -315,6 +256,7 @@ namespace Hotel_Management
             resources.ApplyResources(this.btnTimKiem, "btnTimKiem");
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label12
             // 
@@ -330,6 +272,13 @@ namespace Hotel_Management
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
+            // 
+            // btnReset
+            // 
+            resources.ApplyResources(this.btnReset, "btnReset");
+            this.btnReset.Name = "btnReset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // RoomManagement
             // 
@@ -365,11 +314,6 @@ namespace Hotel_Management
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvDanhSachPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button btnXuatExcel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel3;
@@ -396,5 +340,6 @@ namespace Hotel_Management
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txbTimTenPhong;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnReset;
     }
 }

@@ -36,14 +36,14 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxRoom = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgData)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxRoom.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,9 +59,11 @@
             // 
             // dvgData
             // 
+            this.dvgData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgData.Location = new System.Drawing.Point(340, 86);
             this.dvgData.Name = "dvgData";
+            this.dvgData.RowHeadersWidth = 51;
             this.dvgData.Size = new System.Drawing.Size(318, 341);
             this.dvgData.TabIndex = 1;
             // 
@@ -116,22 +118,23 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(152, 21);
             this.txtPrice.TabIndex = 6;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
-            // groupBox1
+            // groupBoxRoom
             // 
-            this.groupBox1.Controls.Add(this.txtPrice);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtID);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 86);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 168);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin";
+            this.groupBoxRoom.Controls.Add(this.txtPrice);
+            this.groupBoxRoom.Controls.Add(this.label4);
+            this.groupBoxRoom.Controls.Add(this.txtID);
+            this.groupBoxRoom.Controls.Add(this.label2);
+            this.groupBoxRoom.Controls.Add(this.label3);
+            this.groupBoxRoom.Controls.Add(this.txtName);
+            this.groupBoxRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRoom.Location = new System.Drawing.Point(12, 86);
+            this.groupBoxRoom.Name = "groupBoxRoom";
+            this.groupBoxRoom.Size = new System.Drawing.Size(303, 168);
+            this.groupBoxRoom.TabIndex = 8;
+            this.groupBoxRoom.TabStop = false;
+            this.groupBoxRoom.Text = "Thông tin";
             // 
             // groupBox2
             // 
@@ -164,6 +167,7 @@
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -173,6 +177,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -182,6 +187,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ManageRoomType
             // 
@@ -189,14 +195,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 450);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxRoom);
             this.Controls.Add(this.dvgData);
             this.Controls.Add(this.label1);
             this.Name = "ManageRoomType";
             this.Text = "ManageRoomType";
             ((System.ComponentModel.ISupportInitialize)(this.dvgData)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxRoom.ResumeLayout(false);
+            this.groupBoxRoom.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,7 +219,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxRoom;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnUpdate;

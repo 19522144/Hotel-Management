@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InHoaDon
+namespace Hotel_Management
 {
     public partial class InHoaDon : Form
     {

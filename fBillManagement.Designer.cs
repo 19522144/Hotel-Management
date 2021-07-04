@@ -33,7 +33,7 @@ namespace Hotel_Management
             this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXuatHoaDon = new System.Windows.Forms.Button();
-            this.dataViewBill = new System.Windows.Forms.DataGridView();
+            this.dgvBillManagement = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,14 +46,14 @@ namespace Hotel_Management
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txbThanhTien = new System.Windows.Forms.TextBox();
-            this.txbDonGia = new System.Windows.Forms.TextBox();
-            this.txbTenPhong = new System.Windows.Forms.TextBox();
-            this.txbMaPhong = new System.Windows.Forms.TextBox();
-            this.txbTenKhachHang = new System.Windows.Forms.TextBox();
-            this.txbMaKhachHang = new System.Windows.Forms.TextBox();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.txtTenPhong = new System.Windows.Forms.TextBox();
+            this.txtMaPhong = new System.Windows.Forms.TextBox();
+            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
+            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.nudSoNgayThue = new System.Windows.Forms.NumericUpDown();
-            this.txbTriGia = new System.Windows.Forms.TextBox();
+            this.txtTriGia = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -64,25 +64,25 @@ namespace Hotel_Management
             this.label7 = new System.Windows.Forms.Label();
             this.dtpkNgayThanhToan = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.txbMaHoaDon = new System.Windows.Forms.TextBox();
+            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txbTimMaHoaDon = new System.Windows.Forms.TextBox();
+            this.txtTimMaHoaDon = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txbTimTenLoaiPhong = new System.Windows.Forms.TextBox();
-            this.txbTimTenPhong = new System.Windows.Forms.TextBox();
+            this.txtTimTenLoaiPhong = new System.Windows.Forms.TextBox();
+            this.txtTimTenPhong = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.txbTimTenKhachHang = new System.Windows.Forms.TextBox();
+            this.txtTimTenKhachHang = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataViewBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillManagement)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoNgayThue)).BeginInit();
             this.panel1.SuspendLayout();
@@ -113,7 +113,7 @@ namespace Hotel_Management
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.btnXuatHoaDon);
-            this.panel4.Controls.Add(this.dataViewBill);
+            this.panel4.Controls.Add(this.dgvBillManagement);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(449, 76);
             this.panel4.Name = "panel4";
@@ -130,10 +130,10 @@ namespace Hotel_Management
             this.btnXuatHoaDon.Text = "Xuât hóa đơn";
             this.btnXuatHoaDon.UseVisualStyleBackColor = true;
             // 
-            // dataViewBill
+            // dgvBillManagement
             // 
-            this.dataViewBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBillManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBillManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -144,12 +144,12 @@ namespace Hotel_Management
             this.Column8,
             this.Column9,
             this.Column10});
-            this.dataViewBill.Location = new System.Drawing.Point(-1, 66);
-            this.dataViewBill.Name = "dataViewBill";
-            this.dataViewBill.RowHeadersWidth = 51;
-            this.dataViewBill.RowTemplate.Height = 24;
-            this.dataViewBill.Size = new System.Drawing.Size(939, 544);
-            this.dataViewBill.TabIndex = 0;
+            this.dgvBillManagement.Location = new System.Drawing.Point(-1, 66);
+            this.dgvBillManagement.Name = "dgvBillManagement";
+            this.dgvBillManagement.RowHeadersWidth = 51;
+            this.dgvBillManagement.RowTemplate.Height = 24;
+            this.dgvBillManagement.Size = new System.Drawing.Size(939, 544);
+            this.dgvBillManagement.TabIndex = 0;
             // 
             // Column1
             // 
@@ -234,14 +234,14 @@ namespace Hotel_Management
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.txbThanhTien);
-            this.panel2.Controls.Add(this.txbDonGia);
-            this.panel2.Controls.Add(this.txbTenPhong);
-            this.panel2.Controls.Add(this.txbMaPhong);
-            this.panel2.Controls.Add(this.txbTenKhachHang);
-            this.panel2.Controls.Add(this.txbMaKhachHang);
+            this.panel2.Controls.Add(this.txtThanhTien);
+            this.panel2.Controls.Add(this.txtDonGia);
+            this.panel2.Controls.Add(this.txtTenPhong);
+            this.panel2.Controls.Add(this.txtMaPhong);
+            this.panel2.Controls.Add(this.txtTenKhachHang);
+            this.panel2.Controls.Add(this.txtMaKhachHang);
             this.panel2.Controls.Add(this.nudSoNgayThue);
-            this.panel2.Controls.Add(this.txbTriGia);
+            this.panel2.Controls.Add(this.txtTriGia);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label15);
@@ -252,7 +252,7 @@ namespace Hotel_Management
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.dtpkNgayThanhToan);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txbMaHoaDon);
+            this.panel2.Controls.Add(this.txtMaHoaDon);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(15, 285);
@@ -260,51 +260,51 @@ namespace Hotel_Management
             this.panel2.Size = new System.Drawing.Size(399, 309);
             this.panel2.TabIndex = 10;
             // 
-            // txbThanhTien
+            // txtThanhTien
             // 
-            this.txbThanhTien.Location = new System.Drawing.Point(207, 272);
-            this.txbThanhTien.Name = "txbThanhTien";
-            this.txbThanhTien.ReadOnly = true;
-            this.txbThanhTien.Size = new System.Drawing.Size(159, 22);
-            this.txbThanhTien.TabIndex = 34;
+            this.txtThanhTien.Location = new System.Drawing.Point(207, 272);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.ReadOnly = true;
+            this.txtThanhTien.Size = new System.Drawing.Size(159, 22);
+            this.txtThanhTien.TabIndex = 34;
             // 
-            // txbDonGia
+            // txtDonGia
             // 
-            this.txbDonGia.Location = new System.Drawing.Point(22, 272);
-            this.txbDonGia.Name = "txbDonGia";
-            this.txbDonGia.ReadOnly = true;
-            this.txbDonGia.Size = new System.Drawing.Size(159, 22);
-            this.txbDonGia.TabIndex = 33;
+            this.txtDonGia.Location = new System.Drawing.Point(22, 272);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.ReadOnly = true;
+            this.txtDonGia.Size = new System.Drawing.Size(159, 22);
+            this.txtDonGia.TabIndex = 33;
             // 
-            // txbTenPhong
+            // txtTenPhong
             // 
-            this.txbTenPhong.Location = new System.Drawing.Point(207, 214);
-            this.txbTenPhong.Name = "txbTenPhong";
-            this.txbTenPhong.Size = new System.Drawing.Size(157, 22);
-            this.txbTenPhong.TabIndex = 32;
+            this.txtTenPhong.Location = new System.Drawing.Point(207, 214);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.Size = new System.Drawing.Size(157, 22);
+            this.txtTenPhong.TabIndex = 32;
             // 
-            // txbMaPhong
+            // txtMaPhong
             // 
-            this.txbMaPhong.Location = new System.Drawing.Point(22, 214);
-            this.txbMaPhong.Name = "txbMaPhong";
-            this.txbMaPhong.ReadOnly = true;
-            this.txbMaPhong.Size = new System.Drawing.Size(160, 22);
-            this.txbMaPhong.TabIndex = 31;
+            this.txtMaPhong.Location = new System.Drawing.Point(22, 214);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.ReadOnly = true;
+            this.txtMaPhong.Size = new System.Drawing.Size(160, 22);
+            this.txtMaPhong.TabIndex = 31;
             // 
-            // txbTenKhachHang
+            // txtTenKhachHang
             // 
-            this.txbTenKhachHang.Location = new System.Drawing.Point(206, 156);
-            this.txbTenKhachHang.Name = "txbTenKhachHang";
-            this.txbTenKhachHang.Size = new System.Drawing.Size(158, 22);
-            this.txbTenKhachHang.TabIndex = 30;
+            this.txtTenKhachHang.Location = new System.Drawing.Point(206, 156);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.Size = new System.Drawing.Size(158, 22);
+            this.txtTenKhachHang.TabIndex = 30;
             // 
-            // txbMaKhachHang
+            // txtMaKhachHang
             // 
-            this.txbMaKhachHang.Location = new System.Drawing.Point(22, 156);
-            this.txbMaKhachHang.Name = "txbMaKhachHang";
-            this.txbMaKhachHang.ReadOnly = true;
-            this.txbMaKhachHang.Size = new System.Drawing.Size(159, 22);
-            this.txbMaKhachHang.TabIndex = 29;
+            this.txtMaKhachHang.Location = new System.Drawing.Point(22, 156);
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.ReadOnly = true;
+            this.txtMaKhachHang.Size = new System.Drawing.Size(159, 22);
+            this.txtMaKhachHang.TabIndex = 29;
             // 
             // nudSoNgayThue
             // 
@@ -313,12 +313,12 @@ namespace Hotel_Management
             this.nudSoNgayThue.Size = new System.Drawing.Size(159, 22);
             this.nudSoNgayThue.TabIndex = 28;
             // 
-            // txbTriGia
+            // txtTriGia
             // 
-            this.txbTriGia.Location = new System.Drawing.Point(23, 98);
-            this.txbTriGia.Name = "txbTriGia";
-            this.txbTriGia.Size = new System.Drawing.Size(159, 22);
-            this.txbTriGia.TabIndex = 27;
+            this.txtTriGia.Location = new System.Drawing.Point(23, 98);
+            this.txtTriGia.Name = "txtTriGia";
+            this.txtTriGia.Size = new System.Drawing.Size(159, 22);
+            this.txtTriGia.TabIndex = 27;
             // 
             // label19
             // 
@@ -408,13 +408,13 @@ namespace Hotel_Management
             this.label5.TabIndex = 17;
             this.label5.Text = "Ngày thanh toán:";
             // 
-            // txbMaHoaDon
+            // txtMaHoaDon
             // 
-            this.txbMaHoaDon.Location = new System.Drawing.Point(23, 42);
-            this.txbMaHoaDon.Name = "txbMaHoaDon";
-            this.txbMaHoaDon.ReadOnly = true;
-            this.txbMaHoaDon.Size = new System.Drawing.Size(159, 22);
-            this.txbMaHoaDon.TabIndex = 16;
+            this.txtMaHoaDon.Location = new System.Drawing.Point(23, 42);
+            this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.ReadOnly = true;
+            this.txtMaHoaDon.Size = new System.Drawing.Size(159, 22);
+            this.txtMaHoaDon.TabIndex = 16;
             // 
             // label4
             // 
@@ -439,14 +439,14 @@ namespace Hotel_Management
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txbTimMaHoaDon);
+            this.panel1.Controls.Add(this.txtTimMaHoaDon);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnTimKiem);
-            this.panel1.Controls.Add(this.txbTimTenLoaiPhong);
-            this.panel1.Controls.Add(this.txbTimTenPhong);
+            this.panel1.Controls.Add(this.txtTimTenLoaiPhong);
+            this.panel1.Controls.Add(this.txtTimTenPhong);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.txbTimTenKhachHang);
+            this.panel1.Controls.Add(this.txtTimTenKhachHang);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(15, 76);
@@ -454,12 +454,12 @@ namespace Hotel_Management
             this.panel1.Size = new System.Drawing.Size(399, 185);
             this.panel1.TabIndex = 9;
             // 
-            // txbTimMaHoaDon
+            // txtTimMaHoaDon
             // 
-            this.txbTimMaHoaDon.Location = new System.Drawing.Point(23, 49);
-            this.txbTimMaHoaDon.Name = "txbTimMaHoaDon";
-            this.txbTimMaHoaDon.Size = new System.Drawing.Size(158, 22);
-            this.txbTimMaHoaDon.TabIndex = 9;
+            this.txtTimMaHoaDon.Location = new System.Drawing.Point(23, 49);
+            this.txtTimMaHoaDon.Name = "txtTimMaHoaDon";
+            this.txtTimMaHoaDon.Size = new System.Drawing.Size(158, 22);
+            this.txtTimMaHoaDon.TabIndex = 9;
             // 
             // label6
             // 
@@ -480,19 +480,19 @@ namespace Hotel_Management
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             // 
-            // txbTimTenLoaiPhong
+            // txtTimTenLoaiPhong
             // 
-            this.txbTimTenLoaiPhong.Location = new System.Drawing.Point(207, 106);
-            this.txbTimTenLoaiPhong.Name = "txbTimTenLoaiPhong";
-            this.txbTimTenLoaiPhong.Size = new System.Drawing.Size(159, 22);
-            this.txbTimTenLoaiPhong.TabIndex = 7;
+            this.txtTimTenLoaiPhong.Location = new System.Drawing.Point(207, 106);
+            this.txtTimTenLoaiPhong.Name = "txtTimTenLoaiPhong";
+            this.txtTimTenLoaiPhong.Size = new System.Drawing.Size(159, 22);
+            this.txtTimTenLoaiPhong.TabIndex = 7;
             // 
-            // txbTimTenPhong
+            // txtTimTenPhong
             // 
-            this.txbTimTenPhong.Location = new System.Drawing.Point(22, 106);
-            this.txbTimTenPhong.Name = "txbTimTenPhong";
-            this.txbTimTenPhong.Size = new System.Drawing.Size(160, 22);
-            this.txbTimTenPhong.TabIndex = 6;
+            this.txtTimTenPhong.Location = new System.Drawing.Point(22, 106);
+            this.txtTimTenPhong.Name = "txtTimTenPhong";
+            this.txtTimTenPhong.Size = new System.Drawing.Size(160, 22);
+            this.txtTimTenPhong.TabIndex = 6;
             // 
             // label17
             // 
@@ -512,12 +512,12 @@ namespace Hotel_Management
             this.label16.TabIndex = 4;
             this.label16.Text = "Tên phòng:";
             // 
-            // txbTimTenKhachHang
+            // txtTimTenKhachHang
             // 
-            this.txbTimTenKhachHang.Location = new System.Drawing.Point(207, 49);
-            this.txbTimTenKhachHang.Name = "txbTimTenKhachHang";
-            this.txbTimTenKhachHang.Size = new System.Drawing.Size(159, 22);
-            this.txbTimTenKhachHang.TabIndex = 1;
+            this.txtTimTenKhachHang.Location = new System.Drawing.Point(207, 49);
+            this.txtTimTenKhachHang.Name = "txtTimTenKhachHang";
+            this.txtTimTenKhachHang.Size = new System.Drawing.Size(159, 22);
+            this.txtTimTenKhachHang.TabIndex = 1;
             // 
             // label2
             // 
@@ -557,6 +557,7 @@ namespace Hotel_Management
             this.btnDong.TabIndex = 1;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnInHoaDon
             // 
@@ -566,6 +567,7 @@ namespace Hotel_Management
             this.btnInHoaDon.TabIndex = 0;
             this.btnInHoaDon.Text = "In hóa đơn";
             this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // fBillManagement
             // 
@@ -585,7 +587,7 @@ namespace Hotel_Management
             this.Name = "fBillManagement";
             this.Text = "Quản lý hóa đơn";
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataViewBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillManagement)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoNgayThue)).EndInit();
@@ -603,7 +605,7 @@ namespace Hotel_Management
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnXuatHoaDon;
-        private System.Windows.Forms.DataGridView dataViewBill;
+        private System.Windows.Forms.DataGridView dgvBillManagement;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -616,14 +618,14 @@ namespace Hotel_Management
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txbThanhTien;
-        private System.Windows.Forms.TextBox txbDonGia;
-        private System.Windows.Forms.TextBox txbTenPhong;
-        private System.Windows.Forms.TextBox txbMaPhong;
-        private System.Windows.Forms.TextBox txbTenKhachHang;
-        private System.Windows.Forms.TextBox txbMaKhachHang;
+        private System.Windows.Forms.TextBox txtThanhTien;
+        private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.TextBox txtTenPhong;
+        private System.Windows.Forms.TextBox txtMaPhong;
+        private System.Windows.Forms.TextBox txtTenKhachHang;
+        private System.Windows.Forms.TextBox txtMaKhachHang;
         private System.Windows.Forms.NumericUpDown nudSoNgayThue;
-        private System.Windows.Forms.TextBox txbTriGia;
+        private System.Windows.Forms.TextBox txtTriGia;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
@@ -634,18 +636,18 @@ namespace Hotel_Management
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpkNgayThanhToan;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txbMaHoaDon;
+        private System.Windows.Forms.TextBox txtMaHoaDon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txbTimMaHoaDon;
+        private System.Windows.Forms.TextBox txtTimMaHoaDon;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox txbTimTenLoaiPhong;
-        private System.Windows.Forms.TextBox txbTimTenPhong;
+        private System.Windows.Forms.TextBox txtTimTenLoaiPhong;
+        private System.Windows.Forms.TextBox txtTimTenPhong;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txbTimTenKhachHang;
+        private System.Windows.Forms.TextBox txtTimTenKhachHang;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel3;

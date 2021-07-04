@@ -93,6 +93,7 @@
             this.pnExit.Name = "pnExit";
             this.pnExit.Size = new System.Drawing.Size(169, 50);
             this.pnExit.TabIndex = 5;
+            this.pnExit.Click += new System.EventHandler(this.exit);
             // 
             // pictureBox3
             // 
@@ -103,6 +104,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.exit);
             // 
             // label2
             // 
@@ -114,6 +116,7 @@
             this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Thoát";
+            this.label2.Click += new System.EventHandler(this.exit);
             // 
             // pnInfo
             // 
@@ -125,6 +128,7 @@
             this.pnInfo.Name = "pnInfo";
             this.pnInfo.Size = new System.Drawing.Size(169, 50);
             this.pnInfo.TabIndex = 3;
+            this.pnInfo.Click += new System.EventHandler(this.gotoPersonnalInformation);
             // 
             // pictureBox1
             // 
@@ -135,6 +139,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.gotoPersonnalInformation);
             // 
             // lbInfo
             // 
@@ -146,6 +151,7 @@
             this.lbInfo.Size = new System.Drawing.Size(123, 16);
             this.lbInfo.TabIndex = 2;
             this.lbInfo.Text = "Thông tin cá nhân";
+            this.lbInfo.Click += new System.EventHandler(this.gotoPersonnalInformation);
             // 
             // lbName
             // 
@@ -176,7 +182,7 @@
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1183, 640);
+            this.pictureBox4.Size = new System.Drawing.Size(1180, 638);
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
@@ -189,6 +195,7 @@
             this.picBookRoom.Size = new System.Drawing.Size(534, 165);
             this.picBookRoom.TabIndex = 2;
             this.picBookRoom.TabStop = false;
+            this.picBookRoom.Click += new System.EventHandler(this.gotoBookRoom);
             // 
             // label3
             // 
@@ -201,6 +208,7 @@
             this.label3.Size = new System.Drawing.Size(265, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "Lập phiếu thuê phòng";
+            this.label3.Click += new System.EventHandler(this.gotoBookRoom);
             // 
             // picRoomManagement
             // 
@@ -211,6 +219,7 @@
             this.picRoomManagement.Size = new System.Drawing.Size(249, 174);
             this.picRoomManagement.TabIndex = 4;
             this.picRoomManagement.TabStop = false;
+            this.picRoomManagement.Click += new System.EventHandler(this.gotoRoomManage);
             // 
             // label4
             // 
@@ -223,7 +232,7 @@
             this.label4.Size = new System.Drawing.Size(181, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "Quản lý phòng";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.Click += new System.EventHandler(this.gotoRoomManage);
             // 
             // label5
             // 
@@ -236,6 +245,7 @@
             this.label5.Size = new System.Drawing.Size(230, 29);
             this.label5.TabIndex = 7;
             this.label5.Text = "Quản lý phiếu thuê";
+            this.label5.Click += new System.EventHandler(this.gotoRentalManage);
             // 
             // picRentalCoupon
             // 
@@ -246,6 +256,7 @@
             this.picRentalCoupon.Size = new System.Drawing.Size(265, 174);
             this.picRentalCoupon.TabIndex = 6;
             this.picRentalCoupon.TabStop = false;
+            this.picRentalCoupon.Click += new System.EventHandler(this.gotoRentalManage);
             // 
             // pictureBox8
             // 
@@ -264,7 +275,7 @@
             this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox9.Location = new System.Drawing.Point(0, 0);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(191, 640);
+            this.pictureBox9.Size = new System.Drawing.Size(191, 638);
             this.pictureBox9.TabIndex = 9;
             this.pictureBox9.TabStop = false;
             // 
@@ -279,6 +290,7 @@
             this.label6.Size = new System.Drawing.Size(240, 29);
             this.label6.TabIndex = 11;
             this.label6.Text = "Quản lý khách hàng";
+            this.label6.Click += new System.EventHandler(this.gotoCustomerManage);
             // 
             // picCustomer
             // 
@@ -289,6 +301,7 @@
             this.picCustomer.Size = new System.Drawing.Size(249, 165);
             this.picCustomer.TabIndex = 10;
             this.picCustomer.TabStop = false;
+            this.picCustomer.Click += new System.EventHandler(this.gotoCustomerManage);
             // 
             // picReport
             // 
@@ -299,6 +312,7 @@
             this.picReport.Size = new System.Drawing.Size(135, 553);
             this.picReport.TabIndex = 12;
             this.picReport.TabStop = false;
+            this.picReport.Click += new System.EventHandler(this.gotoReport);
             // 
             // label7
             // 
@@ -311,6 +325,7 @@
             this.label7.Size = new System.Drawing.Size(56, 29);
             this.label7.TabIndex = 13;
             this.label7.Text = "Lập";
+            this.label7.Click += new System.EventHandler(this.gotoReport);
             // 
             // label8
             // 
@@ -323,6 +338,7 @@
             this.label8.Size = new System.Drawing.Size(55, 29);
             this.label8.TabIndex = 14;
             this.label8.Text = "cáo";
+            this.label8.Click += new System.EventHandler(this.gotoReport);
             // 
             // label9
             // 
@@ -335,6 +351,7 @@
             this.label9.Size = new System.Drawing.Size(57, 29);
             this.label9.TabIndex = 15;
             this.label9.Text = "báo";
+            this.label9.Click += new System.EventHandler(this.gotoReport);
             // 
             // label10
             // 
@@ -347,6 +364,7 @@
             this.label10.Size = new System.Drawing.Size(186, 26);
             this.label10.TabIndex = 17;
             this.label10.Text = "Loại khách hàng";
+            this.label10.Click += new System.EventHandler(this.gotoCustomerType);
             // 
             // picCustomerType
             // 
@@ -357,6 +375,7 @@
             this.picCustomerType.Size = new System.Drawing.Size(253, 129);
             this.picCustomerType.TabIndex = 16;
             this.picCustomerType.TabStop = false;
+            this.picCustomerType.Click += new System.EventHandler(this.gotoCustomerType);
             // 
             // label11
             // 
@@ -369,6 +388,7 @@
             this.label11.Size = new System.Drawing.Size(192, 26);
             this.label11.TabIndex = 19;
             this.label11.Text = "Danh mục phòng";
+            this.label11.Click += new System.EventHandler(this.gotoRoomtype);
             // 
             // picRoomType
             // 
@@ -379,6 +399,7 @@
             this.picRoomType.Size = new System.Drawing.Size(253, 129);
             this.picRoomType.TabIndex = 18;
             this.picRoomType.TabStop = false;
+            this.picRoomType.Click += new System.EventHandler(this.gotoRoomtype);
             // 
             // label12
             // 
@@ -391,6 +412,7 @@
             this.label12.Size = new System.Drawing.Size(204, 26);
             this.label12.TabIndex = 21;
             this.label12.Text = "Quản lý nhân viên";
+            this.label12.Click += new System.EventHandler(this.gotoStaffManage);
             // 
             // picManageEmloyee
             // 
@@ -401,6 +423,7 @@
             this.picManageEmloyee.Size = new System.Drawing.Size(253, 129);
             this.picManageEmloyee.TabIndex = 20;
             this.picManageEmloyee.TabStop = false;
+            this.picManageEmloyee.Click += new System.EventHandler(this.gotoStaffManage);
             // 
             // label13
             // 
@@ -413,6 +436,7 @@
             this.label13.Size = new System.Drawing.Size(199, 26);
             this.label13.TabIndex = 23;
             this.label13.Text = "Thay đổi quy định";
+            this.label13.Click += new System.EventHandler(this.gotoParameterUpdate);
             // 
             // picChangeRegulation
             // 
@@ -423,6 +447,7 @@
             this.picChangeRegulation.Size = new System.Drawing.Size(253, 129);
             this.picChangeRegulation.TabIndex = 22;
             this.picChangeRegulation.TabStop = false;
+            this.picChangeRegulation.Click += new System.EventHandler(this.gotoParameterUpdate);
             // 
             // label14
             // 
@@ -433,7 +458,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(191, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(992, 60);
+            this.label14.Size = new System.Drawing.Size(989, 60);
             this.label14.TabIndex = 24;
             this.label14.Text = "Quản lý khách sạn";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -449,6 +474,7 @@
             this.label15.Size = new System.Drawing.Size(202, 29);
             this.label15.TabIndex = 26;
             this.label15.Text = "Quản lý hóa đơn";
+            this.label15.Click += new System.EventHandler(this.gotoBillManage);
             // 
             // picBill
             // 
@@ -459,6 +485,7 @@
             this.picBill.Size = new System.Drawing.Size(265, 165);
             this.picBill.TabIndex = 25;
             this.picBill.TabStop = false;
+            this.picBill.Click += new System.EventHandler(this.gotoBillManage);
             // 
             // fMainMenu
             // 
@@ -466,7 +493,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1183, 640);
+            this.ClientSize = new System.Drawing.Size(1180, 638);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.picBill);
             this.Controls.Add(this.label14);
@@ -498,10 +525,12 @@
             this.Controls.Add(this.picBookRoom);
             this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "fMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí khách sạn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fMainMenu_FormClosing);
             this.pnExit.ResumeLayout(false);
             this.pnExit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

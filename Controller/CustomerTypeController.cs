@@ -11,7 +11,12 @@ namespace Hotel_Management.Controller
         KHACHSANEntities entities = new KHACHSANEntities();
         public dynamic getAll()
         {
-            var data = entities.LOAIKHACHes;
+            var data = from c in entities.LOAIKHACHes
+                       select new { 
+                       ID = c.MALOAIKHACH,
+                       Name = c.TENLOAIKHACH
+                       };
+
             return data.ToList();
         }
         public void insertCustomerType(LOAIKHACH lk, KHACHHANG kh)
