@@ -12,7 +12,7 @@ namespace Hotel_Management
 {
     public partial class PersionalInformation : Form
     {
-        public PersionalInformation()
+        public PersionalInformation(int ID)
         {
             InitializeComponent();
         }

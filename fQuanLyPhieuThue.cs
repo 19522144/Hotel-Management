@@ -132,6 +132,10 @@ namespace Hotel_Management
         private void dgvDanhSachPhieuThue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
+            if (row < 1)
+            {
+                return;
+            }
             string RoomName = (string)dgvDanhSachPhieuThue.Rows[row].Cells["RoomName"].Value;
             dateStart = (DateTime) dgvDanhSachPhieuThue.Rows[row].Cells["DayStart"].Value;
 

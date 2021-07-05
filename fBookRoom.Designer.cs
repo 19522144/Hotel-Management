@@ -41,6 +41,8 @@
             this.cmbRoom = new System.Windows.Forms.ComboBox();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.groupBoxCustomer = new System.Windows.Forms.GroupBox();
+            this.cmbSTT = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
@@ -140,6 +142,7 @@
             this.nudPeople.Size = new System.Drawing.Size(202, 20);
             this.nudPeople.TabIndex = 2;
             this.nudPeople.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudPeople.ValueChanged += new System.EventHandler(this.nudPeople_ValueChanged);
             // 
             // label1
             // 
@@ -171,6 +174,8 @@
             // 
             // groupBoxCustomer
             // 
+            this.groupBoxCustomer.Controls.Add(this.cmbSTT);
+            this.groupBoxCustomer.Controls.Add(this.label10);
             this.groupBoxCustomer.Controls.Add(this.label8);
             this.groupBoxCustomer.Controls.Add(this.txtAddress);
             this.groupBoxCustomer.Controls.Add(this.btnReset);
@@ -194,6 +199,24 @@
             this.groupBoxCustomer.TabStop = false;
             this.groupBoxCustomer.Text = "Thông tin khách hàng";
             // 
+            // cmbSTT
+            // 
+            this.cmbSTT.FormattingEnabled = true;
+            this.cmbSTT.Location = new System.Drawing.Point(432, 19);
+            this.cmbSTT.Name = "cmbSTT";
+            this.cmbSTT.Size = new System.Drawing.Size(121, 21);
+            this.cmbSTT.TabIndex = 24;
+            this.cmbSTT.SelectedIndexChanged += new System.EventHandler(this.cmbSTT_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(361, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Khách hàng";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -214,9 +237,9 @@
             // 
             this.btnReset.Location = new System.Drawing.Point(439, 107);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(52, 23);
+            this.btnReset.Size = new System.Drawing.Size(57, 23);
             this.btnReset.TabIndex = 20;
-            this.btnReset.Text = "Đặt lại";
+            this.btnReset.Text = "Tạo mới";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -420,5 +443,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.ComboBox cmbSTT;
+        private System.Windows.Forms.Label label10;
     }
 }

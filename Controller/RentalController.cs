@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -29,11 +30,16 @@ namespace Hotel_Management.Controller
             return data.ToList();
         }
 
-        public void addRental(PHIEUTHUE pt, CHITIETPHIEUTHUE ctpt)
+        public int addRental(PHIEUTHUE pt)
         {
             entities.PHIEUTHUEs.Add(pt);
             entities.SaveChanges();
-            ctpt.MAPHIEUTHUE = pt.MAPHIEUTHUE;
+            return pt.MAPHIEUTHUE;
+        }
+
+        public void addRentalDetail(int MaPhieuThue, CHITIETPHIEUTHUE ctpt)
+        {
+            ctpt.MAPHIEUTHUE = MaPhieuThue;
             entities.CHITIETPHIEUTHUEs.Add(ctpt);
             entities.SaveChanges();
         }

@@ -23,7 +23,8 @@ namespace Hotel_Management.Controller
                            RoomID = c.PHONG.MAPHONG,
                            UnitPrice = c.DONGIA,
                            CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
-                           CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,                                                     
+                           CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,
+                           Amount = c.THANHTIEN
                        };
 
             return data.ToList();
@@ -47,13 +48,12 @@ namespace Hotel_Management.Controller
             cthd.DONGIA = c.DONGIA;
             cthd.SONGAYTHUE = c.SONGAYTHUE;
             cthd.MAPHONG = c.MAPHONG;
-            h.MAKHACHHANG = hd.MAKHACHHANG;       
+            h.MAKHACHHANG = hd.MAKHACHHANG;
             entities.SaveChanges();
         }
 
         public void deleteBill(int ID)
         {
-            //MessageBox.Show("" + ID);
             HOADON hd = entities.HOADONs.Find(ID);
             if (hd != null)
             {
@@ -62,6 +62,44 @@ namespace Hotel_Management.Controller
                 entities.HOADONs.Remove(hd);
                 entities.SaveChanges();
             }
+        }
+
+        public dynamic findBill(int ID, string customerName, string roomName, string roomTypeName)
+        {
+            var result = from c in entities.CHITIETHOADONs
+                         select c;
+            if (ID != -1)
+                result = from c in entities.CHITIETHOADONs
+                         where c.MAHOADON == ID
+                         select c;
+            if (customerName != "")
+                result = from c in result
+                         where c.HOADON.KHACHHANG.TENKHACHHANG.Contains(customerName)
+                         select c;
+            if (roomName != "")
+                result = from c in result
+                         where c.PHONG.TENPHONG.Contains(roomName)
+                         select c;
+            if (roomTypeName != "")
+                result = from c in result
+                         where c.PHONG.LOAIPHONG.TENLOAIPHONG.Contains(roomTypeName)
+                         select c;
+
+            var data = from c in result
+                       select new
+                       {
+                           ID = c.MAHOADON,
+                           PaymentDay = c.HOADON.NGAYTHANHTOAN,
+                           Value = c.HOADON.TRIGIA,
+                           RentalDays = c.SONGAYTHUE,
+                           RoomName = c.PHONG.TENPHONG,
+                           RoomID = c.PHONG.MAPHONG,
+                           UnitPrice = c.DONGIA,
+                           CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
+                           CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,
+                       };
+
+            return data.ToList();
         }
     }
 }
