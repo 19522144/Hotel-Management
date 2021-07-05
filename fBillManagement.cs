@@ -40,19 +40,19 @@ namespace Hotel_Management
             txtDonGia.DataBindings.Clear();
             txtThanhTien.DataBindings.Clear();
 
-            txtMaHoaDon.DataBindings.Add("Text", dgvBillManagement, "ID", true, DataSourceUpdateMode.Never);
+            txtMaHoaDon.DataBindings.Add("Text", dgvBillManagement.DataSource, "ID", true, DataSourceUpdateMode.Never);
  
-            dtpkNgayThanhToan.DataBindings.Add("Text", dgvBillManagement, "PaymentDay", true, DataSourceUpdateMode.Never);
-            txtTriGia.DataBindings.Add("Text", dgvBillManagement, "Value", true, DataSourceUpdateMode.Never);
-            txtSoNgayThue.DataBindings.Add("Text", dgvBillManagement, "RentalDays", true, DataSourceUpdateMode.Never);
+            dtpkNgayThanhToan.DataBindings.Add("Text", dgvBillManagement.DataSource, "PaymentDay", true, DataSourceUpdateMode.Never);
+            txtTriGia.DataBindings.Add("Text", dgvBillManagement.DataSource, "Value", true, DataSourceUpdateMode.Never);
+            txtSoNgayThue.DataBindings.Add("Text", dgvBillManagement.DataSource, "RentalDays", true, DataSourceUpdateMode.Never);
             
-            txtTenPhong.DataBindings.Add("Text", dgvBillManagement, "RoomName", true, DataSourceUpdateMode.Never);
-            txtMaPhong.DataBindings.Add("Text", dgvBillManagement, "RoomID", true, DataSourceUpdateMode.Never);
+            txtTenPhong.DataBindings.Add("Text", dgvBillManagement.DataSource, "RoomName", true, DataSourceUpdateMode.Never);
+            txtMaPhong.DataBindings.Add("Text", dgvBillManagement.DataSource, "RoomID", true, DataSourceUpdateMode.Never);
             
-            txtDonGia.DataBindings.Add("Text", dgvBillManagement, "UnitPrice", true, DataSourceUpdateMode.Never);
-            txtMaKhachHang.DataBindings.Add("Text", dgvBillManagement, "CustomerID", true, DataSourceUpdateMode.Never);
-            txtTenKhachHang.DataBindings.Add("Text", dgvBillManagement, "CustomerName", true, DataSourceUpdateMode.Never);
-            txtThanhTien.DataBindings.Add("Text", dgvBillManagement, "Amount", true, DataSourceUpdateMode.Never);
+            txtDonGia.DataBindings.Add("Text", dgvBillManagement.DataSource, "UnitPrice", true, DataSourceUpdateMode.Never);
+            txtMaKhachHang.DataBindings.Add("Text", dgvBillManagement.DataSource, "CustomerID", true, DataSourceUpdateMode.Never);
+            txtTenKhachHang.DataBindings.Add("Text", dgvBillManagement.DataSource, "CustomerName", true, DataSourceUpdateMode.Never);
+            txtThanhTien.DataBindings.Add("Text", dgvBillManagement.DataSource, "Amount", true, DataSourceUpdateMode.Never);
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -108,6 +108,15 @@ namespace Hotel_Management
                 .findBill(ID, txtTimTenKhachHang.Text, txtTimTenPhong.Text, txtTimTenLoaiPhong.Text);
 
             addBinding();
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            txtTimMaHoaDon.Text = "";
+            txtTimTenKhachHang.Text = "";
+            txtTimTenLoaiPhong.Text = "";
+            txtTimTenPhong.Text = "";
+            LoadData();
         }
     }
 }
