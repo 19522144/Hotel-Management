@@ -97,6 +97,7 @@ namespace Hotel_Management.Controller
                            UnitPrice = c.DONGIA,
                            CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
                            CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,
+                           Amount = c.THANHTIEN
                        };
 
             return data.ToList();
