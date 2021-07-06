@@ -14,6 +14,7 @@ namespace Hotel_Management
     public partial class fBillManagement : Form
     {
         BillController billController = new BillController();
+        int RentalID = 0;
 
         public fBillManagement()
         {
@@ -62,7 +63,7 @@ namespace Hotel_Management
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-            InHoaDon inHoaDon = new InHoaDon();
+            InHoaDon inHoaDon = new InHoaDon(billController.getBillID(RentalID));
             inHoaDon.Show();
         }
 
@@ -79,21 +80,23 @@ namespace Hotel_Management
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dgvBillManagement.Rows[e.RowIndex];
-                txtMaHoaDon.Text = row.Cells[0].Value.ToString();
+                //DataGridViewRow row = this.dgvBillManagement.Rows[e.RowIndex];
+                //txtMaHoaDon.Text = row.Cells[0].Value.ToString();
 
-                dtpkNgayThanhToan.Value = (DateTime)row.Cells[1].Value;
+                //dtpkNgayThanhToan.Value = (DateTime)row.Cells[1].Value;
 
-                txtTriGia.Text = row.Cells[2].Value.ToString();
-                txtSoNgayThue.Text = row.Cells[3].Value.ToString();
+                //txtTriGia.Text = row.Cells[2].Value.ToString();
+                //txtSoNgayThue.Text = row.Cells[3].Value.ToString();
 
-                txtTenPhong.Text = row.Cells[4].Value.ToString();
-                txtMaPhong.Text = row.Cells[5].Value.ToString();
+                //txtTenPhong.Text = row.Cells[4].Value.ToString();
+                //txtMaPhong.Text = row.Cells[5].Value.ToString();
 
-                txtDonGia.Text = row.Cells[6].Value.ToString();
+                //txtDonGia.Text = row.Cells[6].Value.ToString();
 
-                txtMaKhachHang.Text = row.Cells[7].Value.ToString();
-                txtTenKhachHang.Text = row.Cells[8].Value.ToString();
+                //txtMaKhachHang.Text = row.Cells[7].Value.ToString();
+                //txtTenKhachHang.Text = row.Cells[8].Value.ToString();
+                RentalID = (int) dgvBillManagement.Rows[e.RowIndex].Cells["RentalID"].Value;
+                //MessageBox.Show("here");
             }
         }
 

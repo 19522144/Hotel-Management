@@ -23,6 +23,23 @@ namespace Hotel_Management.Controller
                        };
             return data.ToList();
         }
+
+        public dynamic getAvaiableRoom()
+        {
+            var data = from c in entities.PHONGs
+                       where c.TINHTRANG == "Mở"
+                       select new
+                       {
+                           ID = c.MAPHONG,
+                           Name = c.TENPHONG,
+                           RoomType = c.LOAIPHONG.TENLOAIPHONG,
+                           Price = c.LOAIPHONG.DONGIA,
+                           Status = c.TINHTRANG,
+                           Note = c.GHICHU
+                       };
+            return data.ToList();
+        }
+
         public dynamic All()
         {
             var data = entities.LOAIPHONGs;

@@ -24,7 +24,8 @@ namespace Hotel_Management.Controller
                            UnitPrice = c.DONGIA,
                            CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
                            CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,
-                           Amount = c.THANHTIEN
+                           Amount = c.THANHTIEN,
+                           RentalID = c.MAPHIEUTHUE
                        };
 
             return data.ToList();
@@ -102,5 +103,18 @@ namespace Hotel_Management.Controller
 
             return data.ToList();
         }
+
+        public int getBillID(int RentalID)
+        {
+            CHITIETHOADON cthoadon = entities.CHITIETHOADONs.Where(c => c.MAPHIEUTHUE == RentalID).SingleOrDefault();
+            System.Windows.MessageBox.Show(RentalID + " ");// + cthoadon.MAHOADON);
+            return (int) cthoadon.MAHOADON;
+        }
+
+        public CHITIETHOADON getBillByID(int BillID)
+        {
+            return entities.CHITIETHOADONs.Where(c => c.MAHOADON == BillID).SingleOrDefault();
+        }
+
     }
 }

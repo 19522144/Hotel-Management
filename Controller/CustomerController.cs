@@ -19,6 +19,8 @@ namespace Hotel_Management.Controller
                          ID = c.MAKHACHHANG,
                          Name = c.TENKHACHHANG,
                          CMND = c.CMND,
+                         BirthDay = c.NGAYSINH,
+                         Gender = c.GIOITINH,
                          Nationality = c.QUOCTICH,
                          Phone = c.SODIENTHOAI,
                          Type = c.LOAIKHACH.TENLOAIKHACH,
@@ -40,7 +42,9 @@ namespace Hotel_Management.Controller
             k.SODIENTHOAI = kh.SODIENTHOAI;
             k.QUOCTICH = kh.QUOCTICH;
             k.CMND = kh.CMND;
-            k.DIACHI = kh.DIACHI; 
+            k.DIACHI = kh.DIACHI;
+            k.GIOITINH = kh.GIOITINH;
+            k.NGAYSINH = kh.NGAYSINH;
             entities.SaveChanges();
         }
         public void deleteCustomer(int ID)
@@ -62,6 +66,8 @@ namespace Hotel_Management.Controller
                          ID = c.MAKHACHHANG,
                          Name = c.TENKHACHHANG,
                          CMND = c.CMND,
+                         BirthDay = c.NGAYSINH,
+                         Gender = c.GIOITINH,
                          Nationality = c.QUOCTICH,
                          Phone = c.SODIENTHOAI,
                          Type = c.LOAIKHACH.TENLOAIKHACH,
@@ -94,6 +100,8 @@ namespace Hotel_Management.Controller
                            ID = c.MAKHACHHANG,
                            Name = c.TENKHACHHANG,
                            CMND = c.CMND,
+                           BirthDay = c.NGAYSINH,
+                           Gender = c.GIOITINH,
                            Nationality = c.QUOCTICH,
                            Phone = c.SODIENTHOAI,
                            Type = c.LOAIKHACH.TENLOAIKHACH,
