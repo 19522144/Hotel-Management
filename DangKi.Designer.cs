@@ -29,6 +29,7 @@ namespace Hotel_Management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKi));
             this.groupBoxTTCN = new System.Windows.Forms.GroupBox();
             this.comboBoxQTC = new System.Windows.Forms.ComboBox();
             this.textBoxNLMK = new System.Windows.Forms.TextBox();
@@ -238,15 +239,18 @@ namespace Hotel_Management
             this.pictureBoxAĐD.TabIndex = 8;
             this.pictureBoxAĐD.TabStop = false;
             // 
-            // ĐăngKí
+            // DangKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(510, 311);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ĐăngKí";
+            this.MaximizeBox = false;
+            this.Name = "DangKi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangKi";
             this.Load += new System.EventHandler(this.fĐăngKí_Load);

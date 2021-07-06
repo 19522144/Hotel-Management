@@ -20,27 +20,59 @@ namespace Hotel_Management
         CustomerTypeController customerTypeController = new CustomerTypeController();
         ParameterController parameterController = new ParameterController();
 
+        List<KHACHHANG> arrKhachHang;
+        List<int> arrTypeCustomer;
+        List<bool> isEmpty;
+
+        int previousIndex = -1;
+
         public fBookRoom()
         {
             InitializeComponent();
+
+            monthCalendar.MaxSelectionCount = 1;           
 
             cmbRoom.DataSource = roomController.getAll();
             cmbRoom.DisplayMember = "Name";
             cmbRoom.ValueMember = "ID";
 
-            nudPeople.Maximum = parameterController.SOKHTOIDA1PHONG();
-            nudPeople.Minimum = 1;
-
             cmbCustomerType.DataSource = customerTypeController.getAll();
             cmbCustomerType.DisplayMember = "Name";
             cmbCustomerType.ValueMember = "ID";
 
-            monthCalendar.MaxSelectionCount = 1;
+            arrKhachHang = new List<KHACHHANG>();
+            arrTypeCustomer = new List<int>();
+            isEmpty = new List<bool>();
+            for (int i = 0; i < parameterController.SOKHTOIDA1PHONG(); i++)
+            {
+                arrKhachHang.Add(new KHACHHANG());
+                arrTypeCustomer.Add(0);
+                isEmpty.Add(true);
+            }
+
+            nudPeople.Maximum = parameterController.SOKHTOIDA1PHONG();
+            nudPeople.Minimum = 1;
+            nudPeople.Value = 1;
+        }
+
+        bool checkAllEmpty()
+        {
+            for (int i = 0; i < nudPeople.Value; i++)
+            {
+                if (isEmpty[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            if (!checkEmpty())
+            saveTempCustomer();
+
+            if (!checkAllEmpty())
             {
                 MessageBox.Show("Vui lòng điền đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -49,37 +81,27 @@ namespace Hotel_Management
             DialogResult result = MessageBox.Show("Xác nhận đặt phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                int MaKhachHang;
-                if (txtMaKhachHang.Text != "")
-                {
-                    MaKhachHang = Convert.ToInt32(txtMaKhachHang.Text);
-                }
-                else
-                {
-                    KHACHHANG kh = new KHACHHANG()
-                    {
-                        TENKHACHHANG = txtName.Text,
-                        MALOAIKHACH = (int)cmbCustomerType.SelectedValue,
-                        QUOCTICH = txtNationality.Text,
-                        SODIENTHOAI = txtSDT.Text,
-                        CMND = txtCMND.Text,
-                        DIACHI = txtAddress.Text
-                    };
-                    MaKhachHang = customerController.insertCustomer(kh);
-                }
-
-                CHITIETPHIEUTHUE ctpt = new CHITIETPHIEUTHUE()
-                {
-                    MAKHACHHANG = MaKhachHang,
-                };
-
                 PHIEUTHUE pt = new PHIEUTHUE()
                 {
                     MAPHONG = (int)cmbRoom.SelectedValue,
                     NGAYBDTHUE = dtpDayRecieve.Value,
                 };
 
-                RentalController.addRental(pt, ctpt);
+                int MaPhieuThue = RentalController.addRental(pt);
+                
+
+                for (int i = 0; i < nudPeople.Value; i++)
+                {
+                    if (arrKhachHang[i].MAKHACHHANG == 0)
+                    {
+                        arrKhachHang[i].MAKHACHHANG = customerController.insertCustomer(arrKhachHang[i]);
+                    }
+                    CHITIETPHIEUTHUE ctpt = new CHITIETPHIEUTHUE()
+                    {
+                        MAKHACHHANG = arrKhachHang[i].MAKHACHHANG
+                    };
+                    RentalController.addRentalDetail(MaPhieuThue, ctpt);
+                }
             }
         }
 
@@ -87,7 +109,7 @@ namespace Hotel_Management
         {
             foreach (Control item in groupBoxCustomer.Controls)
             {
-                if (item is TextBox && item.Text == "")
+                if (item is TextBox && item.Name != "txtMaKhachHang" && item.Text == "")
                 {
                     return false;
                 }
@@ -113,16 +135,7 @@ namespace Hotel_Management
                 txtNationality.Text = value.Nationality;
                 txtSDT.Text = value.Phone;
                 txtAddress.Text = value.Address;
-                foreach (dynamic item in cmbCustomerType.Items)
-                {
-                    //MessageBox.Show(item.Name + " " + value.Type);
-                    if (item.Name == value.Type)
-                    {
-                        cmbCustomerType.SelectedItem = item;
-                        //MessageBox.Show("TRUE");
-                        break;
-                    }
-                }
+                cmbCustomerType.Text = value.Type;
             }
             else MessageBox.Show("Không tìm thấy, vui lòng kiểm tra lại thông tin",
                 "Thông báo",
@@ -142,13 +155,7 @@ namespace Hotel_Management
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            foreach (Control item in groupBoxCustomer.Controls)
-            {
-                if (item is TextBox)
-                {
-                    item.Text = "";
-                }
-            }
+            txtMaKhachHang.Text = "";
         }
 
         private void KeyPress(object sender, KeyPressEventArgs e)
@@ -158,5 +165,84 @@ namespace Hotel_Management
                 e.Handled = true;
             }
         }
+
+        private void nudPeople_ValueChanged(object sender, EventArgs e)
+        {
+            cmbSTT.Items.Clear();
+            for (int i = 0; i < nudPeople.Value; i++)
+            {
+                cmbSTT.Items.Add(i + 1);
+            }
+
+            cmbSTT.SelectedIndex = 0;
+        }
+
+        private void cmbSTT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (arrKhachHang == null)
+            //{
+            //    createNewList();
+            //}
+
+            //MessageBox.Show(previousIndex + " " + cmbSTT.SelectedIndex);
+
+            if (previousIndex != -1)
+            {
+                saveTempCustomer();
+            }
+
+            txtCMND.Text = arrKhachHang[cmbSTT.SelectedIndex].CMND;
+            txtName.Text = arrKhachHang[cmbSTT.SelectedIndex].TENKHACHHANG;
+            txtAddress.Text = arrKhachHang[cmbSTT.SelectedIndex].DIACHI;
+            txtSDT.Text = arrKhachHang[cmbSTT.SelectedIndex].SODIENTHOAI;
+            txtNationality.Text = arrKhachHang[cmbSTT.SelectedIndex].QUOCTICH;
+            if (arrKhachHang[cmbSTT.SelectedIndex].MAKHACHHANG != 0)
+            {
+                txtMaKhachHang.Text = arrKhachHang[cmbSTT.SelectedIndex].MAKHACHHANG.ToString();
+            }
+            else txtMaKhachHang.Text = "";
+            cmbCustomerType.SelectedIndex = arrTypeCustomer[cmbSTT.SelectedIndex];
+
+            previousIndex = cmbSTT.SelectedIndex;
+            //MessageBox.Show("PreviousIndex = " + previousIndex);
+            //txtMaKhachHang.Text = arrKhachHang[cmbSTT.SelectedIndex].MAKHACHHANG.ToString();
+            //
+        }
+
+        void saveTempCustomer()
+        {
+            arrKhachHang[previousIndex].CMND = txtCMND.Text;
+            arrKhachHang[previousIndex].TENKHACHHANG = txtName.Text;
+            arrKhachHang[previousIndex].DIACHI = txtAddress.Text;
+            arrKhachHang[previousIndex].SODIENTHOAI = txtSDT.Text;
+            arrKhachHang[previousIndex].QUOCTICH = txtNationality.Text;
+            arrKhachHang[previousIndex].MALOAIKHACH = (int)cmbCustomerType.SelectedValue;
+            if (txtMaKhachHang.Text != "")
+            {
+                arrKhachHang[previousIndex].MAKHACHHANG = Convert.ToInt32(txtMaKhachHang.Text);
+            }
+            arrTypeCustomer[previousIndex] = cmbCustomerType.SelectedIndex;
+
+            isEmpty[previousIndex] = !checkEmpty();
+        }
+
+        private void TextChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(cmbSTT.SelectedIndex + "");
+            //return;
+            //if (cmbSTT.SelectedIndex == -1)
+            //{
+            //    return;
+            //}
+            //arrKhachHang[cmbSTT.SelectedIndex].CMND = txtCMND.Text;
+            //arrKhachHang[cmbSTT.SelectedIndex].TENKHACHHANG = txtName.Text;
+            //arrKhachHang[cmbSTT.SelectedIndex].DIACHI = txtAddress.Text;
+            //arrKhachHang[cmbSTT.SelectedIndex].SODIENTHOAI = txtSDT.Text;
+            //arrKhachHang[cmbSTT.SelectedIndex].QUOCTICH = txtNationality.Text;
+            //arrKhachHang[cmbSTT.SelectedIndex].MAKHACHHANG = Convert.ToInt32(txtMaKhachHang.Text);
+            //arrKhachHang[cmbSTT.SelectedIndex].MALOAIKHACH = (int) cmbCustomerType.SelectedValue;
+        }
+
+        
     }
 }

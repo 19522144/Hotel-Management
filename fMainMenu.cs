@@ -39,7 +39,7 @@ namespace Hotel_Management
         {
             if (persionalInformation == null || persionalInformation.IsDisposed)
             {
-                persionalInformation = new PersionalInformation();
+                persionalInformation = new PersionalInformation(1); //
             }
             persionalInformation.Show();
         }

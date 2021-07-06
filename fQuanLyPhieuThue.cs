@@ -61,12 +61,21 @@ namespace Hotel_Management
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            rentalController.deleteRental(Int32.Parse(txtMaPhieuThue.Text));
-            LoadData();
+            if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                rentalController.deleteRental(Int32.Parse(txtMaPhieuThue.Text));
+                LoadData();
+            }
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            if (!checkEmpty())
+            {
+                MessageBox.Show("Vui lòng điền đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             PHIEUTHUE pt = new PHIEUTHUE()
             {
                 MAPHONG = (int) cmbTenPhong.SelectedValue,
@@ -87,6 +96,19 @@ namespace Hotel_Management
             customerController.updateCustomer(kh);
 
             LoadData();
+        }
+
+        private bool checkEmpty()
+        {
+            foreach (Control item in panelRental.Controls)
+            {
+                if (item is TextBox && item.Text == "")
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -110,18 +132,23 @@ namespace Hotel_Management
         private void dgvDanhSachPhieuThue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
+            if (row < 1)
+            {
+                return;
+            }
             string RoomName = (string)dgvDanhSachPhieuThue.Rows[row].Cells["RoomName"].Value;
             dateStart = (DateTime) dgvDanhSachPhieuThue.Rows[row].Cells["DayStart"].Value;
 
             dtpkNgayBatDauThue.Value = dateStart;
-            foreach (dynamic item in cmbTenPhong.Items)
-            {
-                if (item.Name == RoomName)
-                {
-                    cmbTenPhong.SelectedItem = item;
-                    break;
-                }
-            }
+            cmbTenPhong.Text = RoomName;
+            //foreach (dynamic item in cmbTenPhong.Items)
+            //{
+            //    if (item.Name == RoomName)
+            //    {
+            //        cmbTenPhong.SelectedItem = item;
+            //        break;
+            //    }
+            //}
             //cmbTenPhong.SelectedIndex = cmbTenPhong.Items.IndexOf(roomController.findRoom(RoomName));
         }
 
@@ -139,6 +166,8 @@ namespace Hotel_Management
             }
             dgvDanhSachPhieuThue.DataSource = rentalController
                 .findRental(ID, txtTimTenKH.Text, txtTimTenPhong.Text);
+
+            addBinding();
         }
 
         private void KeyPress(object sender, KeyPressEventArgs e)

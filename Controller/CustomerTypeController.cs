@@ -12,27 +12,23 @@ namespace Hotel_Management.Controller
         public dynamic getAll()
         {
             var data = from c in entities.LOAIKHACHes
-                       select new { 
-                       ID = c.MALOAIKHACH,
-                       Name = c.TENLOAIKHACH
+                       select new
+                       {
+                           ID = c.MALOAIKHACH,
+                           Name = c.TENLOAIKHACH
                        };
 
             return data.ToList();
         }
-        public void insertCustomerType(LOAIKHACH lk, KHACHHANG kh)
+        public void insertCustomerType(LOAIKHACH lk)
         {
             entities.LOAIKHACHes.Add(lk);
-            entities.SaveChanges();
-            kh.MALOAIKHACH = lk.MALOAIKHACH;
-            entities.KHACHHANGs.Add(kh);
             entities.SaveChanges();
         }
         public void updateCustomerType(LOAIKHACH lk)
         {
-            LOAIKHACH k = entities.LOAIKHACHes.Find(lk.MALOAIKHACH);
-            k.MALOAIKHACH = lk.MALOAIKHACH;
-            k.TENLOAIKHACH = lk.TENLOAIKHACH; 
-            //MessageBox.Show("Here");
+            LOAIKHACH l = entities.LOAIKHACHes.Find(lk.MALOAIKHACH);
+            l.TENLOAIKHACH = lk.TENLOAIKHACH;
             entities.SaveChanges();
         }
         public void deleteCustomer(int ID)

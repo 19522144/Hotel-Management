@@ -63,6 +63,12 @@ namespace Hotel_Management
         }
         private void btnThemPhong_Click(object sender, EventArgs e)
         {
+            if (txbTenPhong.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             PHONG p = new PHONG()
             {
                 TENPHONG = txbTenPhong.Text,
@@ -83,6 +89,12 @@ namespace Hotel_Management
 
         private void btnCapNhatPhong_Click(object sender, EventArgs e)
         {
+            if (txbTenPhong.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             PHONG p = new PHONG()
             {
                 MAPHONG=Int32.Parse(txbMaPhong.Text),

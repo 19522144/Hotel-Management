@@ -29,10 +29,12 @@ namespace Hotel_Management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyPhieuThue));
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.txtTimTenKH = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -41,7 +43,7 @@ namespace Hotel_Management
             this.txtTimMaPhieuThue = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelRental = new System.Windows.Forms.Panel();
             this.cmbTenPhong = new System.Windows.Forms.ComboBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -67,9 +69,8 @@ namespace Hotel_Management
             this.btnDong = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelRental.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuThue)).BeginInit();
             this.panel3.SuspendLayout();
@@ -122,6 +123,16 @@ namespace Hotel_Management
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(341, 186);
             this.panel4.TabIndex = 19;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(20, 138);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(99, 25);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Tải lại";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // txtTimTenKH
             // 
@@ -193,33 +204,31 @@ namespace Hotel_Management
             this.label3.TabIndex = 16;
             this.label3.Text = "Thông tin chung";
             // 
-            // panel2
+            // panelRental
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-
-            this.panel2.Controls.Add(this.cmbTenPhong);
-            this.panel2.Controls.Add(this.txtDiaChi);
-            this.panel2.Controls.Add(this.label17);
-
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.txtCMND);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.txtTenKhachHang);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.txtMaKhachHang);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.txtMaPhieuThue);
-            this.panel2.Controls.Add(this.dtpkNgayBatDauThue);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(21, 255);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(341, 322);
-            this.panel2.TabIndex = 17;
+            this.panelRental.BackColor = System.Drawing.SystemColors.Menu;
+            this.panelRental.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRental.Controls.Add(this.cmbTenPhong);
+            this.panelRental.Controls.Add(this.txtDiaChi);
+            this.panelRental.Controls.Add(this.label17);
+            this.panelRental.Controls.Add(this.label16);
+            this.panelRental.Controls.Add(this.txtCMND);
+            this.panelRental.Controls.Add(this.label15);
+            this.panelRental.Controls.Add(this.txtTenKhachHang);
+            this.panelRental.Controls.Add(this.label14);
+            this.panelRental.Controls.Add(this.txtMaKhachHang);
+            this.panelRental.Controls.Add(this.label13);
+            this.panelRental.Controls.Add(this.txtMaPhieuThue);
+            this.panelRental.Controls.Add(this.dtpkNgayBatDauThue);
+            this.panelRental.Controls.Add(this.label6);
+            this.panelRental.Controls.Add(this.label4);
+            this.panelRental.Controls.Add(this.label2);
+            this.panelRental.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelRental.Location = new System.Drawing.Point(21, 255);
+            this.panelRental.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.panelRental.Name = "panelRental";
+            this.panelRental.Size = new System.Drawing.Size(341, 322);
+            this.panelRental.TabIndex = 17;
             // 
             // cmbTenPhong
             // 
@@ -245,8 +254,6 @@ namespace Hotel_Management
             this.label17.TabIndex = 21;
             this.label17.Text = "Địa chỉ:";
             // 
-
-
             // label16
             // 
             this.label16.AutoSize = true;
@@ -260,9 +267,7 @@ namespace Hotel_Management
             // 
             this.txtCMND.Location = new System.Drawing.Point(179, 187);
             this.txtCMND.Name = "txtCMND";
-
             this.txtCMND.Size = new System.Drawing.Size(140, 23);
-
             this.txtCMND.TabIndex = 18;
             this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
@@ -279,9 +284,7 @@ namespace Hotel_Management
             // 
             this.txtTenKhachHang.Location = new System.Drawing.Point(179, 146);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-
             this.txtTenKhachHang.Size = new System.Drawing.Size(140, 23);
-
             this.txtTenKhachHang.TabIndex = 16;
             // 
             // label14
@@ -298,7 +301,6 @@ namespace Hotel_Management
             this.txtMaKhachHang.Location = new System.Drawing.Point(179, 105);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
             this.txtMaKhachHang.ReadOnly = true;
-
             this.txtMaKhachHang.Size = new System.Drawing.Size(140, 23);
             this.txtMaKhachHang.TabIndex = 14;
             // 
@@ -311,16 +313,12 @@ namespace Hotel_Management
             this.label13.TabIndex = 13;
             this.label13.Text = "Mã khách hàng:";
             // 
-
-
             // txtMaPhieuThue
             // 
             this.txtMaPhieuThue.Location = new System.Drawing.Point(179, 24);
             this.txtMaPhieuThue.Name = "txtMaPhieuThue";
             this.txtMaPhieuThue.ReadOnly = true;
-
             this.txtMaPhieuThue.Size = new System.Drawing.Size(140, 23);
-
             this.txtMaPhieuThue.TabIndex = 11;
             // 
             // dtpkNgayBatDauThue
@@ -472,24 +470,12 @@ namespace Hotel_Management
             this.btnCapNhat.UseVisualStyleBackColor = true;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(20, 138);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(99, 25);
-            this.btnReset.TabIndex = 6;
-            this.btnReset.Text = "Tải lại";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // fQuanLyPhieuThue
             // 
             this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(1291, 734);
-
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label9);
@@ -497,16 +483,18 @@ namespace Hotel_Management
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelRental);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "fQuanLyPhieuThue";
-            this.ShowInTaskbar = false;
             this.Text = "fQuanLyPhieuThue";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelRental.ResumeLayout(false);
+            this.panelRental.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuThue)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -529,7 +517,7 @@ namespace Hotel_Management
         private System.Windows.Forms.TextBox txtTimMaPhieuThue;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelRental;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.Label label15;
