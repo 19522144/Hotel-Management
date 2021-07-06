@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fManageStaff));
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
-            this.imgAvatar = new System.Windows.Forms.PictureBox();
+            this.picAvatar = new System.Windows.Forms.PictureBox();
             this.lbName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbAccessRights = new System.Windows.Forms.ComboBox();
+            this.cmbAccessRights = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -42,17 +42,19 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvData
             // 
+            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Location = new System.Drawing.Point(346, 101);
             this.dgvData.Name = "dgvData";
             this.dgvData.Size = new System.Drawing.Size(307, 362);
             this.dgvData.TabIndex = 0;
+            this.dgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellClick);
             // 
             // label13
             // 
@@ -64,24 +66,26 @@
             this.label13.TabIndex = 7;
             this.label13.Text = "Quản lý nhân viên";
             // 
-            // imgAvatar
+            // picAvatar
             // 
-            this.imgAvatar.Image = global::Hotel_Management.Properties.Resources.avatar;
-            this.imgAvatar.Location = new System.Drawing.Point(105, 101);
-            this.imgAvatar.Name = "imgAvatar";
-            this.imgAvatar.Size = new System.Drawing.Size(100, 100);
-            this.imgAvatar.TabIndex = 8;
-            this.imgAvatar.TabStop = false;
+            this.picAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picAvatar.Image = global::Hotel_Management.Properties.Resources.avatar;
+            this.picAvatar.Location = new System.Drawing.Point(105, 101);
+            this.picAvatar.Name = "picAvatar";
+            this.picAvatar.Size = new System.Drawing.Size(100, 100);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAvatar.TabIndex = 8;
+            this.picAvatar.TabStop = false;
             // 
             // lbName
             // 
-            this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(79, 214);
+            this.lbName.Location = new System.Drawing.Point(19, 214);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(149, 25);
+            this.lbName.Size = new System.Drawing.Size(282, 25);
             this.lbName.TabIndex = 9;
             this.lbName.Text = "Tên người dùng";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -93,13 +97,13 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Quyền truy cập";
             // 
-            // cbAccessRights
+            // cmbAccessRights
             // 
-            this.cbAccessRights.FormattingEnabled = true;
-            this.cbAccessRights.Location = new System.Drawing.Point(94, 281);
-            this.cbAccessRights.Name = "cbAccessRights";
-            this.cbAccessRights.Size = new System.Drawing.Size(121, 21);
-            this.cbAccessRights.TabIndex = 11;
+            this.cmbAccessRights.FormattingEnabled = true;
+            this.cmbAccessRights.Location = new System.Drawing.Point(94, 281);
+            this.cmbAccessRights.Name = "cmbAccessRights";
+            this.cmbAccessRights.Size = new System.Drawing.Size(121, 21);
+            this.cmbAccessRights.TabIndex = 11;
             // 
             // groupBox1
             // 
@@ -134,6 +138,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Xóa nhân viên";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -144,6 +149,7 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -154,6 +160,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm nhân viên";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnReset
             // 
@@ -172,10 +179,10 @@
             this.ClientSize = new System.Drawing.Size(676, 484);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cbAccessRights);
+            this.Controls.Add(this.cmbAccessRights);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbName);
-            this.Controls.Add(this.imgAvatar);
+            this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dgvData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -184,7 +191,7 @@
             this.Name = "fManageStaff";
             this.Text = "fManageStaff";
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,10 +202,10 @@
 
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox imgAvatar;
+        private System.Windows.Forms.PictureBox picAvatar;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbAccessRights;
+        private System.Windows.Forms.ComboBox cmbAccessRights;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDelete;

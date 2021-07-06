@@ -19,7 +19,7 @@ namespace Hotel_Management.Controller
                            RoomType = c.LOAIPHONG.TENLOAIPHONG,
                            Price = c.LOAIPHONG.DONGIA,
                            Status = c.TINHTRANG,
-                           Note = c.GHICHU
+                           Note = c.GHICHU,
                        };
             return data.ToList();
         }

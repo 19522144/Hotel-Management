@@ -27,6 +27,8 @@ namespace Hotel_Management
         public string QUOCTICH { get; set; }
         public string CMND { get; set; }
         public string DIACHI { get; set; }
+        public Nullable<System.DateTime> NGAYSINH { get; set; }
+        public string GIOITINH { get; set; }
         public Nullable<int> MALOAIKHACH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

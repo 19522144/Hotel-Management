@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="KHACHSANModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QUANLIKHACHSANModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CHITIETHOADON">
           <Key>
             <PropertyRef Name="MACHITIETHOADON" />
@@ -15,6 +15,7 @@
           <Property Name="THANHTIEN" Type="money" Nullable="false" />
           <Property Name="MAHOADON" Type="int" />
           <Property Name="MAPHONG" Type="int" />
+          <Property Name="MAPHIEUTHUE" Type="int" />
         </EntityType>
         <EntityType Name="CHITIETPHIEUTHUE">
           <Key>
@@ -43,6 +44,8 @@
           <Property Name="QUOCTICH" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CMND" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DIACHI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NGAYSINH" Type="date" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="10" />
           <Property Name="MALOAIKHACH" Type="int" />
         </EntityType>
         <EntityType Name="LOAIKHACH">
@@ -59,6 +62,7 @@
           <Property Name="MALOAIPHONG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENLOAIPHONG" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DONGIA" Type="money" Nullable="false" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="NGUOIDUNG">
           <Key>
@@ -78,6 +82,7 @@
           <Property Name="MAPHIEUTHUE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NGAYBDTHUE" Type="date" Nullable="false" />
           <Property Name="MAPHONG" Type="int" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="PHONG">
           <Key>
@@ -97,7 +102,7 @@
           <Property Name="PHUTHU" Type="money" Nullable="false" />
           <Property Name="HESOKHNUOCNGOAI" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__CHITIETHO__MAHOA__45F365D3">
+        <Association Name="FK__CHITIETHO__MAHOA__4D94879B">
           <End Role="HOADON" Type="Self.HOADON" Multiplicity="0..1" />
           <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -109,7 +114,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETHO__MAPHO__46E78A0C">
+        <Association Name="FK__CHITIETHO__MAPHI__4F7CD00D">
+          <End Role="PHIEUTHUE" Type="Self.PHIEUTHUE" Multiplicity="0..1" />
+          <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUTHUE">
+              <PropertyRef Name="MAPHIEUTHUE" />
+            </Principal>
+            <Dependent Role="CHITIETHOADON">
+              <PropertyRef Name="MAPHIEUTHUE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIETHO__MAPHO__4E88ABD4">
           <End Role="PHONG" Type="Self.PHONG" Multiplicity="0..1" />
           <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -121,7 +138,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETPH__MAKHA__4CA06362">
+        <Association Name="FK__CHITIETPH__MAKHA__46E78A0C">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="CHITIETPHIEUTHUE" Type="Self.CHITIETPHIEUTHUE" Multiplicity="*" />
           <ReferentialConstraint>
@@ -133,7 +150,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETPH__MAPHI__4D94879B">
+        <Association Name="FK__CHITIETPH__MAPHI__47DBAE45">
           <End Role="PHIEUTHUE" Type="Self.PHIEUTHUE" Multiplicity="0..1" />
           <End Role="CHITIETPHIEUTHUE" Type="Self.CHITIETPHIEUTHUE" Multiplicity="*" />
           <ReferentialConstraint>
@@ -145,7 +162,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HOADON__MAKHACHH__4316F928">
+        <Association Name="FK__HOADON__MAKHACHH__4AB81AF0">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -157,7 +174,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__KHACHHANG__MALOA__403A8C7D">
+        <Association Name="FK__KHACHHANG__MALOA__412EB0B6">
           <End Role="LOAIKHACH" Type="Self.LOAIKHACH" Multiplicity="0..1" />
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -169,7 +186,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUTHUE__MAPHO__49C3F6B7">
+        <Association Name="FK__PHIEUTHUE__MAPHO__440B1D61">
           <End Role="PHONG" Type="Self.PHONG" Multiplicity="0..1" />
           <End Role="PHIEUTHUE" Type="Self.PHIEUTHUE" Multiplicity="*" />
           <ReferentialConstraint>
@@ -181,7 +198,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHONG__MALOAIPHO__3D5E1FD2">
+        <Association Name="FK__PHONG__MALOAIPHO__3C69FB99">
           <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="0..1" />
           <End Role="PHONG" Type="Self.PHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -193,7 +210,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="KHACHSANModelStoreContainer">
+        <EntityContainer Name="QUANLIKHACHSANModelStoreContainer">
           <EntitySet Name="CHITIETHOADON" EntityType="Self.CHITIETHOADON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHITIETPHIEUTHUE" EntityType="Self.CHITIETPHIEUTHUE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
@@ -204,35 +221,39 @@
           <EntitySet Name="PHIEUTHUE" EntityType="Self.PHIEUTHUE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHONG" EntityType="Self.PHONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__CHITIETHO__MAHOA__45F365D3" Association="Self.FK__CHITIETHO__MAHOA__45F365D3">
+          <AssociationSet Name="FK__CHITIETHO__MAHOA__4D94879B" Association="Self.FK__CHITIETHO__MAHOA__4D94879B">
             <End Role="HOADON" EntitySet="HOADON" />
             <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETHO__MAPHO__46E78A0C" Association="Self.FK__CHITIETHO__MAPHO__46E78A0C">
+          <AssociationSet Name="FK__CHITIETHO__MAPHI__4F7CD00D" Association="Self.FK__CHITIETHO__MAPHI__4F7CD00D">
+            <End Role="PHIEUTHUE" EntitySet="PHIEUTHUE" />
+            <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIETHO__MAPHO__4E88ABD4" Association="Self.FK__CHITIETHO__MAPHO__4E88ABD4">
             <End Role="PHONG" EntitySet="PHONG" />
             <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETPH__MAKHA__4CA06362" Association="Self.FK__CHITIETPH__MAKHA__4CA06362">
+          <AssociationSet Name="FK__CHITIETPH__MAKHA__46E78A0C" Association="Self.FK__CHITIETPH__MAKHA__46E78A0C">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="CHITIETPHIEUTHUE" EntitySet="CHITIETPHIEUTHUE" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETPH__MAPHI__4D94879B" Association="Self.FK__CHITIETPH__MAPHI__4D94879B">
+          <AssociationSet Name="FK__CHITIETPH__MAPHI__47DBAE45" Association="Self.FK__CHITIETPH__MAPHI__47DBAE45">
             <End Role="PHIEUTHUE" EntitySet="PHIEUTHUE" />
             <End Role="CHITIETPHIEUTHUE" EntitySet="CHITIETPHIEUTHUE" />
           </AssociationSet>
-          <AssociationSet Name="FK__HOADON__MAKHACHH__4316F928" Association="Self.FK__HOADON__MAKHACHH__4316F928">
+          <AssociationSet Name="FK__HOADON__MAKHACHH__4AB81AF0" Association="Self.FK__HOADON__MAKHACHH__4AB81AF0">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="HOADON" EntitySet="HOADON" />
           </AssociationSet>
-          <AssociationSet Name="FK__KHACHHANG__MALOA__403A8C7D" Association="Self.FK__KHACHHANG__MALOA__403A8C7D">
+          <AssociationSet Name="FK__KHACHHANG__MALOA__412EB0B6" Association="Self.FK__KHACHHANG__MALOA__412EB0B6">
             <End Role="LOAIKHACH" EntitySet="LOAIKHACH" />
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUTHUE__MAPHO__49C3F6B7" Association="Self.FK__PHIEUTHUE__MAPHO__49C3F6B7">
+          <AssociationSet Name="FK__PHIEUTHUE__MAPHO__440B1D61" Association="Self.FK__PHIEUTHUE__MAPHO__440B1D61">
             <End Role="PHONG" EntitySet="PHONG" />
             <End Role="PHIEUTHUE" EntitySet="PHIEUTHUE" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHONG__MALOAIPHO__3D5E1FD2" Association="Self.FK__PHONG__MALOAIPHO__3D5E1FD2">
+          <AssociationSet Name="FK__PHONG__MALOAIPHO__3C69FB99" Association="Self.FK__PHONG__MALOAIPHO__3C69FB99">
             <End Role="LOAIPHONG" EntitySet="LOAIPHONG" />
             <End Role="PHONG" EntitySet="PHONG" />
           </AssociationSet>
@@ -241,7 +262,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="KHACHSANModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="QUANLIKHACHSANModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CHITIETHOADON">
           <Key>
             <PropertyRef Name="MACHITIETHOADON" />
@@ -252,8 +273,10 @@
           <Property Name="THANHTIEN" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="MAHOADON" Type="Int32" />
           <Property Name="MAPHONG" Type="Int32" />
-          <NavigationProperty Name="HOADON" Relationship="Self.FK__CHITIETHO__MAHOA__45F365D3" FromRole="CHITIETHOADON" ToRole="HOADON" />
-          <NavigationProperty Name="PHONG" Relationship="Self.FK__CHITIETHO__MAPHO__46E78A0C" FromRole="CHITIETHOADON" ToRole="PHONG" />
+          <Property Name="MAPHIEUTHUE" Type="Int32" />
+          <NavigationProperty Name="HOADON" Relationship="Self.FK__CHITIETHO__MAHOA__4D94879B" FromRole="CHITIETHOADON" ToRole="HOADON" />
+          <NavigationProperty Name="PHIEUTHUE" Relationship="Self.FK__CHITIETHO__MAPHI__4F7CD00D" FromRole="CHITIETHOADON" ToRole="PHIEUTHUE" />
+          <NavigationProperty Name="PHONG" Relationship="Self.FK__CHITIETHO__MAPHO__4E88ABD4" FromRole="CHITIETHOADON" ToRole="PHONG" />
         </EntityType>
         <EntityType Name="CHITIETPHIEUTHUE">
           <Key>
@@ -262,8 +285,8 @@
           <Property Name="MACTPHIEUTHUE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MAKHACHHANG" Type="Int32" />
           <Property Name="MAPHIEUTHUE" Type="Int32" />
-          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__CHITIETPH__MAKHA__4CA06362" FromRole="CHITIETPHIEUTHUE" ToRole="KHACHHANG" />
-          <NavigationProperty Name="PHIEUTHUE" Relationship="Self.FK__CHITIETPH__MAPHI__4D94879B" FromRole="CHITIETPHIEUTHUE" ToRole="PHIEUTHUE" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__CHITIETPH__MAKHA__46E78A0C" FromRole="CHITIETPHIEUTHUE" ToRole="KHACHHANG" />
+          <NavigationProperty Name="PHIEUTHUE" Relationship="Self.FK__CHITIETPH__MAPHI__47DBAE45" FromRole="CHITIETPHIEUTHUE" ToRole="PHIEUTHUE" />
         </EntityType>
         <EntityType Name="HOADON">
           <Key>
@@ -273,8 +296,8 @@
           <Property Name="NGAYTHANHTOAN" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TRIGIA" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="MAKHACHHANG" Type="Int32" />
-          <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.FK__CHITIETHO__MAHOA__45F365D3" FromRole="HOADON" ToRole="CHITIETHOADON" />
-          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__HOADON__MAKHACHH__4316F928" FromRole="HOADON" ToRole="KHACHHANG" />
+          <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.FK__CHITIETHO__MAHOA__4D94879B" FromRole="HOADON" ToRole="CHITIETHOADON" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__HOADON__MAKHACHH__4AB81AF0" FromRole="HOADON" ToRole="KHACHHANG" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -286,10 +309,12 @@
           <Property Name="QUOCTICH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+          <Property Name="GIOITINH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="MALOAIKHACH" Type="Int32" />
-          <NavigationProperty Name="CHITIETPHIEUTHUEs" Relationship="Self.FK__CHITIETPH__MAKHA__4CA06362" FromRole="KHACHHANG" ToRole="CHITIETPHIEUTHUE" />
-          <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__MAKHACHH__4316F928" FromRole="KHACHHANG" ToRole="HOADON" />
-          <NavigationProperty Name="LOAIKHACH" Relationship="Self.FK__KHACHHANG__MALOA__403A8C7D" FromRole="KHACHHANG" ToRole="LOAIKHACH" />
+          <NavigationProperty Name="CHITIETPHIEUTHUEs" Relationship="Self.FK__CHITIETPH__MAKHA__46E78A0C" FromRole="KHACHHANG" ToRole="CHITIETPHIEUTHUE" />
+          <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__MAKHACHH__4AB81AF0" FromRole="KHACHHANG" ToRole="HOADON" />
+          <NavigationProperty Name="LOAIKHACH" Relationship="Self.FK__KHACHHANG__MALOA__412EB0B6" FromRole="KHACHHANG" ToRole="LOAIKHACH" />
         </EntityType>
         <EntityType Name="LOAIKHACH">
           <Key>
@@ -297,7 +322,7 @@
           </Key>
           <Property Name="MALOAIKHACH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENLOAIKHACH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="KHACHHANGs" Relationship="Self.FK__KHACHHANG__MALOA__403A8C7D" FromRole="LOAIKHACH" ToRole="KHACHHANG" />
+          <NavigationProperty Name="KHACHHANGs" Relationship="Self.FK__KHACHHANG__MALOA__412EB0B6" FromRole="LOAIKHACH" ToRole="KHACHHANG" />
         </EntityType>
         <EntityType Name="LOAIPHONG">
           <Key>
@@ -306,7 +331,8 @@
           <Property Name="MALOAIPHONG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENLOAIPHONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DONGIA" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="PHONGs" Relationship="Self.FK__PHONG__MALOAIPHO__3D5E1FD2" FromRole="LOAIPHONG" ToRole="PHONG" />
+          <Property Name="GHICHU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHONGs" Relationship="Self.FK__PHONG__MALOAIPHO__3C69FB99" FromRole="LOAIPHONG" ToRole="PHONG" />
         </EntityType>
         <EntityType Name="NGUOIDUNG">
           <Key>
@@ -326,8 +352,10 @@
           <Property Name="MAPHIEUTHUE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NGAYBDTHUE" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MAPHONG" Type="Int32" />
-          <NavigationProperty Name="CHITIETPHIEUTHUEs" Relationship="Self.FK__CHITIETPH__MAPHI__4D94879B" FromRole="PHIEUTHUE" ToRole="CHITIETPHIEUTHUE" />
-          <NavigationProperty Name="PHONG" Relationship="Self.FK__PHIEUTHUE__MAPHO__49C3F6B7" FromRole="PHIEUTHUE" ToRole="PHONG" />
+          <Property Name="GHICHU" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.FK__CHITIETHO__MAPHI__4F7CD00D" FromRole="PHIEUTHUE" ToRole="CHITIETHOADON" />
+          <NavigationProperty Name="CHITIETPHIEUTHUEs" Relationship="Self.FK__CHITIETPH__MAPHI__47DBAE45" FromRole="PHIEUTHUE" ToRole="CHITIETPHIEUTHUE" />
+          <NavigationProperty Name="PHONG" Relationship="Self.FK__PHIEUTHUE__MAPHO__440B1D61" FromRole="PHIEUTHUE" ToRole="PHONG" />
         </EntityType>
         <EntityType Name="PHONG">
           <Key>
@@ -338,9 +366,9 @@
           <Property Name="GHICHU" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TINHTRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MALOAIPHONG" Type="Int32" />
-          <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.FK__CHITIETHO__MAPHO__46E78A0C" FromRole="PHONG" ToRole="CHITIETHOADON" />
-          <NavigationProperty Name="LOAIPHONG" Relationship="Self.FK__PHONG__MALOAIPHO__3D5E1FD2" FromRole="PHONG" ToRole="LOAIPHONG" />
-          <NavigationProperty Name="PHIEUTHUEs" Relationship="Self.FK__PHIEUTHUE__MAPHO__49C3F6B7" FromRole="PHONG" ToRole="PHIEUTHUE" />
+          <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.FK__CHITIETHO__MAPHO__4E88ABD4" FromRole="PHONG" ToRole="CHITIETHOADON" />
+          <NavigationProperty Name="LOAIPHONG" Relationship="Self.FK__PHONG__MALOAIPHO__3C69FB99" FromRole="PHONG" ToRole="LOAIPHONG" />
+          <NavigationProperty Name="PHIEUTHUEs" Relationship="Self.FK__PHIEUTHUE__MAPHO__440B1D61" FromRole="PHONG" ToRole="PHIEUTHUE" />
         </EntityType>
         <EntityType Name="THAMSO">
           <Key>
@@ -350,7 +378,7 @@
           <Property Name="PHUTHU" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="HESOKHNUOCNGOAI" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="FK__CHITIETHO__MAHOA__45F365D3">
+        <Association Name="FK__CHITIETHO__MAHOA__4D94879B">
           <End Role="HOADON" Type="Self.HOADON" Multiplicity="0..1" />
           <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -362,7 +390,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETHO__MAPHO__46E78A0C">
+        <Association Name="FK__CHITIETHO__MAPHI__4F7CD00D">
+          <End Role="PHIEUTHUE" Type="Self.PHIEUTHUE" Multiplicity="0..1" />
+          <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUTHUE">
+              <PropertyRef Name="MAPHIEUTHUE" />
+            </Principal>
+            <Dependent Role="CHITIETHOADON">
+              <PropertyRef Name="MAPHIEUTHUE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIETHO__MAPHO__4E88ABD4">
           <End Role="PHONG" Type="Self.PHONG" Multiplicity="0..1" />
           <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -374,7 +414,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETPH__MAKHA__4CA06362">
+        <Association Name="FK__CHITIETPH__MAKHA__46E78A0C">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="CHITIETPHIEUTHUE" Type="Self.CHITIETPHIEUTHUE" Multiplicity="*" />
           <ReferentialConstraint>
@@ -386,7 +426,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETPH__MAPHI__4D94879B">
+        <Association Name="FK__CHITIETPH__MAPHI__47DBAE45">
           <End Role="PHIEUTHUE" Type="Self.PHIEUTHUE" Multiplicity="0..1" />
           <End Role="CHITIETPHIEUTHUE" Type="Self.CHITIETPHIEUTHUE" Multiplicity="*" />
           <ReferentialConstraint>
@@ -398,7 +438,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HOADON__MAKHACHH__4316F928">
+        <Association Name="FK__HOADON__MAKHACHH__4AB81AF0">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -410,7 +450,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__KHACHHANG__MALOA__403A8C7D">
+        <Association Name="FK__KHACHHANG__MALOA__412EB0B6">
           <End Role="LOAIKHACH" Type="Self.LOAIKHACH" Multiplicity="0..1" />
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -422,7 +462,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHONG__MALOAIPHO__3D5E1FD2">
+        <Association Name="FK__PHONG__MALOAIPHO__3C69FB99">
           <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="0..1" />
           <End Role="PHONG" Type="Self.PHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -434,7 +474,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUTHUE__MAPHO__49C3F6B7">
+        <Association Name="FK__PHIEUTHUE__MAPHO__440B1D61">
           <End Role="PHONG" Type="Self.PHONG" Multiplicity="0..1" />
           <End Role="PHIEUTHUE" Type="Self.PHIEUTHUE" Multiplicity="*" />
           <ReferentialConstraint>
@@ -457,35 +497,39 @@
           <EntitySet Name="PHIEUTHUEs" EntityType="Self.PHIEUTHUE" />
           <EntitySet Name="PHONGs" EntityType="Self.PHONG" />
           <EntitySet Name="THAMSOes" EntityType="Self.THAMSO" />
-          <AssociationSet Name="FK__CHITIETHO__MAHOA__45F365D3" Association="Self.FK__CHITIETHO__MAHOA__45F365D3">
+          <AssociationSet Name="FK__CHITIETHO__MAHOA__4D94879B" Association="Self.FK__CHITIETHO__MAHOA__4D94879B">
             <End Role="HOADON" EntitySet="HOADONs" />
             <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETHO__MAPHO__46E78A0C" Association="Self.FK__CHITIETHO__MAPHO__46E78A0C">
+          <AssociationSet Name="FK__CHITIETHO__MAPHI__4F7CD00D" Association="Self.FK__CHITIETHO__MAPHI__4F7CD00D">
+            <End Role="PHIEUTHUE" EntitySet="PHIEUTHUEs" />
+            <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIETHO__MAPHO__4E88ABD4" Association="Self.FK__CHITIETHO__MAPHO__4E88ABD4">
             <End Role="PHONG" EntitySet="PHONGs" />
             <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETPH__MAKHA__4CA06362" Association="Self.FK__CHITIETPH__MAKHA__4CA06362">
+          <AssociationSet Name="FK__CHITIETPH__MAKHA__46E78A0C" Association="Self.FK__CHITIETPH__MAKHA__46E78A0C">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
             <End Role="CHITIETPHIEUTHUE" EntitySet="CHITIETPHIEUTHUEs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETPH__MAPHI__4D94879B" Association="Self.FK__CHITIETPH__MAPHI__4D94879B">
+          <AssociationSet Name="FK__CHITIETPH__MAPHI__47DBAE45" Association="Self.FK__CHITIETPH__MAPHI__47DBAE45">
             <End Role="PHIEUTHUE" EntitySet="PHIEUTHUEs" />
             <End Role="CHITIETPHIEUTHUE" EntitySet="CHITIETPHIEUTHUEs" />
           </AssociationSet>
-          <AssociationSet Name="FK__HOADON__MAKHACHH__4316F928" Association="Self.FK__HOADON__MAKHACHH__4316F928">
+          <AssociationSet Name="FK__HOADON__MAKHACHH__4AB81AF0" Association="Self.FK__HOADON__MAKHACHH__4AB81AF0">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
             <End Role="HOADON" EntitySet="HOADONs" />
           </AssociationSet>
-          <AssociationSet Name="FK__KHACHHANG__MALOA__403A8C7D" Association="Self.FK__KHACHHANG__MALOA__403A8C7D">
+          <AssociationSet Name="FK__KHACHHANG__MALOA__412EB0B6" Association="Self.FK__KHACHHANG__MALOA__412EB0B6">
             <End Role="LOAIKHACH" EntitySet="LOAIKHACHes" />
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHONG__MALOAIPHO__3D5E1FD2" Association="Self.FK__PHONG__MALOAIPHO__3D5E1FD2">
+          <AssociationSet Name="FK__PHONG__MALOAIPHO__3C69FB99" Association="Self.FK__PHONG__MALOAIPHO__3C69FB99">
             <End Role="LOAIPHONG" EntitySet="LOAIPHONGs" />
             <End Role="PHONG" EntitySet="PHONGs" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUTHUE__MAPHO__49C3F6B7" Association="Self.FK__PHIEUTHUE__MAPHO__49C3F6B7">
+          <AssociationSet Name="FK__PHIEUTHUE__MAPHO__440B1D61" Association="Self.FK__PHIEUTHUE__MAPHO__440B1D61">
             <End Role="PHONG" EntitySet="PHONGs" />
             <End Role="PHIEUTHUE" EntitySet="PHIEUTHUEs" />
           </AssociationSet>
@@ -495,9 +539,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="KHACHSANModelStoreContainer" CdmEntityContainer="KHACHSANEntities">
+        <EntityContainerMapping StorageEntityContainer="QUANLIKHACHSANModelStoreContainer" CdmEntityContainer="KHACHSANEntities">
           <EntitySetMapping Name="CHITIETHOADONs">
-            <EntityTypeMapping TypeName="KHACHSANModel.CHITIETHOADON">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.CHITIETHOADON">
               <MappingFragment StoreEntitySet="CHITIETHOADON">
                 <ScalarProperty Name="MACHITIETHOADON" ColumnName="MACHITIETHOADON" />
                 <ScalarProperty Name="SONGAYTHUE" ColumnName="SONGAYTHUE" />
@@ -505,11 +549,12 @@
                 <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
                 <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
                 <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+                <ScalarProperty Name="MAPHIEUTHUE" ColumnName="MAPHIEUTHUE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CHITIETPHIEUTHUEs">
-            <EntityTypeMapping TypeName="KHACHSANModel.CHITIETPHIEUTHUE">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.CHITIETPHIEUTHUE">
               <MappingFragment StoreEntitySet="CHITIETPHIEUTHUE">
                 <ScalarProperty Name="MACTPHIEUTHUE" ColumnName="MACTPHIEUTHUE" />
                 <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
@@ -518,7 +563,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HOADONs">
-            <EntityTypeMapping TypeName="KHACHSANModel.HOADON">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.HOADON">
               <MappingFragment StoreEntitySet="HOADON">
                 <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
                 <ScalarProperty Name="NGAYTHANHTOAN" ColumnName="NGAYTHANHTOAN" />
@@ -528,7 +573,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KHACHHANGs">
-            <EntityTypeMapping TypeName="KHACHSANModel.KHACHHANG">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.KHACHHANG">
               <MappingFragment StoreEntitySet="KHACHHANG">
                 <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
                 <ScalarProperty Name="TENKHACHHANG" ColumnName="TENKHACHHANG" />
@@ -536,12 +581,14 @@
                 <ScalarProperty Name="QUOCTICH" ColumnName="QUOCTICH" />
                 <ScalarProperty Name="CMND" ColumnName="CMND" />
                 <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
                 <ScalarProperty Name="MALOAIKHACH" ColumnName="MALOAIKHACH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOAIKHACHes">
-            <EntityTypeMapping TypeName="KHACHSANModel.LOAIKHACH">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.LOAIKHACH">
               <MappingFragment StoreEntitySet="LOAIKHACH">
                 <ScalarProperty Name="MALOAIKHACH" ColumnName="MALOAIKHACH" />
                 <ScalarProperty Name="TENLOAIKHACH" ColumnName="TENLOAIKHACH" />
@@ -549,16 +596,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOAIPHONGs">
-            <EntityTypeMapping TypeName="KHACHSANModel.LOAIPHONG">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.LOAIPHONG">
               <MappingFragment StoreEntitySet="LOAIPHONG">
                 <ScalarProperty Name="MALOAIPHONG" ColumnName="MALOAIPHONG" />
                 <ScalarProperty Name="TENLOAIPHONG" ColumnName="TENLOAIPHONG" />
                 <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NGUOIDUNGs">
-            <EntityTypeMapping TypeName="KHACHSANModel.NGUOIDUNG">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.NGUOIDUNG">
               <MappingFragment StoreEntitySet="NGUOIDUNG">
                 <ScalarProperty Name="MANGUOIDUNG" ColumnName="MANGUOIDUNG" />
                 <ScalarProperty Name="TENNGUOIDUNG" ColumnName="TENNGUOIDUNG" />
@@ -570,16 +618,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHIEUTHUEs">
-            <EntityTypeMapping TypeName="KHACHSANModel.PHIEUTHUE">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.PHIEUTHUE">
               <MappingFragment StoreEntitySet="PHIEUTHUE">
                 <ScalarProperty Name="MAPHIEUTHUE" ColumnName="MAPHIEUTHUE" />
                 <ScalarProperty Name="NGAYBDTHUE" ColumnName="NGAYBDTHUE" />
                 <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHONGs">
-            <EntityTypeMapping TypeName="KHACHSANModel.PHONG">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.PHONG">
               <MappingFragment StoreEntitySet="PHONG">
                 <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
                 <ScalarProperty Name="TENPHONG" ColumnName="TENPHONG" />
@@ -590,7 +639,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="THAMSOes">
-            <EntityTypeMapping TypeName="KHACHSANModel.THAMSO">
+            <EntityTypeMapping TypeName="QUANLIKHACHSANModel.THAMSO">
               <MappingFragment StoreEntitySet="THAMSO">
                 <ScalarProperty Name="SOKHTOIDA1PHONG" ColumnName="SOKHTOIDA1PHONG" />
                 <ScalarProperty Name="PHUTHU" ColumnName="PHUTHU" />

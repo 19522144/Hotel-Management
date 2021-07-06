@@ -20,8 +20,10 @@ namespace Hotel_Management
         public decimal THANHTIEN { get; set; }
         public Nullable<int> MAHOADON { get; set; }
         public Nullable<int> MAPHONG { get; set; }
+        public Nullable<int> MAPHIEUTHUE { get; set; }
     
         public virtual HOADON HOADON { get; set; }
+        public virtual PHIEUTHUE PHIEUTHUE { get; set; }
         public virtual PHONG PHONG { get; set; }
     }
 }

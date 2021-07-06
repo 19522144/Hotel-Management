@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,7 +35,7 @@ namespace Hotel_Management
             if (MainInstance == null)
                 MainInstance = this;
         }
-        
+
         private void gotoPersonnalInformation(object sender, EventArgs e)
         {
             if (persionalInformation == null || persionalInformation.IsDisposed)

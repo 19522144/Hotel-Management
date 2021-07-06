@@ -31,35 +31,35 @@ namespace Hotel_Management
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKi));
             this.groupBoxTTCN = new System.Windows.Forms.GroupBox();
-            this.comboBoxQTC = new System.Windows.Forms.ComboBox();
-            this.textBoxNLMK = new System.Windows.Forms.TextBox();
+            this.cmbQuyen = new System.Windows.Forms.ComboBox();
+            this.txtRePasswork = new System.Windows.Forms.TextBox();
             this.labelNLMK = new System.Windows.Forms.Label();
             this.labelTND = new System.Windows.Forms.Label();
-            this.textBoxMK = new System.Windows.Forms.TextBox();
-            this.textBoxTND = new System.Windows.Forms.TextBox();
-            this.textBoxTĐN = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtNameLogin = new System.Windows.Forms.TextBox();
             this.labelMK = new System.Windows.Forms.Label();
             this.labelQTC = new System.Windows.Forms.Label();
             this.labelTĐN = new System.Windows.Forms.Label();
             this.labelĐK = new System.Windows.Forms.Label();
-            this.buttonĐK = new System.Windows.Forms.Button();
-            this.buttonĐ = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxAĐD = new System.Windows.Forms.PictureBox();
+            this.buttonDangKi = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.panel = new System.Windows.Forms.Panel();
+            this.picAvatar = new System.Windows.Forms.PictureBox();
             this.groupBoxTTCN.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAĐD)).BeginInit();
+            this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxTTCN
             // 
-            this.groupBoxTTCN.Controls.Add(this.comboBoxQTC);
-            this.groupBoxTTCN.Controls.Add(this.textBoxNLMK);
+            this.groupBoxTTCN.Controls.Add(this.cmbQuyen);
+            this.groupBoxTTCN.Controls.Add(this.txtRePasswork);
             this.groupBoxTTCN.Controls.Add(this.labelNLMK);
             this.groupBoxTTCN.Controls.Add(this.labelTND);
-            this.groupBoxTTCN.Controls.Add(this.textBoxMK);
-            this.groupBoxTTCN.Controls.Add(this.textBoxTND);
-            this.groupBoxTTCN.Controls.Add(this.textBoxTĐN);
+            this.groupBoxTTCN.Controls.Add(this.txtPassword);
+            this.groupBoxTTCN.Controls.Add(this.txtName);
+            this.groupBoxTTCN.Controls.Add(this.txtNameLogin);
             this.groupBoxTTCN.Controls.Add(this.labelMK);
             this.groupBoxTTCN.Controls.Add(this.labelQTC);
             this.groupBoxTTCN.Controls.Add(this.labelTĐN);
@@ -72,25 +72,24 @@ namespace Hotel_Management
             this.groupBoxTTCN.TabIndex = 0;
             this.groupBoxTTCN.TabStop = false;
             this.groupBoxTTCN.Text = "Nhập thông tin cá nhân";
-            this.groupBoxTTCN.Enter += new System.EventHandler(this.groupBoxTTCN_Enter);
             // 
-            // comboBoxQTC
+            // cmbQuyen
             // 
-            this.comboBoxQTC.FormattingEnabled = true;
-            this.comboBoxQTC.Location = new System.Drawing.Point(143, 131);
-            this.comboBoxQTC.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxQTC.Name = "comboBoxQTC";
-            this.comboBoxQTC.Size = new System.Drawing.Size(168, 25);
-            this.comboBoxQTC.TabIndex = 8;
+            this.cmbQuyen.FormattingEnabled = true;
+            this.cmbQuyen.Location = new System.Drawing.Point(143, 131);
+            this.cmbQuyen.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbQuyen.Name = "cmbQuyen";
+            this.cmbQuyen.Size = new System.Drawing.Size(168, 25);
+            this.cmbQuyen.TabIndex = 8;
             // 
-            // textBoxNLMK
+            // txtRePasswork
             // 
-            this.textBoxNLMK.Location = new System.Drawing.Point(143, 104);
-            this.textBoxNLMK.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNLMK.Name = "textBoxNLMK";
-            this.textBoxNLMK.Size = new System.Drawing.Size(168, 23);
-            this.textBoxNLMK.TabIndex = 10;
-            this.textBoxNLMK.UseSystemPasswordChar = true;
+            this.txtRePasswork.Location = new System.Drawing.Point(143, 104);
+            this.txtRePasswork.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRePasswork.Name = "txtRePasswork";
+            this.txtRePasswork.Size = new System.Drawing.Size(168, 23);
+            this.txtRePasswork.TabIndex = 10;
+            this.txtRePasswork.UseSystemPasswordChar = true;
             // 
             // labelNLMK
             // 
@@ -116,30 +115,30 @@ namespace Hotel_Management
             this.labelTND.TabIndex = 4;
             this.labelTND.Text = "Tên Người Dùng: ";
             // 
-            // textBoxMK
+            // txtPassword
             // 
-            this.textBoxMK.Location = new System.Drawing.Point(143, 76);
-            this.textBoxMK.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxMK.Name = "textBoxMK";
-            this.textBoxMK.Size = new System.Drawing.Size(168, 23);
-            this.textBoxMK.TabIndex = 7;
-            this.textBoxMK.UseSystemPasswordChar = true;
+            this.txtPassword.Location = new System.Drawing.Point(143, 76);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(168, 23);
+            this.txtPassword.TabIndex = 7;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // textBoxTND
+            // txtName
             // 
-            this.textBoxTND.Location = new System.Drawing.Point(143, 49);
-            this.textBoxTND.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxTND.Name = "textBoxTND";
-            this.textBoxTND.Size = new System.Drawing.Size(168, 23);
-            this.textBoxTND.TabIndex = 6;
+            this.txtName.Location = new System.Drawing.Point(143, 49);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(168, 23);
+            this.txtName.TabIndex = 6;
             // 
-            // textBoxTĐN
+            // txtNameLogin
             // 
-            this.textBoxTĐN.Location = new System.Drawing.Point(143, 23);
-            this.textBoxTĐN.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxTĐN.Name = "textBoxTĐN";
-            this.textBoxTĐN.Size = new System.Drawing.Size(168, 23);
-            this.textBoxTĐN.TabIndex = 5;
+            this.txtNameLogin.Location = new System.Drawing.Point(143, 23);
+            this.txtNameLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNameLogin.Name = "txtNameLogin";
+            this.txtNameLogin.Size = new System.Drawing.Size(168, 23);
+            this.txtNameLogin.TabIndex = 5;
             // 
             // labelMK
             // 
@@ -188,56 +187,57 @@ namespace Hotel_Management
             this.labelĐK.Size = new System.Drawing.Size(253, 18);
             this.labelĐK.TabIndex = 1;
             this.labelĐK.Text = "ĐĂNG KÍ THÔNG TIN THÀNH VIÊN";
-            this.labelĐK.Click += new System.EventHandler(this.label1_Click);
             // 
-            // buttonĐK
+            // buttonDangKi
             // 
-            this.buttonĐK.BackColor = System.Drawing.Color.CadetBlue;
-            this.buttonĐK.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonĐK.Location = new System.Drawing.Point(140, 236);
-            this.buttonĐK.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonĐK.Name = "buttonĐK";
-            this.buttonĐK.Size = new System.Drawing.Size(90, 36);
-            this.buttonĐK.TabIndex = 5;
-            this.buttonĐK.Text = "Đăng Kí";
-            this.buttonĐK.UseVisualStyleBackColor = false;
+            this.buttonDangKi.BackColor = System.Drawing.Color.CadetBlue;
+            this.buttonDangKi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonDangKi.Location = new System.Drawing.Point(140, 236);
+            this.buttonDangKi.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDangKi.Name = "buttonDangKi";
+            this.buttonDangKi.Size = new System.Drawing.Size(90, 36);
+            this.buttonDangKi.TabIndex = 5;
+            this.buttonDangKi.Text = "Đăng Kí";
+            this.buttonDangKi.UseVisualStyleBackColor = false;
+            this.buttonDangKi.Click += new System.EventHandler(this.buttonDangKi_Click);
             // 
-            // buttonĐ
+            // buttonExit
             // 
-            this.buttonĐ.BackColor = System.Drawing.Color.CadetBlue;
-            this.buttonĐ.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonĐ.Location = new System.Drawing.Point(321, 236);
-            this.buttonĐ.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonĐ.Name = "buttonĐ";
-            this.buttonĐ.Size = new System.Drawing.Size(94, 36);
-            this.buttonĐ.TabIndex = 6;
-            this.buttonĐ.Text = "Đóng";
-            this.buttonĐ.UseVisualStyleBackColor = false;
+            this.buttonExit.BackColor = System.Drawing.Color.CadetBlue;
+            this.buttonExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonExit.Location = new System.Drawing.Point(321, 236);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(94, 36);
+            this.buttonExit.TabIndex = 6;
+            this.buttonExit.Text = "Đóng";
+            this.buttonExit.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.pictureBoxAĐD);
-            this.panel1.Controls.Add(this.labelĐK);
-            this.panel1.Controls.Add(this.buttonĐ);
-            this.panel1.Controls.Add(this.groupBoxTTCN);
-            this.panel1.Controls.Add(this.buttonĐK);
-            this.panel1.Location = new System.Drawing.Point(10, 11);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(490, 292);
-            this.panel1.TabIndex = 7;
+            this.panel.BackColor = System.Drawing.SystemColors.Control;
+            this.panel.Controls.Add(this.picAvatar);
+            this.panel.Controls.Add(this.labelĐK);
+            this.panel.Controls.Add(this.buttonExit);
+            this.panel.Controls.Add(this.groupBoxTTCN);
+            this.panel.Controls.Add(this.buttonDangKi);
+            this.panel.Location = new System.Drawing.Point(10, 11);
+            this.panel.Margin = new System.Windows.Forms.Padding(2);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(490, 292);
+            this.panel.TabIndex = 7;
             // 
-            // pictureBoxAĐD
+            // picAvatar
             // 
-            this.pictureBoxAĐD.Image = global::Hotel_Management.Properties.Resources.avatar_default;
-            this.pictureBoxAĐD.Location = new System.Drawing.Point(2, 80);
-            this.pictureBoxAĐD.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxAĐD.Name = "pictureBoxAĐD";
-            this.pictureBoxAĐD.Size = new System.Drawing.Size(104, 114);
-            this.pictureBoxAĐD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAĐD.TabIndex = 8;
-            this.pictureBoxAĐD.TabStop = false;
+            this.picAvatar.Image = global::Hotel_Management.Properties.Resources.avatar_default;
+            this.picAvatar.Location = new System.Drawing.Point(2, 80);
+            this.picAvatar.Margin = new System.Windows.Forms.Padding(2);
+            this.picAvatar.Name = "picAvatar";
+            this.picAvatar.Size = new System.Drawing.Size(104, 114);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAvatar.TabIndex = 8;
+            this.picAvatar.TabStop = false;
+            this.picAvatar.Click += new System.EventHandler(this.picAvatar_Click);
             // 
             // DangKi
             // 
@@ -245,7 +245,7 @@ namespace Hotel_Management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(510, 311);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -253,12 +253,11 @@ namespace Hotel_Management
             this.Name = "DangKi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangKi";
-            this.Load += new System.EventHandler(this.fĐăngKí_Load);
             this.groupBoxTTCN.ResumeLayout(false);
             this.groupBoxTTCN.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAĐD)).EndInit();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,19 +267,19 @@ namespace Hotel_Management
         private System.Windows.Forms.GroupBox groupBoxTTCN;
         private System.Windows.Forms.Label labelĐK;
         private System.Windows.Forms.Label labelTĐN;
-        private System.Windows.Forms.TextBox textBoxMK;
-        private System.Windows.Forms.TextBox textBoxTND;
-        private System.Windows.Forms.TextBox textBoxTĐN;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtNameLogin;
         private System.Windows.Forms.Label labelMK;
         private System.Windows.Forms.Label labelQTC;
         private System.Windows.Forms.Label labelTND;
-        private System.Windows.Forms.TextBox textBoxNLMK;
+        private System.Windows.Forms.TextBox txtRePasswork;
         private System.Windows.Forms.Label labelNLMK;
-        private System.Windows.Forms.Button buttonĐK;
-        private System.Windows.Forms.Button buttonĐ;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBoxQTC;
-        private System.Windows.Forms.PictureBox pictureBoxAĐD;
+        private System.Windows.Forms.Button buttonDangKi;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.ComboBox cmbQuyen;
+        private System.Windows.Forms.PictureBox picAvatar;
     }
 }
 
