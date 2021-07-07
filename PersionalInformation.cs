@@ -32,6 +32,7 @@ namespace Hotel_Management
             txbUserCode.DataBindings.Add("Text", userController.All(), "MANGUOIDUNG");
             txbUserName.DataBindings.Add("Text", userController.All(), "TENDANGNHAP");
             txbYourName.DataBindings.Add("Text", userController.All(), "TENNGUOIDUNG");
+            
         }
         private void PersionalInformation_Load(object sender, EventArgs e)
         {
@@ -106,6 +107,7 @@ namespace Hotel_Management
         }
         private void btnSaveSecurity_Click(object sender, EventArgs e)
         {
+            
             if (txbNewPass.Text != txbConfirmNewPass.Text)
             {
                 MessageBox.Show("Xác nhận mật khẩu mới không đúng, vui lòng xác nhận lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -119,13 +121,12 @@ namespace Hotel_Management
             {
                 NGUOIDUNG nd = new NGUOIDUNG()
                 {
+                    MANGUOIDUNG = Int32.Parse(txbUserCode.Text),
                     MATKHAU = GetMD5(txbNewPass.Text)
                 };
                 userController.UpdatePassword(nd);
                 MessageBox.Show("Lưu thay đổi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }    
-                
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)

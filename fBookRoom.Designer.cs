@@ -41,6 +41,10 @@
             this.cmbRoom = new System.Windows.Forms.ComboBox();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.groupBoxCustomer = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
             this.cmbSTT = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -174,6 +178,10 @@
             // 
             // groupBoxCustomer
             // 
+            this.groupBoxCustomer.Controls.Add(this.label15);
+            this.groupBoxCustomer.Controls.Add(this.dtpBirthDay);
+            this.groupBoxCustomer.Controls.Add(this.label14);
+            this.groupBoxCustomer.Controls.Add(this.cmbGender);
             this.groupBoxCustomer.Controls.Add(this.cmbSTT);
             this.groupBoxCustomer.Controls.Add(this.label10);
             this.groupBoxCustomer.Controls.Add(this.label8);
@@ -194,10 +202,46 @@
             this.groupBoxCustomer.Controls.Add(this.label6);
             this.groupBoxCustomer.Location = new System.Drawing.Point(11, 250);
             this.groupBoxCustomer.Name = "groupBoxCustomer";
-            this.groupBoxCustomer.Size = new System.Drawing.Size(559, 252);
+            this.groupBoxCustomer.Size = new System.Drawing.Size(559, 311);
             this.groupBoxCustomer.TabIndex = 2;
             this.groupBoxCustomer.TabStop = false;
             this.groupBoxCustomer.Text = "Thông tin khách hàng";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(7, 253);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 13);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Ngày sinh";
+            // 
+            // dtpBirthDay
+            // 
+            this.dtpBirthDay.Location = new System.Drawing.Point(10, 274);
+            this.dtpBirthDay.Name = "dtpBirthDay";
+            this.dtpBirthDay.Size = new System.Drawing.Size(241, 20);
+            this.dtpBirthDay.TabIndex = 27;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(285, 253);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Giới tính";
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cmbGender.Location = new System.Drawing.Point(288, 273);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(203, 21);
+            this.cmbGender.TabIndex = 25;
             // 
             // cmbSTT
             // 
@@ -387,7 +431,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 514);
+            this.ClientSize = new System.Drawing.Size(755, 562);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnBook);
@@ -445,5 +489,9 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.ComboBox cmbSTT;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dtpBirthDay;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmbGender;
     }
 }

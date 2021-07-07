@@ -19,8 +19,10 @@ namespace Hotel_Management
         RoomController roomController = new RoomController();
         CustomerController customerController = new CustomerController();
         BillController billController = new BillController();
+        ParameterController parameterController = new ParameterController();
 
         DateTime dateStart = new DateTime();
+        bool isPaid = true;
 
         public fQuanLyPhieuThue()
         {
@@ -29,8 +31,14 @@ namespace Hotel_Management
             cmbTenPhong.DataSource = roomController.getAll();
             cmbTenPhong.DisplayMember = "Name";
             cmbTenPhong.ValueMember = "ID";
+
+            if (dgvDanhSachPhieuThue.Rows.Count <= 0)
+                return;
             dtpkNgayBatDauThue.Value = (DateTime) dgvDanhSachPhieuThue.Rows[0].Cells["DayStart"].Value;
             dateStart = dtpkNgayBatDauThue.Value;
+            if (dgvDanhSachPhieuThue.Rows[0].Cells["NOTE"].Value.ToString() == "Đã thanh toán")
+                isPaid = true;
+            else isPaid = false;
         }
 
         void LoadData()
@@ -70,6 +78,11 @@ namespace Hotel_Management
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            if (isPaid)
+            {
+                MessageBox.Show("Không thể cập nhật hóa đơn đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!checkEmpty())
             {
                 MessageBox.Show("Vui lòng điền đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -113,17 +126,6 @@ namespace Hotel_Management
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //PHIEUTHUE phieuthue = new PHIEUTHUE()
-            //{
-            //    MAPHONG = (int)cmbTenPhong.SelectedValue,
-            //    NGAYBDTHUE = dtpkNgayBatDauThue.Value,
-            //};
-            //CHITIETPHIEUTHUE ct = new CHITIETPHIEUTHUE()
-            //{
-            //    MAKHACHHANG = Convert.ToInt32(txtMaKhachHang.Text),
-            //};
-            //rentalController.addRental(phieuthue, ct);
-            //LoadData();
             if (fMainMenu.bookRoom == null || fMainMenu.bookRoom.IsDisposed)
                 fMainMenu.bookRoom = new fBookRoom();
             fMainMenu.bookRoom.Show();
@@ -138,18 +140,14 @@ namespace Hotel_Management
             }
             string RoomName = (string)dgvDanhSachPhieuThue.Rows[row].Cells["RoomName"].Value;
             dateStart = (DateTime) dgvDanhSachPhieuThue.Rows[row].Cells["DayStart"].Value;
+            string pay = (string) dgvDanhSachPhieuThue.Rows[row].Cells["NOTE"].Value;
+            if ( pay == "Đã thanh toán")
+                isPaid = true;
+            else
+                isPaid = false;
 
             dtpkNgayBatDauThue.Value = dateStart;
             cmbTenPhong.Text = RoomName;
-            //foreach (dynamic item in cmbTenPhong.Items)
-            //{
-            //    if (item.Name == RoomName)
-            //    {
-            //        cmbTenPhong.SelectedItem = item;
-            //        break;
-            //    }
-            //}
-            //cmbTenPhong.SelectedIndex = cmbTenPhong.Items.IndexOf(roomController.findRoom(RoomName));
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -232,36 +230,61 @@ namespace Hotel_Management
             {
                 return;
             }
-            TimeSpan timeSpan = DateTime.Now - dateStart;
-            int soNgay = timeSpan.Days;
-            dynamic a = cmbTenPhong.SelectedItem;
-            Decimal TriGia = a.Price * soNgay;
-
             //MessageBox.Show("" + TriGia);
-            HOADON hoadon = new HOADON()
+            if (!isPaid)
             {
-                MAKHACHHANG = Convert.ToInt32(txtMaKhachHang.Text),
-                NGAYTHANHTOAN = DateTime.Now,
-                TRIGIA = 0
-            };
+                TimeSpan timeSpan = DateTime.Now - dateStart;
+                decimal unitPrice = getUnitPrice();
+                int percent = (int)unitPrice;                
+                int soNgay = timeSpan.Days + 1;
+                dynamic room = cmbTenPhong.SelectedItem;
+                int price = (int) room.Price;
+                int temp = (int) (price * soNgay * (percent * 1.0) / 100);
+                Decimal TriGia = temp;
 
-            CHITIETHOADON chitiet = new CHITIETHOADON()
-            {
-                DONGIA = a.Price,
-                MAPHONG = (int)cmbTenPhong.SelectedValue,
-                SONGAYTHUE = soNgay,
-                THANHTIEN = TriGia
-            };
-            billController.addBill(hoadon, chitiet);
-            rentalController.deleteRental(Convert.ToInt32(txtMaPhieuThue.Text));
-            LoadData();
-            InHoaDon inHoaDon = new InHoaDon();//Ve sau se truyen ma hoa don vao day
+                HOADON hoadon = new HOADON()
+                {
+                    MAKHACHHANG = Convert.ToInt32(txtMaKhachHang.Text),
+                    NGAYTHANHTOAN = DateTime.Now,
+                    TRIGIA = room.Price
+                };
+
+                CHITIETHOADON chitiet = new CHITIETHOADON()
+                {
+                    DONGIA = unitPrice,
+                    MAPHONG = (int)cmbTenPhong.SelectedValue,
+                    SONGAYTHUE = soNgay,
+                    THANHTIEN = TriGia,
+                    MAPHIEUTHUE = Convert.ToInt32(txtMaPhieuThue.Text)
+                };
+
+                billController.addBill(hoadon, chitiet);
+                rentalController.setPaid(Convert.ToInt32(txtMaPhieuThue.Text));
+            }
+
+            //rentalController.deleteRental(Convert.ToInt32(txtMaPhieuThue.Text));
+            InHoaDon inHoaDon = new InHoaDon(billController.getBillID(Convert.ToInt32(txtMaPhieuThue.Text)));
             inHoaDon.Show();
+            LoadData();  
+        }
+
+        private decimal getUnitPrice()
+        {
+            decimal unitPrice = 100;
+            int ID = Convert.ToInt32(txtMaPhieuThue.Text);
+            if (rentalController.isForeign(ID))
+                unitPrice += (parameterController.HESOKHNUOCNGOAI() - 1)*100;
+            if (rentalController.getNumberPeople(ID) > 2)
+                unitPrice += 25;
+
+            return unitPrice;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             LoadData();
         }
+
+
     }
 }
