@@ -24,6 +24,20 @@ namespace Hotel_Management.Controller
             return data.ToList();
         }
 
+        public void setRoomBooked(int ID)
+        {
+            PHONG phong = entities.PHONGs.Find(ID);
+            phong.TINHTRANG = "Đóng";
+            entities.SaveChanges();
+        }
+
+        public void setRoomCheck(int ID)
+        {
+            PHONG phong = entities.PHONGs.Find(ID);
+            phong.TINHTRANG = "Mở";
+            entities.SaveChanges();
+        }
+
         public dynamic getAvaiableRoom()
         {
             var data = from c in entities.PHONGs

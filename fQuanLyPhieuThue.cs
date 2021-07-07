@@ -260,6 +260,8 @@ namespace Hotel_Management
 
                 billController.addBill(hoadon, chitiet);
                 rentalController.setPaid(Convert.ToInt32(txtMaPhieuThue.Text));
+
+                roomController.setRoomCheck((int)cmbTenPhong.SelectedValue);
             }
 
             //rentalController.deleteRental(Convert.ToInt32(txtMaPhieuThue.Text));

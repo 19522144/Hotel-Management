@@ -107,7 +107,7 @@ namespace Hotel_Management.Controller
         public int getBillID(int RentalID)
         {
             CHITIETHOADON cthoadon = entities.CHITIETHOADONs.Where(c => c.MAPHIEUTHUE == RentalID).SingleOrDefault();
-            System.Windows.MessageBox.Show(RentalID + " ");// + cthoadon.MAHOADON);
+            //System.Windows.MessageBox.Show(RentalID + " ");// + cthoadon.MAHOADON);
             return (int) cthoadon.MAHOADON;
         }
 

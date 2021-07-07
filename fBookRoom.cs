@@ -30,15 +30,9 @@ namespace Hotel_Management
         {
             InitializeComponent();
 
+            LoadData();
+
             monthCalendar.MaxSelectionCount = 1;           
-
-            cmbRoom.DataSource = roomController.getAvaiableRoom();
-            cmbRoom.DisplayMember = "Name";
-            cmbRoom.ValueMember = "ID";
-
-            cmbCustomerType.DataSource = customerTypeController.getAll();
-            cmbCustomerType.DisplayMember = "Name";
-            cmbCustomerType.ValueMember = "ID";
 
             arrKhachHang = new List<KHACHHANG>();
             arrTypeCustomer = new List<int>();
@@ -53,6 +47,17 @@ namespace Hotel_Management
             nudPeople.Maximum = parameterController.SOKHTOIDA1PHONG();
             nudPeople.Minimum = 1;
             nudPeople.Value = 1;
+        }
+
+        void LoadData()
+        {
+            cmbRoom.DataSource = roomController.getAvaiableRoom();
+            cmbRoom.DisplayMember = "Name";
+            cmbRoom.ValueMember = "ID";
+
+            cmbCustomerType.DataSource = customerTypeController.getAll();
+            cmbCustomerType.DisplayMember = "Name";
+            cmbCustomerType.ValueMember = "ID";
         }
 
         bool checkAllEmpty()
@@ -89,7 +94,8 @@ namespace Hotel_Management
                 };
 
                 int MaPhieuThue = RentalController.addRental(pt);
-                
+
+                roomController.setRoomBooked((int)cmbRoom.SelectedValue);
 
                 for (int i = 0; i < nudPeople.Value; i++)
                 {
@@ -104,6 +110,7 @@ namespace Hotel_Management
                     RentalController.addRentalDetail(MaPhieuThue, ctpt);
                 }
                 MessageBox.Show("Đặt phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
             }
         }
 

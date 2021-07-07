@@ -40,7 +40,7 @@ namespace Hotel_Management
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.lbTG = new System.Windows.Forms.Label();
             this.lbNTT = new System.Windows.Forms.Label();
-            this.txtMaKh = new System.Windows.Forms.TextBox();
+            this.txtTenKh = new System.Windows.Forms.TextBox();
             this.lbMHĐ = new System.Windows.Forms.Label();
             this.lbMKH = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -121,7 +121,7 @@ namespace Hotel_Management
             this.panel2.Controls.Add(this.txtMaHoaDon);
             this.panel2.Controls.Add(this.lbTG);
             this.panel2.Controls.Add(this.lbNTT);
-            this.panel2.Controls.Add(this.txtMaKh);
+            this.panel2.Controls.Add(this.txtTenKh);
             this.panel2.Controls.Add(this.lbMHĐ);
             this.panel2.Controls.Add(this.lbMKH);
             this.panel2.Location = new System.Drawing.Point(32, 58);
@@ -187,17 +187,17 @@ namespace Hotel_Management
             this.lbNTT.TabIndex = 2;
             this.lbNTT.Text = "Ngày Thanh Toán:";
             // 
-            // txtMaKh
+            // txtTenKh
             // 
-            this.txtMaKh.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtMaKh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaKh.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtMaKh.Location = new System.Drawing.Point(186, 45);
-            this.txtMaKh.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaKh.Name = "txtMaKh";
-            this.txtMaKh.ReadOnly = true;
-            this.txtMaKh.Size = new System.Drawing.Size(138, 13);
-            this.txtMaKh.TabIndex = 15;
+            this.txtTenKh.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtTenKh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenKh.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtTenKh.Location = new System.Drawing.Point(186, 45);
+            this.txtTenKh.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenKh.Name = "txtTenKh";
+            this.txtTenKh.ReadOnly = true;
+            this.txtTenKh.Size = new System.Drawing.Size(138, 13);
+            this.txtTenKh.TabIndex = 15;
             // 
             // lbMHĐ
             // 
@@ -218,9 +218,9 @@ namespace Hotel_Management
             this.lbMKH.Location = new System.Drawing.Point(59, 43);
             this.lbMKH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMKH.Name = "lbMKH";
-            this.lbMKH.Size = new System.Drawing.Size(121, 16);
+            this.lbMKH.Size = new System.Drawing.Size(125, 16);
             this.lbMKH.TabIndex = 1;
-            this.lbMKH.Text = "Mã Khách Hàng:";
+            this.lbMKH.Text = "Tên Khách Hàng:";
             // 
             // groupBoxTTHĐ
             // 
@@ -437,7 +437,7 @@ namespace Hotel_Management
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DateTimePicker dtpDay;
         private System.Windows.Forms.TextBox txtMaHoaDon;
-        private System.Windows.Forms.TextBox txtMaKh;
+        private System.Windows.Forms.TextBox txtTenKh;
         private System.Windows.Forms.GroupBox groupBoxTTHĐ;
         private System.Windows.Forms.Label lbTG;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelHĐ;
