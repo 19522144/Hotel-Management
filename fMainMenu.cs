@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WebForms;
+﻿using Hotel_Management.Controller;
+using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,9 @@ namespace Hotel_Management
         ManageRoomType manageRoomType;
         PersionalInformation persionalInformation;
         RoomManagement roomManagement;
+
+        UserController userController = new UserController();
+
         public static fMainMenu MainInstance;
 
         public fMainMenu()

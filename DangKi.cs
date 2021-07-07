@@ -104,6 +104,11 @@ namespace Hotel_Management
             picAvatar.Image = avatar;
         }
 
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         public string GetMD5(string chuoi)
         {
             string str_md5 = "";

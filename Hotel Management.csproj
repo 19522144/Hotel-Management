@@ -345,6 +345,8 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="QuanLiKhachSan.sql" />
+    <Content Include="Resources\hidepw.png" />
+    <Content Include="Resources\showpw.png" />
     <None Include="Resources\Show 16px.png" />
     <None Include="Resources\Hide.png" />
     <None Include="Resources\Eye.png" />

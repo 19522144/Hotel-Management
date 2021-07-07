@@ -58,5 +58,33 @@ namespace Hotel_Management.Controller
             entities.NGUOIDUNGs.Add(nd);
             entities.SaveChanges();
         }
+
+        public void resetUser(NGUOIDUNG nguoidung)
+        {
+            NGUOIDUNG p = entities.NGUOIDUNGs.Find(nguoidung.MANGUOIDUNG);
+            p.TENDANGNHAP = nguoidung.TENDANGNHAP;
+            p.MATKHAU = nguoidung.MATKHAU;
+            entities.SaveChanges();
+        }
+
+        public bool login(string username, string password)
+        {
+            var existuser = entities.NGUOIDUNGs.FirstOrDefault(m => m.TENDANGNHAP.Equals(username));
+            if(existuser != null)
+            {
+                if (existuser.MATKHAU.Equals(password))
+                    return true;
+                else
+                    return false;
+            }
+            return false;           
+        }
+
+        public void getData(NGUOIDUNG nguoidung)
+        {
+            int ID = nguoidung.MANGUOIDUNG;
+            string name = nguoidung.TENNGUOIDUNG;
+            int avatar = nguoidung.ANHDAIDIEN;
+        }
     }
 }

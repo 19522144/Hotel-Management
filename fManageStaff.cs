@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace Hotel_Management
     public partial class fManageStaff : Form
     {
         DangKi dangKi;
-        UserController userControlller = new UserController();
+        UserController userController = new UserController();
         int ID;
 
         public fManageStaff()
@@ -28,7 +29,7 @@ namespace Hotel_Management
 
         void LoadData()
         {
-            dgvData.DataSource = userControlller.getAll();
+            dgvData.DataSource = userController.getAll();
             int index = (int)dgvData.Rows[0].Cells["Avatar"].Value;
             ID = (int) dgvData.Rows[0].Cells["ID"].Value;
             setAvatar(index);
@@ -96,13 +97,66 @@ namespace Hotel_Management
                 QUYENTRUYCAP = cmbAccessRights.Text
             };
 
-            userControlller.updateRights(nguoiDung);
+            userController.updateRights(nguoiDung);
             LoadData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in dgvData.SelectedRows)
+            {
+                int rowId = Convert.ToInt32(row.Cells[0].Value);
 
+                if (rowId > 0)
+                {                 
+                    if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        userController.deleteUser(rowId);
+                        LoadData();
+                    }
+                }
+            }
+            
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            NGUOIDUNG nguoiDung = new NGUOIDUNG()
+            {
+                MANGUOIDUNG = ID,
+                TENDANGNHAP = "user",
+                MATKHAU = GetMD5("user")             
+            };
+
+            userController.resetUser(nguoiDung);
+            LoadData();
+            MessageBox.Show("Đã đặt lại mật khẩu thành mặc định", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public string GetMD5(string chuoi)
+        {
+            string str_md5 = "";
+            byte[] mang = System.Text.Encoding.UTF8.GetBytes(chuoi);
+
+            MD5CryptoServiceProvider my_md5 = new MD5CryptoServiceProvider();
+            mang = my_md5.ComputeHash(mang);
+
+            foreach (byte b in mang)
+            {
+                str_md5 += b.ToString("X2");
+            }
+
+            return str_md5;
         }
     }
 }
