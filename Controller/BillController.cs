@@ -31,6 +31,29 @@ namespace Hotel_Management.Controller
             return data.ToList();
         }
 
+        public dynamic getAllWithTime(int month, int year)
+        {
+            var data = from c in entities.CHITIETHOADONs
+                       where c.HOADON.NGAYTHANHTOAN.Month == month && c.HOADON.NGAYTHANHTOAN.Year == year
+                       select new
+                       {
+                           ID = c.MAHOADON,
+                           PaymentDay = c.HOADON.NGAYTHANHTOAN,
+                           Value = c.HOADON.TRIGIA,
+                           RentalDays = c.SONGAYTHUE,
+                           RoomName = c.PHONG.TENPHONG,
+                           RoomID = c.PHONG.MAPHONG,
+                           UnitPrice = c.DONGIA,
+                           CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
+                           CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,
+                           Amount = c.THANHTIEN,
+                           RentalID = c.MAPHIEUTHUE
+                       };
+            //if (data.ToList().Count == 0)
+            //    return new List<int>();
+            return data.ToList();
+        }
+
         public void addBill(HOADON hd, CHITIETHOADON cthd)
         {
             entities.HOADONs.Add(hd);
