@@ -24,18 +24,27 @@ namespace Hotel_Management.Controller
                        
             return data.ToList();
         }
+        public dynamic All()
+        {
+            var data =  entities.NGUOIDUNGs;
+            return data.ToList();
+        }
 
-        public void UpdateUser(NGUOIDUNG nguoidung)
+            public void UpdateUser(NGUOIDUNG nguoidung)
         {
             NGUOIDUNG p = entities.NGUOIDUNGs.Find(nguoidung.MANGUOIDUNG);
             p.TENNGUOIDUNG = nguoidung.TENNGUOIDUNG;
             p.TENDANGNHAP = nguoidung.TENDANGNHAP;
-            p.MATKHAU = nguoidung.MATKHAU;
-            p.QUYENTRUYCAP = nguoidung.QUYENTRUYCAP;
-
+            //p.MATKHAU = nguoidung.MATKHAU;
+            //p.QUYENTRUYCAP = nguoidung.QUYENTRUYCAP;
             entities.SaveChanges();
         }
-
+        public void UpdatePassword(NGUOIDUNG nguoidung)
+        {
+            NGUOIDUNG p = entities.NGUOIDUNGs.Find(nguoidung.MANGUOIDUNG);
+            p.MATKHAU = nguoidung.MATKHAU;
+            entities.SaveChanges();
+        }
         public void updateRights(NGUOIDUNG nguoiDung)
         {
             NGUOIDUNG p = entities.NGUOIDUNGs.Find(nguoiDung.MANGUOIDUNG);
