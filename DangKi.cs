@@ -49,8 +49,6 @@ namespace Hotel_Management
                 MessageBox.Show("Mật khẩu không giống nhau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            
             
             NGUOIDUNG nguoiDung = new NGUOIDUNG() {
                 ANHDAIDIEN = avatarIndex,
