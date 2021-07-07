@@ -19,10 +19,41 @@ namespace Hotel_Management.Controller
                            RoomType = c.LOAIPHONG.TENLOAIPHONG,
                            Price = c.LOAIPHONG.DONGIA,
                            Status = c.TINHTRANG,
+                           Note = c.GHICHU,
+                       };
+            return data.ToList();
+        }
+
+        public void setRoomBooked(int ID)
+        {
+            PHONG phong = entities.PHONGs.Find(ID);
+            phong.TINHTRANG = "Đóng";
+            entities.SaveChanges();
+        }
+
+        public void setRoomCheck(int ID)
+        {
+            PHONG phong = entities.PHONGs.Find(ID);
+            phong.TINHTRANG = "Mở";
+            entities.SaveChanges();
+        }
+
+        public dynamic getAvaiableRoom()
+        {
+            var data = from c in entities.PHONGs
+                       where c.TINHTRANG == "Mở"
+                       select new
+                       {
+                           ID = c.MAPHONG,
+                           Name = c.TENPHONG,
+                           RoomType = c.LOAIPHONG.TENLOAIPHONG,
+                           Price = c.LOAIPHONG.DONGIA,
+                           Status = c.TINHTRANG,
                            Note = c.GHICHU
                        };
             return data.ToList();
         }
+
         public dynamic All()
         {
             var data = entities.LOAIPHONGs;

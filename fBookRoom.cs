@@ -30,15 +30,9 @@ namespace Hotel_Management
         {
             InitializeComponent();
 
+            LoadData();
+
             monthCalendar.MaxSelectionCount = 1;           
-
-            cmbRoom.DataSource = roomController.getAll();
-            cmbRoom.DisplayMember = "Name";
-            cmbRoom.ValueMember = "ID";
-
-            cmbCustomerType.DataSource = customerTypeController.getAll();
-            cmbCustomerType.DisplayMember = "Name";
-            cmbCustomerType.ValueMember = "ID";
 
             arrKhachHang = new List<KHACHHANG>();
             arrTypeCustomer = new List<int>();
@@ -53,6 +47,17 @@ namespace Hotel_Management
             nudPeople.Maximum = parameterController.SOKHTOIDA1PHONG();
             nudPeople.Minimum = 1;
             nudPeople.Value = 1;
+        }
+
+        void LoadData()
+        {
+            cmbRoom.DataSource = roomController.getAvaiableRoom();
+            cmbRoom.DisplayMember = "Name";
+            cmbRoom.ValueMember = "ID";
+
+            cmbCustomerType.DataSource = customerTypeController.getAll();
+            cmbCustomerType.DisplayMember = "Name";
+            cmbCustomerType.ValueMember = "ID";
         }
 
         bool checkAllEmpty()
@@ -85,10 +90,12 @@ namespace Hotel_Management
                 {
                     MAPHONG = (int)cmbRoom.SelectedValue,
                     NGAYBDTHUE = dtpDayRecieve.Value,
+                    GHICHU = "Chưa thanh toán"
                 };
 
                 int MaPhieuThue = RentalController.addRental(pt);
-                
+
+                roomController.setRoomBooked((int)cmbRoom.SelectedValue);
 
                 for (int i = 0; i < nudPeople.Value; i++)
                 {
@@ -102,6 +109,8 @@ namespace Hotel_Management
                     };
                     RentalController.addRentalDetail(MaPhieuThue, ctpt);
                 }
+                MessageBox.Show("Đặt phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
             }
         }
 
@@ -136,6 +145,8 @@ namespace Hotel_Management
                 txtSDT.Text = value.Phone;
                 txtAddress.Text = value.Address;
                 cmbCustomerType.Text = value.Type;
+                cmbGender.Text = value.Gender;
+                dtpBirthDay.Value = value.BirthDay;
             }
             else MessageBox.Show("Không tìm thấy, vui lòng kiểm tra lại thông tin",
                 "Thông báo",
@@ -196,6 +207,11 @@ namespace Hotel_Management
             txtAddress.Text = arrKhachHang[cmbSTT.SelectedIndex].DIACHI;
             txtSDT.Text = arrKhachHang[cmbSTT.SelectedIndex].SODIENTHOAI;
             txtNationality.Text = arrKhachHang[cmbSTT.SelectedIndex].QUOCTICH;
+            if (arrKhachHang[cmbSTT.SelectedIndex].NGAYSINH != null)
+            {
+                dtpBirthDay.Value = (DateTime)arrKhachHang[cmbSTT.SelectedIndex].NGAYSINH;
+            }
+            cmbGender.Text = arrKhachHang[cmbSTT.SelectedIndex].GIOITINH;
             if (arrKhachHang[cmbSTT.SelectedIndex].MAKHACHHANG != 0)
             {
                 txtMaKhachHang.Text = arrKhachHang[cmbSTT.SelectedIndex].MAKHACHHANG.ToString();
@@ -217,6 +233,8 @@ namespace Hotel_Management
             arrKhachHang[previousIndex].SODIENTHOAI = txtSDT.Text;
             arrKhachHang[previousIndex].QUOCTICH = txtNationality.Text;
             arrKhachHang[previousIndex].MALOAIKHACH = (int)cmbCustomerType.SelectedValue;
+            arrKhachHang[previousIndex].NGAYSINH = dtpBirthDay.Value;
+            arrKhachHang[previousIndex].GIOITINH = cmbGender.Text;
             if (txtMaKhachHang.Text != "")
             {
                 arrKhachHang[previousIndex].MAKHACHHANG = Convert.ToInt32(txtMaKhachHang.Text);

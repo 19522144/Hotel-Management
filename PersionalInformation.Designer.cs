@@ -33,7 +33,6 @@ namespace Hotel_Management
             this.labelPersionalInformation = new System.Windows.Forms.Label();
             this.btnSaveAI = new System.Windows.Forms.Button();
             this.txbUserName = new System.Windows.Forms.TextBox();
-            this.cbBoxAccessRights = new System.Windows.Forms.ComboBox();
             this.labelUserCode = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
             this.labelYourName = new System.Windows.Forms.Label();
@@ -49,13 +48,14 @@ namespace Hotel_Management
             this.txbConfirmNewPass = new System.Windows.Forms.TextBox();
             this.txbNewPass = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.labelAccessRights = new System.Windows.Forms.Label();
+            this.labelCurrentPass = new System.Windows.Forms.Label();
             this.btnHideNewPass = new System.Windows.Forms.Button();
             this.btnHideConfirmNewPass = new System.Windows.Forms.Button();
             this.btnShowConfirmNewPass = new System.Windows.Forms.Button();
             this.btnShowNewPass = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.imgAvatar = new System.Windows.Forms.PictureBox();
+            this.txbCurrentPass = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelPersionalInformation
@@ -86,14 +86,6 @@ namespace Hotel_Management
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(240, 21);
             this.txbUserName.TabIndex = 2;
-            // 
-            // cbBoxAccessRights
-            // 
-            this.cbBoxAccessRights.FormattingEnabled = true;
-            this.cbBoxAccessRights.Location = new System.Drawing.Point(633, 298);
-            this.cbBoxAccessRights.Name = "cbBoxAccessRights";
-            this.cbBoxAccessRights.Size = new System.Drawing.Size(220, 23);
-            this.cbBoxAccessRights.TabIndex = 3;
             // 
             // labelUserCode
             // 
@@ -132,6 +124,7 @@ namespace Hotel_Management
             // 
             this.txbUserCode.Location = new System.Drawing.Point(311, 153);
             this.txbUserCode.Name = "txbUserCode";
+            this.txbUserCode.ReadOnly = true;
             this.txbUserCode.Size = new System.Drawing.Size(240, 21);
             this.txbUserCode.TabIndex = 8;
             // 
@@ -150,7 +143,7 @@ namespace Hotel_Management
             this.listBoxAcountInformation.ItemHeight = 15;
             this.listBoxAcountInformation.Location = new System.Drawing.Point(288, 86);
             this.listBoxAcountInformation.Name = "listBoxAcountInformation";
-            this.listBoxAcountInformation.Size = new System.Drawing.Size(291, 319);
+            this.listBoxAcountInformation.Size = new System.Drawing.Size(291, 304);
             this.listBoxAcountInformation.TabIndex = 10;
             // 
             // labelSecurity
@@ -183,7 +176,7 @@ namespace Hotel_Management
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(602, 86);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(276, 319);
+            this.listBox1.Size = new System.Drawing.Size(276, 304);
             this.listBox1.TabIndex = 13;
             // 
             // btnSaveSecurity
@@ -244,16 +237,16 @@ namespace Hotel_Management
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // labelAccessRights
+            // labelCurrentPass
             // 
-            this.labelAccessRights.AutoSize = true;
-            this.labelAccessRights.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccessRights.ForeColor = System.Drawing.Color.Teal;
-            this.labelAccessRights.Location = new System.Drawing.Point(629, 266);
-            this.labelAccessRights.Name = "labelAccessRights";
-            this.labelAccessRights.Size = new System.Drawing.Size(91, 15);
-            this.labelAccessRights.TabIndex = 20;
-            this.labelAccessRights.Text = "Quyền truy cập:";
+            this.labelCurrentPass.AutoSize = true;
+            this.labelCurrentPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentPass.ForeColor = System.Drawing.Color.Teal;
+            this.labelCurrentPass.Location = new System.Drawing.Point(629, 266);
+            this.labelCurrentPass.Name = "labelCurrentPass";
+            this.labelCurrentPass.Size = new System.Drawing.Size(134, 15);
+            this.labelCurrentPass.TabIndex = 20;
+            this.labelCurrentPass.Text = "Nhập mật khẩu hiện tại:";
             // 
             // btnHideNewPass
             // 
@@ -268,7 +261,7 @@ namespace Hotel_Management
             // btnHideConfirmNewPass
             // 
             this.btnHideConfirmNewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnHideConfirmNewPass.Image")));
-            this.btnHideConfirmNewPass.Location = new System.Drawing.Point(827, 226);
+            this.btnHideConfirmNewPass.Location = new System.Drawing.Point(826, 223);
             this.btnHideConfirmNewPass.Name = "btnHideConfirmNewPass";
             this.btnHideConfirmNewPass.Size = new System.Drawing.Size(26, 24);
             this.btnHideConfirmNewPass.TabIndex = 23;
@@ -278,7 +271,7 @@ namespace Hotel_Management
             // btnShowConfirmNewPass
             // 
             this.btnShowConfirmNewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnShowConfirmNewPass.Image")));
-            this.btnShowConfirmNewPass.Location = new System.Drawing.Point(827, 226);
+            this.btnShowConfirmNewPass.Location = new System.Drawing.Point(827, 224);
             this.btnShowConfirmNewPass.Name = "btnShowConfirmNewPass";
             this.btnShowConfirmNewPass.Size = new System.Drawing.Size(26, 24);
             this.btnShowConfirmNewPass.TabIndex = 24;
@@ -295,26 +288,35 @@ namespace Hotel_Management
             this.btnShowNewPass.UseVisualStyleBackColor = true;
             this.btnShowNewPass.Click += new System.EventHandler(this.btnShowNewPass_Click);
             // 
-            // pictureBox1
+            // imgAvatar
             // 
-            this.pictureBox1.Image = global::Hotel_Management.Properties.Resources.avatar_default;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 290);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.imgAvatar.Image = global::Hotel_Management.Properties.Resources.avatar_default;
+            this.imgAvatar.Location = new System.Drawing.Point(12, 101);
+            this.imgAvatar.Name = "imgAvatar";
+            this.imgAvatar.Size = new System.Drawing.Size(256, 290);
+            this.imgAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAvatar.TabIndex = 4;
+            this.imgAvatar.TabStop = false;
+            // 
+            // txbCurrentPass
+            // 
+            this.txbCurrentPass.Location = new System.Drawing.Point(633, 300);
+            this.txbCurrentPass.Name = "txbCurrentPass";
+            this.txbCurrentPass.Size = new System.Drawing.Size(196, 21);
+            this.txbCurrentPass.TabIndex = 25;
+            this.txbCurrentPass.UseSystemPasswordChar = true;
             // 
             // PersionalInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 506);
-            this.Controls.Add(this.btnShowConfirmNewPass);
             this.Controls.Add(this.btnHideConfirmNewPass);
+            this.Controls.Add(this.txbCurrentPass);
+            this.Controls.Add(this.btnShowConfirmNewPass);
             this.Controls.Add(this.btnHideNewPass);
             this.Controls.Add(this.btnShowNewPass);
-            this.Controls.Add(this.labelAccessRights);
+            this.Controls.Add(this.labelCurrentPass);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txbNewPass);
             this.Controls.Add(this.txbConfirmNewPass);
@@ -322,7 +324,6 @@ namespace Hotel_Management
             this.Controls.Add(this.labelNewPass);
             this.Controls.Add(this.btnSaveSecurity);
             this.Controls.Add(this.labelSecurity);
-            this.Controls.Add(this.cbBoxAccessRights);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.labelAcountInformation);
             this.Controls.Add(this.btnSaveAI);
@@ -333,7 +334,7 @@ namespace Hotel_Management
             this.Controls.Add(this.labelUserCode);
             this.Controls.Add(this.txbUserCode);
             this.Controls.Add(this.listBoxAcountInformation);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imgAvatar);
             this.Controls.Add(this.labelPersionalInformation);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -342,7 +343,7 @@ namespace Hotel_Management
             this.Name = "PersionalInformation";
             this.Text = "PersionalInformation";
             this.Load += new System.EventHandler(this.PersionalInformation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,8 +354,7 @@ namespace Hotel_Management
         private System.Windows.Forms.Label labelPersionalInformation;
         private System.Windows.Forms.Button btnSaveAI;
         private System.Windows.Forms.TextBox txbUserName;
-        private System.Windows.Forms.ComboBox cbBoxAccessRights;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgAvatar;
         private System.Windows.Forms.Label labelUserCode;
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label labelYourName;
@@ -370,10 +370,11 @@ namespace Hotel_Management
         private System.Windows.Forms.TextBox txbConfirmNewPass;
         private System.Windows.Forms.TextBox txbNewPass;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label labelAccessRights;
+        private System.Windows.Forms.Label labelCurrentPass;
         private System.Windows.Forms.Button btnShowNewPass;
         private System.Windows.Forms.Button btnHideNewPass;
         private System.Windows.Forms.Button btnHideConfirmNewPass;
         private System.Windows.Forms.Button btnShowConfirmNewPass;
+        private System.Windows.Forms.TextBox txbCurrentPass;
     }
 }

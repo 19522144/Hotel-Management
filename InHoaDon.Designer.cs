@@ -31,16 +31,16 @@ namespace Hotel_Management
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InHoaDon));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonThoat = new System.Windows.Forms.Button();
-            this.buttonInHoaDon = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxTG = new System.Windows.Forms.TextBox();
-            this.dateTimePickerNL = new System.Windows.Forms.DateTimePicker();
-            this.textBoxMHĐ = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.dtpDay = new System.Windows.Forms.DateTimePicker();
+            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.lbTG = new System.Windows.Forms.Label();
             this.lbNTT = new System.Windows.Forms.Label();
-            this.textBoxMKH = new System.Windows.Forms.TextBox();
+            this.txtTenKh = new System.Windows.Forms.TextBox();
             this.lbMHĐ = new System.Windows.Forms.Label();
             this.lbMKH = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -48,14 +48,14 @@ namespace Hotel_Management
             this.tableLayoutPanelHĐ = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbMCTHĐ = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.lbTT = new System.Windows.Forms.Label();
             this.lbTBĐG = new System.Windows.Forms.Label();
             this.lbSNT = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtMoney = new System.Windows.Forms.TextBox();
+            this.txtNumberDay = new System.Windows.Forms.TextBox();
+            this.txtRoomName = new System.Windows.Forms.TextBox();
+            this.txtMaCT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -66,41 +66,41 @@ namespace Hotel_Management
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonThoat);
-            this.panel1.Controls.Add(this.buttonInHoaDon);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnInHoaDon);
             this.panel1.Location = new System.Drawing.Point(32, 279);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(788, 42);
             this.panel1.TabIndex = 0;
             // 
-            // buttonThoat
+            // btnExit
             // 
-            this.buttonThoat.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonThoat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThoat.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonThoat.Location = new System.Drawing.Point(494, 5);
-            this.buttonThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(147, 33);
-            this.buttonThoat.TabIndex = 1;
-            this.buttonThoat.Text = "Thoát";
-            this.buttonThoat.UseVisualStyleBackColor = false;
-            this.buttonThoat.Click += new System.EventHandler(this.button2_Click);
+            this.btnExit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnExit.Location = new System.Drawing.Point(494, 5);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(147, 33);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // buttonInHoaDon
+            // btnInHoaDon
             // 
-            this.buttonInHoaDon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonInHoaDon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInHoaDon.ForeColor = System.Drawing.Color.DarkBlue;
-            this.buttonInHoaDon.Location = new System.Drawing.Point(148, 5);
-            this.buttonInHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonInHoaDon.Name = "buttonInHoaDon";
-            this.buttonInHoaDon.Size = new System.Drawing.Size(135, 33);
-            this.buttonInHoaDon.TabIndex = 0;
-            this.buttonInHoaDon.Text = "In Hóa Đơn";
-            this.buttonInHoaDon.UseVisualStyleBackColor = false;
-            this.buttonInHoaDon.Click += new System.EventHandler(this.button1_Click);
+            this.btnInHoaDon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInHoaDon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInHoaDon.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnInHoaDon.Location = new System.Drawing.Point(148, 5);
+            this.btnInHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(135, 33);
+            this.btnInHoaDon.TabIndex = 0;
+            this.btnInHoaDon.Text = "In Hóa Đơn";
+            this.btnInHoaDon.UseVisualStyleBackColor = false;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // labelName
             // 
@@ -113,94 +113,91 @@ namespace Hotel_Management
             this.labelName.Size = new System.Drawing.Size(309, 22);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "HÓA ĐƠN THANH TOÁN DỊCH VỤ";
-            this.labelName.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBoxTG);
-            this.panel2.Controls.Add(this.dateTimePickerNL);
-            this.panel2.Controls.Add(this.textBoxMHĐ);
+            this.panel2.Controls.Add(this.txtPrice);
+            this.panel2.Controls.Add(this.dtpDay);
+            this.panel2.Controls.Add(this.txtMaHoaDon);
             this.panel2.Controls.Add(this.lbTG);
             this.panel2.Controls.Add(this.lbNTT);
-            this.panel2.Controls.Add(this.textBoxMKH);
+            this.panel2.Controls.Add(this.txtTenKh);
             this.panel2.Controls.Add(this.lbMHĐ);
             this.panel2.Controls.Add(this.lbMKH);
-            this.panel2.Location = new System.Drawing.Point(9, 58);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(32, 58);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(746, 73);
+            this.panel2.Size = new System.Drawing.Size(788, 73);
             this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // textBoxTG
+            // txtPrice
             // 
-            this.textBoxTG.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBoxTG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTG.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.textBoxTG.Location = new System.Drawing.Point(527, 45);
-            this.textBoxTG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBoxTG.Name = "textBoxTG";
-            this.textBoxTG.ReadOnly = true;
-            this.textBoxTG.Size = new System.Drawing.Size(138, 13);
-            this.textBoxTG.TabIndex = 18;
+            this.txtPrice.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrice.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtPrice.Location = new System.Drawing.Point(553, 45);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
+            this.txtPrice.Size = new System.Drawing.Size(218, 13);
+            this.txtPrice.TabIndex = 18;
             // 
-            // dateTimePickerNL
+            // dtpDay
             // 
-            this.dateTimePickerNL.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-            this.dateTimePickerNL.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNL.Location = new System.Drawing.Point(606, 11);
-            this.dateTimePickerNL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePickerNL.Name = "dateTimePickerNL";
-            this.dateTimePickerNL.Size = new System.Drawing.Size(139, 20);
-            this.dateTimePickerNL.TabIndex = 8;
+            this.dtpDay.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
+            this.dtpDay.Enabled = false;
+            this.dtpDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDay.Location = new System.Drawing.Point(632, 11);
+            this.dtpDay.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDay.Name = "dtpDay";
+            this.dtpDay.Size = new System.Drawing.Size(139, 20);
+            this.dtpDay.TabIndex = 8;
             // 
-            // textBoxMHĐ
+            // txtMaHoaDon
             // 
-            this.textBoxMHĐ.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBoxMHĐ.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMHĐ.Location = new System.Drawing.Point(172, 13);
-            this.textBoxMHĐ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBoxMHĐ.Name = "textBoxMHĐ";
-            this.textBoxMHĐ.ReadOnly = true;
-            this.textBoxMHĐ.Size = new System.Drawing.Size(138, 13);
-            this.textBoxMHĐ.TabIndex = 6;
+            this.txtMaHoaDon.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtMaHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaHoaDon.Location = new System.Drawing.Point(172, 13);
+            this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.ReadOnly = true;
+            this.txtMaHoaDon.Size = new System.Drawing.Size(138, 13);
+            this.txtMaHoaDon.TabIndex = 6;
             // 
             // lbTG
             // 
             this.lbTG.AutoSize = true;
             this.lbTG.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTG.Location = new System.Drawing.Point(464, 43);
+            this.lbTG.Location = new System.Drawing.Point(490, 43);
             this.lbTG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTG.Name = "lbTG";
             this.lbTG.Size = new System.Drawing.Size(56, 16);
             this.lbTG.TabIndex = 16;
             this.lbTG.Text = "Trị Giá:";
-            this.lbTG.Click += new System.EventHandler(this.lbTG_Click);
             // 
             // lbNTT
             // 
             this.lbNTT.AutoSize = true;
             this.lbNTT.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNTT.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbNTT.Location = new System.Drawing.Point(464, 14);
+            this.lbNTT.Location = new System.Drawing.Point(490, 14);
             this.lbNTT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNTT.Name = "lbNTT";
             this.lbNTT.Size = new System.Drawing.Size(130, 16);
             this.lbNTT.TabIndex = 2;
             this.lbNTT.Text = "Ngày Thanh Toán:";
-            this.lbNTT.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBoxMKH
+            // txtTenKh
             // 
-            this.textBoxMKH.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBoxMKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMKH.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.textBoxMKH.Location = new System.Drawing.Point(186, 45);
-            this.textBoxMKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBoxMKH.Name = "textBoxMKH";
-            this.textBoxMKH.ReadOnly = true;
-            this.textBoxMKH.Size = new System.Drawing.Size(138, 13);
-            this.textBoxMKH.TabIndex = 15;
+            this.txtTenKh.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtTenKh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenKh.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtTenKh.Location = new System.Drawing.Point(186, 45);
+            this.txtTenKh.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenKh.Name = "txtTenKh";
+            this.txtTenKh.ReadOnly = true;
+            this.txtTenKh.Size = new System.Drawing.Size(138, 13);
+            this.txtTenKh.TabIndex = 15;
             // 
             // lbMHĐ
             // 
@@ -221,24 +218,22 @@ namespace Hotel_Management
             this.lbMKH.Location = new System.Drawing.Point(59, 43);
             this.lbMKH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMKH.Name = "lbMKH";
-            this.lbMKH.Size = new System.Drawing.Size(121, 16);
+            this.lbMKH.Size = new System.Drawing.Size(125, 16);
             this.lbMKH.TabIndex = 1;
-            this.lbMKH.Text = "Mã Khách Hàng:";
-            this.lbMKH.Click += new System.EventHandler(this.label5_Click);
+            this.lbMKH.Text = "Tên Khách Hàng:";
             // 
             // groupBoxTTHĐ
             // 
             this.groupBoxTTHĐ.Controls.Add(this.tableLayoutPanelHĐ);
             this.groupBoxTTHĐ.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBoxTTHĐ.Location = new System.Drawing.Point(86, 150);
-            this.groupBoxTTHĐ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTTHĐ.Location = new System.Drawing.Point(94, 150);
+            this.groupBoxTTHĐ.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxTTHĐ.Name = "groupBoxTTHĐ";
-            this.groupBoxTTHĐ.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTTHĐ.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxTTHĐ.Size = new System.Drawing.Size(657, 95);
             this.groupBoxTTHĐ.TabIndex = 9;
             this.groupBoxTTHĐ.TabStop = false;
             this.groupBoxTTHĐ.Text = "Thông tin Hóa Đơn";
-            this.groupBoxTTHĐ.Enter += new System.EventHandler(this.groupBoxTTHĐ_Enter);
             // 
             // tableLayoutPanelHĐ
             // 
@@ -252,16 +247,16 @@ namespace Hotel_Management
             this.tableLayoutPanelHĐ.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
             this.tableLayoutPanelHĐ.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanelHĐ.Controls.Add(this.lbMCTHĐ, 0, 0);
-            this.tableLayoutPanelHĐ.Controls.Add(this.textBox26, 4, 1);
+            this.tableLayoutPanelHĐ.Controls.Add(this.txtUnitPrice, 4, 1);
             this.tableLayoutPanelHĐ.Controls.Add(this.lbTT, 5, 0);
             this.tableLayoutPanelHĐ.Controls.Add(this.lbTBĐG, 4, 0);
             this.tableLayoutPanelHĐ.Controls.Add(this.lbSNT, 2, 0);
-            this.tableLayoutPanelHĐ.Controls.Add(this.textBox27, 5, 1);
-            this.tableLayoutPanelHĐ.Controls.Add(this.textBox24, 2, 1);
-            this.tableLayoutPanelHĐ.Controls.Add(this.textBox1, 1, 1);
-            this.tableLayoutPanelHĐ.Controls.Add(this.textBox20, 0, 1);
+            this.tableLayoutPanelHĐ.Controls.Add(this.txtMoney, 5, 1);
+            this.tableLayoutPanelHĐ.Controls.Add(this.txtNumberDay, 2, 1);
+            this.tableLayoutPanelHĐ.Controls.Add(this.txtRoomName, 1, 1);
+            this.tableLayoutPanelHĐ.Controls.Add(this.txtMaCT, 0, 1);
             this.tableLayoutPanelHĐ.Location = new System.Drawing.Point(0, 26);
-            this.tableLayoutPanelHĐ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanelHĐ.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelHĐ.Name = "tableLayoutPanelHĐ";
             this.tableLayoutPanelHĐ.RowCount = 2;
             this.tableLayoutPanelHĐ.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
@@ -294,14 +289,14 @@ namespace Hotel_Management
             this.lbMCTHĐ.TabIndex = 0;
             this.lbMCTHĐ.Text = "Mã CTHĐ";
             // 
-            // textBox26
+            // txtUnitPrice
             // 
-            this.textBox26.Location = new System.Drawing.Point(345, 32);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.ReadOnly = true;
-            this.textBox26.Size = new System.Drawing.Size(126, 20);
-            this.textBox26.TabIndex = 11;
+            this.txtUnitPrice.Location = new System.Drawing.Point(345, 32);
+            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.ReadOnly = true;
+            this.txtUnitPrice.Size = new System.Drawing.Size(126, 20);
+            this.txtUnitPrice.TabIndex = 11;
             // 
             // lbTT
             // 
@@ -342,43 +337,43 @@ namespace Hotel_Management
             this.lbSNT.Text = "Số Ngày Thuê";
             this.lbSNT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox27
+            // txtMoney
             // 
-            this.textBox27.Location = new System.Drawing.Point(475, 32);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ReadOnly = true;
-            this.textBox27.Size = new System.Drawing.Size(155, 20);
-            this.textBox27.TabIndex = 12;
+            this.txtMoney.Location = new System.Drawing.Point(475, 32);
+            this.txtMoney.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMoney.Name = "txtMoney";
+            this.txtMoney.ReadOnly = true;
+            this.txtMoney.Size = new System.Drawing.Size(155, 20);
+            this.txtMoney.TabIndex = 12;
             // 
-            // textBox24
+            // txtNumberDay
             // 
-            this.textBox24.Location = new System.Drawing.Point(216, 32);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.ReadOnly = true;
-            this.textBox24.Size = new System.Drawing.Size(125, 20);
-            this.textBox24.TabIndex = 9;
+            this.txtNumberDay.Location = new System.Drawing.Point(216, 32);
+            this.txtNumberDay.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumberDay.Name = "txtNumberDay";
+            this.txtNumberDay.ReadOnly = true;
+            this.txtNumberDay.Size = new System.Drawing.Size(125, 20);
+            this.txtNumberDay.TabIndex = 9;
             // 
-            // textBox1
+            // txtRoomName
             // 
-            this.textBox1.Location = new System.Drawing.Point(83, 32);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtRoomName.Location = new System.Drawing.Point(83, 32);
+            this.txtRoomName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRoomName.Name = "txtRoomName";
+            this.txtRoomName.ReadOnly = true;
+            this.txtRoomName.Size = new System.Drawing.Size(129, 20);
+            this.txtRoomName.TabIndex = 12;
             // 
-            // textBox20
+            // txtMaCT
             // 
-            this.textBox20.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox20.Location = new System.Drawing.Point(2, 32);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(77, 20);
-            this.textBox20.TabIndex = 5;
+            this.txtMaCT.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMaCT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaCT.Location = new System.Drawing.Point(2, 32);
+            this.txtMaCT.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaCT.Name = "txtMaCT";
+            this.txtMaCT.ReadOnly = true;
+            this.txtMaCT.Size = new System.Drawing.Size(77, 20);
+            this.txtMaCT.TabIndex = 5;
             // 
             // label1
             // 
@@ -393,10 +388,10 @@ namespace Hotel_Management
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(32, 259);
+            this.label2.Location = new System.Drawing.Point(32, 251);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(750, 2);
+            this.label2.Size = new System.Drawing.Size(789, 1);
             this.label2.TabIndex = 11;
             this.label2.Text = "label2";
             // 
@@ -405,7 +400,7 @@ namespace Hotel_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(824, 528);
+            this.ClientSize = new System.Drawing.Size(850, 354);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxTTHĐ);
@@ -414,7 +409,7 @@ namespace Hotel_Management
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "InHoaDon";
             this.Text = "InHoaDon";
@@ -432,33 +427,33 @@ namespace Hotel_Management
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonThoat;
-        private System.Windows.Forms.Button buttonInHoaDon;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbNTT;
         private System.Windows.Forms.Label lbMHĐ;
         private System.Windows.Forms.Label lbMKH;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNL;
-        private System.Windows.Forms.TextBox textBoxMHĐ;
-        private System.Windows.Forms.TextBox textBoxMKH;
+        private System.Windows.Forms.DateTimePicker dtpDay;
+        private System.Windows.Forms.TextBox txtMaHoaDon;
+        private System.Windows.Forms.TextBox txtTenKh;
         private System.Windows.Forms.GroupBox groupBoxTTHĐ;
         private System.Windows.Forms.Label lbTG;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelHĐ;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox txtUnitPrice;
+        private System.Windows.Forms.TextBox txtNumberDay;
         private System.Windows.Forms.Label lbMCTHĐ;
         private System.Windows.Forms.Label lbTBĐG;
         private System.Windows.Forms.Label lbTT;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox txtMoney;
         private System.Windows.Forms.Label lbSNT;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtMaCT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxTG;
+        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRoomName;
     }
 }
 

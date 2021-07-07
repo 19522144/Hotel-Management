@@ -42,6 +42,8 @@ namespace Hotel_Management
             txtDiaChi.DataBindings.Clear();
             txtQuocTich.DataBindings.Clear();
             cmbLoai.DataBindings.Clear();
+            cmbGender.DataBindings.Clear();
+            dtpBirthDay.DataBindings.Clear();
 
             txtMaKH.DataBindings.Add("Text", dgvData.DataSource, "ID", true, DataSourceUpdateMode.Never);
             txtCMND.DataBindings.Add("Text", dgvData.DataSource, "CMND", true, DataSourceUpdateMode.Never);
@@ -50,6 +52,8 @@ namespace Hotel_Management
             txtDiaChi.DataBindings.Add("Text", dgvData.DataSource, "Address", true, DataSourceUpdateMode.Never);
             txtQuocTich.DataBindings.Add("Text", dgvData.DataSource, "Nationality", true, DataSourceUpdateMode.Never);
             cmbLoai.DataBindings.Add("Text", dgvData.DataSource, "Type", true, DataSourceUpdateMode.Never);
+            cmbGender.DataBindings.Add("Text", dgvData.DataSource, "Gender", true, DataSourceUpdateMode.Never);
+            dtpBirthDay.DataBindings.Add("Value", dgvData.DataSource, "BirthDay", true, DataSourceUpdateMode.Never);
         }
 
 
@@ -71,7 +75,9 @@ namespace Hotel_Management
                 DIACHI = txtDiaChi.Text,
                 MALOAIKHACH = (int)cmbLoai.SelectedValue,
                 QUOCTICH = txtQuocTich.Text,
-                SODIENTHOAI = txtSDT.Text
+                SODIENTHOAI = txtSDT.Text,
+                GIOITINH = cmbGender.Text,
+                NGAYSINH = dtpBirthDay.Value
             };
 
             CustomerController.updateCustomer(kh);
@@ -139,7 +145,9 @@ namespace Hotel_Management
                 DIACHI = txtDiaChi.Text,
                 MALOAIKHACH = (int)cmbLoai.SelectedValue,
                 QUOCTICH = txtQuocTich.Text,
-                SODIENTHOAI = txtSDT.Text
+                SODIENTHOAI = txtSDT.Text,
+                GIOITINH = cmbGender.Text,
+                NGAYSINH = dtpBirthDay.Value
             };
 
             CustomerController.insertCustomer(kh);

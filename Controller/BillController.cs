@@ -24,9 +24,33 @@ namespace Hotel_Management.Controller
                            UnitPrice = c.DONGIA,
                            CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
                            CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,
-                           Amount = c.THANHTIEN
+                           Amount = c.THANHTIEN,
+                           RentalID = c.MAPHIEUTHUE
                        };
 
+            return data.ToList();
+        }
+
+        public dynamic getAllWithTime(int month, int year)
+        {
+            var data = from c in entities.CHITIETHOADONs
+                       where c.HOADON.NGAYTHANHTOAN.Month == month && c.HOADON.NGAYTHANHTOAN.Year == year
+                       select new
+                       {
+                           ID = c.MAHOADON,
+                           PaymentDay = c.HOADON.NGAYTHANHTOAN,
+                           Value = c.HOADON.TRIGIA,
+                           RentalDays = c.SONGAYTHUE,
+                           RoomName = c.PHONG.TENPHONG,
+                           RoomID = c.PHONG.MAPHONG,
+                           UnitPrice = c.DONGIA,
+                           CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
+                           CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,
+                           Amount = c.THANHTIEN,
+                           RentalID = c.MAPHIEUTHUE
+                       };
+            //if (data.ToList().Count == 0)
+            //    return new List<int>();
             return data.ToList();
         }
 
@@ -102,5 +126,18 @@ namespace Hotel_Management.Controller
 
             return data.ToList();
         }
+
+        public int getBillID(int RentalID)
+        {
+            CHITIETHOADON cthoadon = entities.CHITIETHOADONs.Where(c => c.MAPHIEUTHUE == RentalID).SingleOrDefault();
+            //System.Windows.MessageBox.Show(RentalID + " ");// + cthoadon.MAHOADON);
+            return (int) cthoadon.MAHOADON;
+        }
+
+        public CHITIETHOADON getBillByID(int BillID)
+        {
+            return entities.CHITIETHOADONs.Where(c => c.MAHOADON == BillID).SingleOrDefault();
+        }
+
     }
 }

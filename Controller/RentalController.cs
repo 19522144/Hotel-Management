@@ -24,10 +24,18 @@ namespace Hotel_Management.Controller
                            CustomerName = c.KHACHHANG.TENKHACHHANG,
                            CMND = c.KHACHHANG.CMND,
                            DayStart = c.PHIEUTHUE.NGAYBDTHUE,
-                           Address = c.KHACHHANG.DIACHI
+                           Address = c.KHACHHANG.DIACHI,
+                           NOTE = c.PHIEUTHUE.GHICHU
                        };
 
             return data.ToList();
+        }
+
+        public void setPaid(int ID)
+        {
+            PHIEUTHUE phieuthue = entities.PHIEUTHUEs.Find(ID);
+            phieuthue.GHICHU = "Đã thanh toán";
+            entities.SaveChanges();
         }
 
         public int addRental(PHIEUTHUE pt)
@@ -97,6 +105,26 @@ namespace Hotel_Management.Controller
                        };
 
             return data.ToList();
+        }
+
+        public bool isForeign(int ID)
+        {
+            var data = from c in entities.CHITIETPHIEUTHUEs
+                       where c.MAPHIEUTHUE == ID && c.KHACHHANG.LOAIKHACH.TENLOAIKHACH == "Nước ngoài" //:((
+                       select c;
+            //MessageBox.Show("" + data.ToList().Count);
+            if (data.ToList().Count != 0)
+                return true;
+            return false;
+        }
+
+        public int getNumberPeople(int ID)
+        {
+            var data = from c in entities.CHITIETPHIEUTHUEs
+                       where c.MAPHIEUTHUE == ID 
+                       select c;
+
+            return data.ToList().Count;
         }
     }
 }
