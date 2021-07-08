@@ -103,20 +103,11 @@ namespace Hotel_Management
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvData.SelectedRows)
+            if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int rowId = Convert.ToInt32(row.Cells[0].Value);
-
-                if (rowId > 0)
-                {                 
-                    if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        userController.deleteUser(rowId);
-                        LoadData();
-                    }
-                }
+                userController.deleteUser(ID);
+                LoadData();
             }
-            
         }
 
         private void btnExit_Click(object sender, EventArgs e)

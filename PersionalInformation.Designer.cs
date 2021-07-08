@@ -55,24 +55,25 @@ namespace Hotel_Management
             this.btnShowNewPass = new System.Windows.Forms.Button();
             this.imgAvatar = new System.Windows.Forms.PictureBox();
             this.txbCurrentPass = new System.Windows.Forms.TextBox();
+            this.lbRights = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelPersionalInformation
             // 
             this.labelPersionalInformation.AutoSize = true;
-            this.labelPersionalInformation.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPersionalInformation.Font = new System.Drawing.Font("Segoe UI Black", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPersionalInformation.ForeColor = System.Drawing.Color.Teal;
-            this.labelPersionalInformation.Location = new System.Drawing.Point(27, 9);
+            this.labelPersionalInformation.Location = new System.Drawing.Point(361, 9);
             this.labelPersionalInformation.Name = "labelPersionalInformation";
-            this.labelPersionalInformation.Size = new System.Drawing.Size(139, 20);
+            this.labelPersionalInformation.Size = new System.Drawing.Size(181, 25);
             this.labelPersionalInformation.TabIndex = 0;
             this.labelPersionalInformation.Text = "Thông tin cá nhân";
             // 
             // btnSaveAI
             // 
             this.btnSaveAI.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAI.Location = new System.Drawing.Point(366, 367);
+            this.btnSaveAI.Location = new System.Drawing.Point(365, 364);
             this.btnSaveAI.Name = "btnSaveAI";
             this.btnSaveAI.Size = new System.Drawing.Size(143, 34);
             this.btnSaveAI.TabIndex = 1;
@@ -82,7 +83,7 @@ namespace Hotel_Management
             // 
             // txbUserName
             // 
-            this.txbUserName.Location = new System.Drawing.Point(311, 226);
+            this.txbUserName.Location = new System.Drawing.Point(310, 223);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(240, 21);
             this.txbUserName.TabIndex = 2;
@@ -92,7 +93,7 @@ namespace Hotel_Management
             this.labelUserCode.AutoSize = true;
             this.labelUserCode.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserCode.ForeColor = System.Drawing.Color.Teal;
-            this.labelUserCode.Location = new System.Drawing.Point(307, 119);
+            this.labelUserCode.Location = new System.Drawing.Point(306, 116);
             this.labelUserCode.Name = "labelUserCode";
             this.labelUserCode.Size = new System.Drawing.Size(92, 15);
             this.labelUserCode.TabIndex = 5;
@@ -103,7 +104,7 @@ namespace Hotel_Management
             this.labelUserName.AutoSize = true;
             this.labelUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserName.ForeColor = System.Drawing.Color.Teal;
-            this.labelUserName.Location = new System.Drawing.Point(307, 194);
+            this.labelUserName.Location = new System.Drawing.Point(306, 191);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(89, 15);
             this.labelUserName.TabIndex = 6;
@@ -114,7 +115,7 @@ namespace Hotel_Management
             this.labelYourName.AutoSize = true;
             this.labelYourName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelYourName.ForeColor = System.Drawing.Color.Teal;
-            this.labelYourName.Location = new System.Drawing.Point(307, 266);
+            this.labelYourName.Location = new System.Drawing.Point(306, 263);
             this.labelYourName.Name = "labelYourName";
             this.labelYourName.Size = new System.Drawing.Size(94, 15);
             this.labelYourName.TabIndex = 7;
@@ -122,7 +123,7 @@ namespace Hotel_Management
             // 
             // txbUserCode
             // 
-            this.txbUserCode.Location = new System.Drawing.Point(311, 153);
+            this.txbUserCode.Location = new System.Drawing.Point(310, 150);
             this.txbUserCode.Name = "txbUserCode";
             this.txbUserCode.ReadOnly = true;
             this.txbUserCode.Size = new System.Drawing.Size(240, 21);
@@ -130,7 +131,7 @@ namespace Hotel_Management
             // 
             // txbYourName
             // 
-            this.txbYourName.Location = new System.Drawing.Point(311, 300);
+            this.txbYourName.Location = new System.Drawing.Point(310, 297);
             this.txbYourName.Name = "txbYourName";
             this.txbYourName.Size = new System.Drawing.Size(243, 21);
             this.txbYourName.TabIndex = 9;
@@ -141,7 +142,7 @@ namespace Hotel_Management
             this.listBoxAcountInformation.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.listBoxAcountInformation.FormattingEnabled = true;
             this.listBoxAcountInformation.ItemHeight = 15;
-            this.listBoxAcountInformation.Location = new System.Drawing.Point(288, 86);
+            this.listBoxAcountInformation.Location = new System.Drawing.Point(287, 83);
             this.listBoxAcountInformation.Name = "listBoxAcountInformation";
             this.listBoxAcountInformation.Size = new System.Drawing.Size(291, 304);
             this.listBoxAcountInformation.TabIndex = 10;
@@ -151,7 +152,7 @@ namespace Hotel_Management
             this.labelSecurity.AutoSize = true;
             this.labelSecurity.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSecurity.ForeColor = System.Drawing.Color.Teal;
-            this.labelSecurity.Location = new System.Drawing.Point(709, 74);
+            this.labelSecurity.Location = new System.Drawing.Point(708, 71);
             this.labelSecurity.Name = "labelSecurity";
             this.labelSecurity.Size = new System.Drawing.Size(64, 19);
             this.labelSecurity.TabIndex = 11;
@@ -162,7 +163,7 @@ namespace Hotel_Management
             this.labelAcountInformation.AutoSize = true;
             this.labelAcountInformation.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAcountInformation.ForeColor = System.Drawing.Color.Teal;
-            this.labelAcountInformation.Location = new System.Drawing.Point(342, 74);
+            this.labelAcountInformation.Location = new System.Drawing.Point(341, 71);
             this.labelAcountInformation.Name = "labelAcountInformation";
             this.labelAcountInformation.Size = new System.Drawing.Size(135, 19);
             this.labelAcountInformation.TabIndex = 12;
@@ -174,7 +175,7 @@ namespace Hotel_Management
             this.listBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(602, 86);
+            this.listBox1.Location = new System.Drawing.Point(601, 83);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(276, 304);
             this.listBox1.TabIndex = 13;
@@ -182,7 +183,7 @@ namespace Hotel_Management
             // btnSaveSecurity
             // 
             this.btnSaveSecurity.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveSecurity.Location = new System.Drawing.Point(665, 367);
+            this.btnSaveSecurity.Location = new System.Drawing.Point(664, 364);
             this.btnSaveSecurity.Name = "btnSaveSecurity";
             this.btnSaveSecurity.Size = new System.Drawing.Size(143, 34);
             this.btnSaveSecurity.TabIndex = 14;
@@ -195,7 +196,7 @@ namespace Hotel_Management
             this.labelNewPass.AutoSize = true;
             this.labelNewPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNewPass.ForeColor = System.Drawing.Color.Teal;
-            this.labelNewPass.Location = new System.Drawing.Point(629, 119);
+            this.labelNewPass.Location = new System.Drawing.Point(628, 116);
             this.labelNewPass.Name = "labelNewPass";
             this.labelNewPass.Size = new System.Drawing.Size(84, 15);
             this.labelNewPass.TabIndex = 15;
@@ -206,7 +207,7 @@ namespace Hotel_Management
             this.labelConfirmNewPass.AutoSize = true;
             this.labelConfirmNewPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirmNewPass.ForeColor = System.Drawing.Color.Teal;
-            this.labelConfirmNewPass.Location = new System.Drawing.Point(629, 194);
+            this.labelConfirmNewPass.Location = new System.Drawing.Point(628, 191);
             this.labelConfirmNewPass.Name = "labelConfirmNewPass";
             this.labelConfirmNewPass.Size = new System.Drawing.Size(136, 15);
             this.labelConfirmNewPass.TabIndex = 16;
@@ -214,14 +215,14 @@ namespace Hotel_Management
             // 
             // txbConfirmNewPass
             // 
-            this.txbConfirmNewPass.Location = new System.Drawing.Point(633, 226);
+            this.txbConfirmNewPass.Location = new System.Drawing.Point(632, 223);
             this.txbConfirmNewPass.Name = "txbConfirmNewPass";
             this.txbConfirmNewPass.Size = new System.Drawing.Size(220, 21);
             this.txbConfirmNewPass.TabIndex = 17;
             // 
             // txbNewPass
             // 
-            this.txbNewPass.Location = new System.Drawing.Point(633, 153);
+            this.txbNewPass.Location = new System.Drawing.Point(632, 150);
             this.txbNewPass.Name = "txbNewPass";
             this.txbNewPass.Size = new System.Drawing.Size(220, 21);
             this.txbNewPass.TabIndex = 18;
@@ -229,7 +230,7 @@ namespace Hotel_Management
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(547, 437);
+            this.btnExit.Location = new System.Drawing.Point(546, 434);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(93, 35);
             this.btnExit.TabIndex = 19;
@@ -242,7 +243,7 @@ namespace Hotel_Management
             this.labelCurrentPass.AutoSize = true;
             this.labelCurrentPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCurrentPass.ForeColor = System.Drawing.Color.Teal;
-            this.labelCurrentPass.Location = new System.Drawing.Point(629, 266);
+            this.labelCurrentPass.Location = new System.Drawing.Point(628, 263);
             this.labelCurrentPass.Name = "labelCurrentPass";
             this.labelCurrentPass.Size = new System.Drawing.Size(134, 15);
             this.labelCurrentPass.TabIndex = 20;
@@ -251,7 +252,7 @@ namespace Hotel_Management
             // btnHideNewPass
             // 
             this.btnHideNewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnHideNewPass.Image")));
-            this.btnHideNewPass.Location = new System.Drawing.Point(826, 153);
+            this.btnHideNewPass.Location = new System.Drawing.Point(825, 150);
             this.btnHideNewPass.Name = "btnHideNewPass";
             this.btnHideNewPass.Size = new System.Drawing.Size(27, 24);
             this.btnHideNewPass.TabIndex = 22;
@@ -261,7 +262,7 @@ namespace Hotel_Management
             // btnHideConfirmNewPass
             // 
             this.btnHideConfirmNewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnHideConfirmNewPass.Image")));
-            this.btnHideConfirmNewPass.Location = new System.Drawing.Point(826, 223);
+            this.btnHideConfirmNewPass.Location = new System.Drawing.Point(825, 220);
             this.btnHideConfirmNewPass.Name = "btnHideConfirmNewPass";
             this.btnHideConfirmNewPass.Size = new System.Drawing.Size(26, 24);
             this.btnHideConfirmNewPass.TabIndex = 23;
@@ -271,7 +272,7 @@ namespace Hotel_Management
             // btnShowConfirmNewPass
             // 
             this.btnShowConfirmNewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnShowConfirmNewPass.Image")));
-            this.btnShowConfirmNewPass.Location = new System.Drawing.Point(827, 224);
+            this.btnShowConfirmNewPass.Location = new System.Drawing.Point(826, 221);
             this.btnShowConfirmNewPass.Name = "btnShowConfirmNewPass";
             this.btnShowConfirmNewPass.Size = new System.Drawing.Size(26, 24);
             this.btnShowConfirmNewPass.TabIndex = 24;
@@ -281,7 +282,7 @@ namespace Hotel_Management
             // btnShowNewPass
             // 
             this.btnShowNewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnShowNewPass.Image")));
-            this.btnShowNewPass.Location = new System.Drawing.Point(826, 153);
+            this.btnShowNewPass.Location = new System.Drawing.Point(825, 150);
             this.btnShowNewPass.Name = "btnShowNewPass";
             this.btnShowNewPass.Size = new System.Drawing.Size(27, 24);
             this.btnShowNewPass.TabIndex = 21;
@@ -291,26 +292,38 @@ namespace Hotel_Management
             // imgAvatar
             // 
             this.imgAvatar.Image = global::Hotel_Management.Properties.Resources.avatar_default;
-            this.imgAvatar.Location = new System.Drawing.Point(12, 101);
+            this.imgAvatar.Location = new System.Drawing.Point(12, 83);
             this.imgAvatar.Name = "imgAvatar";
-            this.imgAvatar.Size = new System.Drawing.Size(256, 290);
+            this.imgAvatar.Size = new System.Drawing.Size(256, 255);
             this.imgAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgAvatar.TabIndex = 4;
             this.imgAvatar.TabStop = false;
             // 
             // txbCurrentPass
             // 
-            this.txbCurrentPass.Location = new System.Drawing.Point(633, 300);
+            this.txbCurrentPass.Location = new System.Drawing.Point(632, 297);
             this.txbCurrentPass.Name = "txbCurrentPass";
             this.txbCurrentPass.Size = new System.Drawing.Size(196, 21);
             this.txbCurrentPass.TabIndex = 25;
             this.txbCurrentPass.UseSystemPasswordChar = true;
             // 
+            // lbRights
+            // 
+            this.lbRights.Font = new System.Drawing.Font("Segoe UI Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRights.ForeColor = System.Drawing.Color.Teal;
+            this.lbRights.Location = new System.Drawing.Point(12, 362);
+            this.lbRights.Name = "lbRights";
+            this.lbRights.Size = new System.Drawing.Size(256, 25);
+            this.lbRights.TabIndex = 26;
+            this.lbRights.Text = "Nhân viên";
+            this.lbRights.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // PersionalInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 506);
+            this.ClientSize = new System.Drawing.Size(896, 481);
+            this.Controls.Add(this.lbRights);
             this.Controls.Add(this.btnHideConfirmNewPass);
             this.Controls.Add(this.txbCurrentPass);
             this.Controls.Add(this.btnShowConfirmNewPass);
@@ -376,5 +389,6 @@ namespace Hotel_Management
         private System.Windows.Forms.Button btnHideConfirmNewPass;
         private System.Windows.Forms.Button btnShowConfirmNewPass;
         private System.Windows.Forms.TextBox txbCurrentPass;
+        private System.Windows.Forms.Label lbRights;
     }
 }

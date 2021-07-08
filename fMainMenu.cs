@@ -22,29 +22,32 @@ namespace Hotel_Management
         fQuanLyPhieuThue quanLyPhieuThue;
         fParameterUpdate parameterUpdate;
         fReport report;
-        DangKi dangKi;
-        InHoaDon inHoaDon;
         ManageCustomerType manageCustomerType;
         ManageRoomType manageRoomType;
         PersionalInformation persionalInformation;
         RoomManagement roomManagement;
 
         UserController userController = new UserController();
+        int UserID;
+        bool isManager = false;
 
-        public static fMainMenu MainInstance;
 
-        public fMainMenu()
+        public fMainMenu(int ID)
         {
             InitializeComponent();
-            if (MainInstance == null)
-                MainInstance = this;
+            UserID = ID;
+            NGUOIDUNG nguoiDung = userController.getUserByID(UserID);
+            if (nguoiDung.QUYENTRUYCAP == "Quản lý")
+                isManager = true;
+            setAvatar(nguoiDung.ANHDAIDIEN);
+            lbName.Text = nguoiDung.TENNGUOIDUNG;
         }
 
         private void gotoPersonnalInformation(object sender, EventArgs e)
         {
             if (persionalInformation == null || persionalInformation.IsDisposed)
             {
-                persionalInformation = new PersionalInformation(1); //
+                persionalInformation = new PersionalInformation(UserID); //
             }
             persionalInformation.Show();
         }
@@ -114,7 +117,9 @@ namespace Hotel_Management
             {
                 manageCustomerType = new ManageCustomerType();
             }
-            manageCustomerType.Show();
+            if (isManager)
+                manageCustomerType.Show();
+            else MessageBox.Show("Bạn không có quyền truy cập vào khu vực này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void gotoRoomtype(object sender, EventArgs e)
@@ -123,7 +128,11 @@ namespace Hotel_Management
             {
                 manageRoomType = new ManageRoomType();
             }
-            manageRoomType.Show();
+            
+            if (isManager)
+                manageRoomType.Show();
+            else MessageBox.Show("Bạn không có quyền truy cập vào khu vực này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void gotoStaffManage(object sender, EventArgs e)
@@ -132,7 +141,11 @@ namespace Hotel_Management
             {
                 manageStaff = new fManageStaff();
             }
-            manageStaff.Show();
+            
+            if (isManager)
+                manageStaff.Show();
+            else MessageBox.Show("Bạn không có quyền truy cập vào khu vực này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void gotoParameterUpdate(object sender, EventArgs e)
@@ -141,7 +154,11 @@ namespace Hotel_Management
             {
                 parameterUpdate = new fParameterUpdate();
             }
-            parameterUpdate.Show();
+            
+            if (isManager)
+                parameterUpdate.Show();
+            else MessageBox.Show("Bạn không có quyền truy cập vào khu vực này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void fMainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -151,6 +168,30 @@ namespace Hotel_Management
             {
                 e.Cancel = true;
             }
+        }
+
+        void setAvatar(int index)
+        {
+            if (index > 5)
+                return;
+
+            Bitmap bitmap = new Bitmap(Properties.Resources.avatar);
+            int HEIGHT = bitmap.Height / 3;
+            int WIDTH = bitmap.Width / 3;
+
+            int row = index / 3;
+            int column = index % 3;
+            Bitmap avatar = new Bitmap(WIDTH, HEIGHT);
+
+            for (int i = row * HEIGHT; i < (row + 1) * HEIGHT; i++)
+            {
+                for (int j = column * WIDTH; j < (column + 1) * WIDTH; j++)
+                {
+                    avatar.SetPixel(j - column * WIDTH, i - row * HEIGHT, bitmap.GetPixel(j, i));
+                }
+            }
+
+            imgAvatar.Image = avatar;
         }
 
     }

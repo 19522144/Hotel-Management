@@ -155,15 +155,15 @@
             // 
             // lbName
             // 
-            this.lbName.AutoSize = true;
             this.lbName.BackColor = System.Drawing.Color.Black;
             this.lbName.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.White;
-            this.lbName.Location = new System.Drawing.Point(27, 145);
+            this.lbName.Location = new System.Drawing.Point(11, 141);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(125, 21);
+            this.lbName.Size = new System.Drawing.Size(168, 51);
             this.lbName.TabIndex = 1;
             this.lbName.Text = "Tên nhân viên";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // imgAvatar
             // 
@@ -172,6 +172,7 @@
             this.imgAvatar.Location = new System.Drawing.Point(42, 33);
             this.imgAvatar.Name = "imgAvatar";
             this.imgAvatar.Size = new System.Drawing.Size(100, 89);
+            this.imgAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgAvatar.TabIndex = 0;
             this.imgAvatar.TabStop = false;
             // 

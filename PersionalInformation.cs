@@ -16,14 +16,16 @@ namespace Hotel_Management
     public partial class PersionalInformation : Form
     {
         UserController userController = new UserController();
-        
+        NGUOIDUNG nguoiDung;
+
         public PersionalInformation(int ID)
         {
             InitializeComponent();
-            NGUOIDUNG nguoiDung = userController.getUserByID(ID);
+            nguoiDung = userController.getUserByID(ID);
             txbUserCode.Text = nguoiDung.MANGUOIDUNG.ToString();
             txbUserName.Text = nguoiDung.TENDANGNHAP;
             txbYourName.Text = nguoiDung.TENNGUOIDUNG;
+            lbRights.Text = nguoiDung.QUYENTRUYCAP;
             setAvatar(nguoiDung.ANHDAIDIEN);
         }
         void AddBinding()
@@ -117,7 +119,7 @@ namespace Hotel_Management
                 MessageBox.Show("Xác nhận mật khẩu mới không đúng, vui lòng xác nhận lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txbConfirmNewPass.Focus();
             }
-            else if (GetMD5(txbCurrentPass.Text) != "21232F297A57A5A743894A0E4A801FC3")
+            else if (GetMD5(txbCurrentPass.Text) != nguoiDung.MATKHAU)
             {
                 MessageBox.Show("Mật khẩu hiện tại không đúng, vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txbCurrentPass.Focus();

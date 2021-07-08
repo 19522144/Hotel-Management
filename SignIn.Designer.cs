@@ -47,10 +47,11 @@ namespace Hotel_Management
             this.labelLogin.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.labelLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.labelLogin.ForeColor = System.Drawing.Color.Teal;
-            this.labelLogin.Location = new System.Drawing.Point(409, 17);
-            this.labelLogin.MinimumSize = new System.Drawing.Size(20, 16);
+            this.labelLogin.Location = new System.Drawing.Point(307, 14);
+            this.labelLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLogin.MinimumSize = new System.Drawing.Size(15, 13);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(131, 39);
+            this.labelLogin.Size = new System.Drawing.Size(98, 32);
             this.labelLogin.TabIndex = 17;
             this.labelLogin.Text = "Đăng Nhập";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,29 +61,29 @@ namespace Hotel_Management
             this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::Hotel_Management.Properties.Resources.avatar_default;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 39);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(233, 245);
+            this.pictureBox1.Size = new System.Drawing.Size(175, 199);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
             // txbUsername
             // 
-            this.txbUsername.Location = new System.Drawing.Point(319, 103);
-            this.txbUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbUsername.Location = new System.Drawing.Point(239, 84);
+            this.txbUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(297, 22);
-            this.txbUsername.TabIndex = 15;
+            this.txbUsername.Size = new System.Drawing.Size(224, 20);
+            this.txbUsername.TabIndex = 1;
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(319, 168);
-            this.txbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbPassword.Location = new System.Drawing.Point(239, 136);
+            this.txbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(232, 22);
-            this.txbPassword.TabIndex = 14;
+            this.txbPassword.Size = new System.Drawing.Size(175, 20);
+            this.txbPassword.TabIndex = 2;
             this.txbPassword.UseSystemPasswordChar = true;
             // 
             // labelPassword
@@ -91,9 +92,10 @@ namespace Hotel_Management
             this.labelPassword.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.labelPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.labelPassword.ForeColor = System.Drawing.Color.Teal;
-            this.labelPassword.Location = new System.Drawing.Point(319, 135);
+            this.labelPassword.Location = new System.Drawing.Point(239, 110);
+            this.labelPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(84, 23);
+            this.labelPassword.Size = new System.Drawing.Size(68, 19);
             this.labelPassword.TabIndex = 13;
             this.labelPassword.Text = "Mật khẩu";
             // 
@@ -103,19 +105,20 @@ namespace Hotel_Management
             this.labelUsername.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.labelUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.labelUsername.ForeColor = System.Drawing.Color.Teal;
-            this.labelUsername.Location = new System.Drawing.Point(319, 68);
+            this.labelUsername.Location = new System.Drawing.Point(239, 55);
+            this.labelUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(124, 23);
+            this.labelUsername.Size = new System.Drawing.Size(102, 19);
             this.labelUsername.TabIndex = 12;
             this.labelUsername.Text = "Tên đăng nhập";
             // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(319, 260);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Location = new System.Drawing.Point(239, 211);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(297, 37);
+            this.btnExit.Size = new System.Drawing.Size(223, 30);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -124,10 +127,10 @@ namespace Hotel_Management
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(319, 207);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.Location = new System.Drawing.Point(239, 168);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(297, 37);
+            this.btnLogin.Size = new System.Drawing.Size(223, 30);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -137,9 +140,10 @@ namespace Hotel_Management
             // 
             this.ckbShow.AutoSize = true;
             this.ckbShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbShow.Location = new System.Drawing.Point(557, 168);
+            this.ckbShow.Location = new System.Drawing.Point(418, 136);
+            this.ckbShow.Margin = new System.Windows.Forms.Padding(2);
             this.ckbShow.Name = "ckbShow";
-            this.ckbShow.Size = new System.Drawing.Size(68, 22);
+            this.ckbShow.Size = new System.Drawing.Size(57, 19);
             this.ckbShow.TabIndex = 20;
             this.ckbShow.Text = "Show";
             this.ckbShow.UseVisualStyleBackColor = true;
@@ -147,10 +151,11 @@ namespace Hotel_Management
             // 
             // SignIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.btnLogin;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(659, 315);
+            this.ClientSize = new System.Drawing.Size(494, 256);
             this.Controls.Add(this.ckbShow);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.pictureBox1);
@@ -162,9 +167,10 @@ namespace Hotel_Management
             this.Controls.Add(this.btnLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "SignIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

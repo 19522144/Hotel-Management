@@ -15,7 +15,6 @@ namespace Hotel_Management
     public partial class SignIn : Form
     {
         UserController userController = new UserController();
-        fMainMenu menu;
 
         public SignIn()
         {
@@ -43,11 +42,6 @@ namespace Hotel_Management
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             return false;
-            //else
-            //    if (txbUsername.Text == "lethuydung" && txbPassword.Text == "123456789")
-            //    MessageBox.Show("Bạn đã đăng nhập thành công.");
-            //else MessageBox.Show("Bạn đã nhập sai tài khoản hoặc mật khẩu.");
-
         }
 
         public string GetMD5(string chuoi)
@@ -73,18 +67,16 @@ namespace Hotel_Management
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            if (userController.login(txbUsername.Text, GetMD5(txbPassword.Text)) == true)
+            int ID = userController.login(txbUsername.Text, GetMD5(txbPassword.Text));
+            if (ID != -1)
             {
 
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK,
                    MessageBoxIcon.Information);
+                txbPassword.Text = "";
+                fMainMenu menu = new fMainMenu(ID);
 
-                if (menu == null || menu.IsDisposed)
-                {                    
-                    menu = new fMainMenu();
-                }
-
-                menu.Show();
+                menu.ShowDialog();
             }
 
             else

@@ -86,17 +86,17 @@ namespace Hotel_Management.Controller
             entities.SaveChanges();
         }
 
-        public bool login(string username, string password)
+        public int login(string username, string password)
         {
             var existuser = entities.NGUOIDUNGs.FirstOrDefault(m => m.TENDANGNHAP.Equals(username));
             if(existuser != null)
             {
                 if (existuser.MATKHAU.Equals(password))
-                    return true;
+                    return existuser.MANGUOIDUNG;
                 else
-                    return false;
+                    return -1;
             }
-            return false;           
+            return -1;           
         }
 
         public void getData(NGUOIDUNG nguoidung)
