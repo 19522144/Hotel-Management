@@ -42,6 +42,7 @@ namespace Hotel_Management.Controller
                            Value = c.HOADON.TRIGIA,
                            RentalDays = c.SONGAYTHUE,
                            RoomName = c.PHONG.TENPHONG,
+                           RoomType = c.PHONG.LOAIPHONG.TENLOAIPHONG,
                            RoomID = c.PHONG.MAPHONG,
                            UnitPrice = c.DONGIA,
                            CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
@@ -121,7 +122,8 @@ namespace Hotel_Management.Controller
                            UnitPrice = c.DONGIA,
                            CustomerID = c.HOADON.KHACHHANG.MAKHACHHANG,
                            CustomerName = c.HOADON.KHACHHANG.TENKHACHHANG,
-                           Amount = c.THANHTIEN
+                           Amount = c.THANHTIEN,
+                           RentalID = c.MAPHIEUTHUE
                        };
 
             return data.ToList();
