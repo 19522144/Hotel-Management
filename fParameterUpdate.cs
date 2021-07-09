@@ -20,13 +20,6 @@ namespace Hotel_Management
             InitializeComponent();
 
             LoadData();
-            THAMSO thamso = new THAMSO() {
-                SOKHTOIDA1PHONG = 5, //thay doi theo man hinh
-                HESOKHNUOCNGOAI = 2,
-                PHUTHU = 1
-            };
-            controller.updateParameter(thamso);
-            
         }
 
         private void LoadData()
@@ -63,5 +56,6 @@ namespace Hotel_Management
                 e.Handled = true;
             }
         }
+
     }
 }

@@ -40,7 +40,7 @@ namespace Hotel_Management
             isEmpty = new List<bool>();
             for (int i = 0; i < parameterController.SOKHTOIDA1PHONG(); i++)
             {
-                arrKhachHang.Add(new KHACHHANG());
+                arrKhachHang.Add(new KHACHHANG() { GIOITINH = ""});
                 arrTypeCustomer.Add(0);
                 isEmpty.Add(true);
             }
@@ -53,6 +53,8 @@ namespace Hotel_Management
             nudPeople.Maximum = parameterController.SOKHTOIDA1PHONG();
             nudPeople.Minimum = 1;
             nudPeople.Value = 1;
+
+            cmbGender.SelectedIndex = 0;
         }
 
         void LoadCustomerType()
@@ -222,7 +224,9 @@ namespace Hotel_Management
             {
                 dtpBirthDay.Value = (DateTime)arrKhachHang[cmbSTT.SelectedIndex].NGAYSINH;
             }
-            cmbGender.Text = arrKhachHang[cmbSTT.SelectedIndex].GIOITINH;
+            if (arrKhachHang[cmbSTT.SelectedIndex].GIOITINH != "")
+                cmbGender.Text = arrKhachHang[cmbSTT.SelectedIndex].GIOITINH;
+            else cmbGender.SelectedIndex = 0;
             if (arrKhachHang[cmbSTT.SelectedIndex].MAKHACHHANG != 0)
             {
                 txtMaKhachHang.Text = arrKhachHang[cmbSTT.SelectedIndex].MAKHACHHANG.ToString();

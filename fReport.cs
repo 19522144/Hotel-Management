@@ -48,9 +48,9 @@ namespace Hotel_Management
 
             foreach (dynamic item in bill)
             {
-                Report re = dicReport[item.RoomName];
+                Report re = dicReport[item.RoomType];
                 re.revenue += item.Amount;
-                dicReport[item.RoomName] = re;
+                dicReport[item.RoomType] = re;
 
                 TongDoanhThu += item.Amount;
             }

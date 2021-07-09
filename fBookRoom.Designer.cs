@@ -275,7 +275,7 @@
             this.txtAddress.Location = new System.Drawing.Point(10, 221);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(241, 20);
-            this.txtAddress.TabIndex = 21;
+            this.txtAddress.TabIndex = 4;
             // 
             // btnReset
             // 
@@ -301,7 +301,7 @@
             this.txtSDT.Location = new System.Drawing.Point(288, 164);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(203, 20);
-            this.txtSDT.TabIndex = 18;
+            this.txtSDT.TabIndex = 5;
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // label3
@@ -336,7 +336,7 @@
             this.txtCMND.Location = new System.Drawing.Point(7, 52);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(150, 20);
-            this.txtCMND.TabIndex = 14;
+            this.txtCMND.TabIndex = 1;
             this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // label7
@@ -379,14 +379,14 @@
             this.txtNationality.Location = new System.Drawing.Point(6, 166);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(245, 20);
-            this.txtNationality.TabIndex = 7;
+            this.txtNationality.TabIndex = 3;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(6, 108);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(245, 20);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 2;
             // 
             // label6
             // 
