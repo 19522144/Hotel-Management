@@ -276,8 +276,10 @@ namespace Hotel_Management
             int ID = Convert.ToInt32(txtMaPhieuThue.Text);
             if (rentalController.isForeign(ID))
                 unitPrice += (parameterController.HESOKHNUOCNGOAI() - 1)*100;
+            //MessageBox.Show(unitPrice + "");
             if (rentalController.getNumberPeople(ID) > 2)
-                unitPrice += 25;
+                unitPrice += parameterController.PHUTHU();
+            //MessageBox.Show(unitPrice + "");
 
             return unitPrice;
         }
