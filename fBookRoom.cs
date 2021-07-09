@@ -30,7 +30,8 @@ namespace Hotel_Management
         {
             InitializeComponent();
 
-            LoadData();
+            LoadRoom();
+            LoadCustomerType();
 
             monthCalendar.MaxSelectionCount = 1;           
 
@@ -44,20 +45,29 @@ namespace Hotel_Management
                 isEmpty.Add(true);
             }
 
+            MaxPeople();
+        }
+        
+        void MaxPeople()
+        {
             nudPeople.Maximum = parameterController.SOKHTOIDA1PHONG();
             nudPeople.Minimum = 1;
             nudPeople.Value = 1;
         }
 
-        void LoadData()
+        void LoadCustomerType()
+        {
+            cmbCustomerType.DataSource = customerTypeController.getAll();
+            cmbCustomerType.DisplayMember = "Name";
+            cmbCustomerType.ValueMember = "ID";
+        }
+        void LoadRoom()
         {
             cmbRoom.DataSource = roomController.getAvaiableRoom();
             cmbRoom.DisplayMember = "Name";
             cmbRoom.ValueMember = "ID";
 
-            cmbCustomerType.DataSource = customerTypeController.getAll();
-            cmbCustomerType.DisplayMember = "Name";
-            cmbCustomerType.ValueMember = "ID";
+            
         }
 
         bool checkAllEmpty()
@@ -110,7 +120,8 @@ namespace Hotel_Management
                     RentalController.addRentalDetail(MaPhieuThue, ctpt);
                 }
                 MessageBox.Show("Đặt phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData();
+                LoadRoom();
+                LoadCustomerType();
             }
         }
 

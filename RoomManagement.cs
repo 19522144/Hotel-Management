@@ -16,20 +16,30 @@ namespace Hotel_Management
     {
 
         RoomController roomController = new RoomController();
+
         public RoomManagement()
         {
             InitializeComponent();
             LoadData();
-            cbLoaiPhong.DataSource = roomController.All();
-            cbLoaiPhong.DisplayMember = "TENLOAIPHONG";
-            cbLoaiPhong.ValueMember = "MALOAIPHONG";
+            LoadTenPhong();
+            LoadTenPhongTimKiem();
+            
+        }
 
+        void LoadTenPhongTimKiem()
+        {
             cbTimLoaiPhong.DataSource = roomController.All();
             cbTimLoaiPhong.DisplayMember = "TENLOAIPHONG";
             cbTimLoaiPhong.ValueMember = "MALOAIPHONG";
-
-            
         }
+
+        void LoadTenPhong()
+        {
+            cbLoaiPhong.DataSource = roomController.All();
+            cbLoaiPhong.DisplayMember = "TENLOAIPHONG";
+            cbLoaiPhong.ValueMember = "MALOAIPHONG";
+        }
+
         void LoadData()
         {
             dgvDanhSachPhong.DataSource = roomController.getAll();

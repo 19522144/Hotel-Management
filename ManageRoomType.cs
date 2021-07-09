@@ -13,6 +13,7 @@ namespace Hotel_Management
     public partial class ManageRoomType : Form
     {
         RoomTypeController roomTypeController = new RoomTypeController();
+
         public ManageRoomType()
         {
             InitializeComponent();
@@ -20,17 +21,17 @@ namespace Hotel_Management
         }
         void LoadData()
         {
-            dvgData.DataSource = roomTypeController.getAll();
+            dgvRoomType.DataSource = roomTypeController.getAll();
             addBlinding();
         }
         void addBlinding()
         {
             txtID.DataBindings.Clear();
-            txtID.DataBindings.Add("Text", dvgData.DataSource, "ID", true, DataSourceUpdateMode.Never);
+            txtID.DataBindings.Add("Text", dgvRoomType.DataSource, "ID", true, DataSourceUpdateMode.Never);
             txtName.DataBindings.Clear();
-            txtName.DataBindings.Add("Text", dvgData.DataSource, "Name", true, DataSourceUpdateMode.Never);
+            txtName.DataBindings.Add("Text", dgvRoomType.DataSource, "Name", true, DataSourceUpdateMode.Never);
             txtPrice.DataBindings.Clear();
-            txtPrice.DataBindings.Add("Text", dvgData.DataSource, "Price", true, DataSourceUpdateMode.Never);
+            txtPrice.DataBindings.Add("Text", dgvRoomType.DataSource, "Price", true, DataSourceUpdateMode.Never);
 
         }
 
@@ -96,6 +97,22 @@ namespace Hotel_Management
             if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void dgvRoomType_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvRoomType.Rows[e.RowIndex];
+                txtID.Text = row.Cells[0].Value.ToString();
+                txtName.Text = row.Cells[1].Value.ToString();
+                txtPrice.Text = row.Cells[2].Value.ToString();
             }
         }
     }

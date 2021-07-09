@@ -216,10 +216,10 @@ namespace Hotel_Management
             this.panel.Controls.Add(this.buttonExit);
             this.panel.Controls.Add(this.groupBoxTTCN);
             this.panel.Controls.Add(this.buttonDangKi);
-            this.panel.Location = new System.Drawing.Point(13, 14);
+            this.panel.Location = new System.Drawing.Point(-1, 0);
             this.panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(653, 359);
+            this.panel.Size = new System.Drawing.Size(682, 387);
             this.panel.TabIndex = 7;
             // 
             // picAvatar

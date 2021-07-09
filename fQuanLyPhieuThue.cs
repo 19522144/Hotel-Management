@@ -28,9 +28,7 @@ namespace Hotel_Management
         {
             InitializeComponent();
             LoadData();
-            cmbTenPhong.DataSource = roomController.getAll();
-            cmbTenPhong.DisplayMember = "Name";
-            cmbTenPhong.ValueMember = "ID";
+            LoadTenPhong();
 
             if (dgvDanhSachPhieuThue.Rows.Count <= 0)
                 return;
@@ -41,6 +39,12 @@ namespace Hotel_Management
             else isPaid = false;
         }
 
+        void LoadTenPhong()
+        {
+            cmbTenPhong.DataSource = roomController.getAll();
+            cmbTenPhong.DisplayMember = "Name";
+            cmbTenPhong.ValueMember = "ID";
+        }
         void LoadData()
         {
             dgvDanhSachPhieuThue.DataSource = rentalController.getAll();

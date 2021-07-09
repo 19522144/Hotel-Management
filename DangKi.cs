@@ -28,6 +28,11 @@ namespace Hotel_Management
             avatar = new Bitmap(WIDTH, HEIGHT);
             changeAvatar(0);
 
+            LoadAcess();
+        }
+
+        void LoadAcess()
+        {
             cmbQuyen.Items.Add("Quản lý");
             cmbQuyen.Items.Add("Nhân viên");
             cmbQuyen.SelectedIndex = 0;
