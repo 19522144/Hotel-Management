@@ -73,7 +73,12 @@ namespace Hotel_Management
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (isPaid)
+            {
+                MessageBox.Show("Không thể xóa hóa đơn đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 rentalController.deleteRental(Int32.Parse(txtMaPhieuThue.Text));
                 LoadData();
