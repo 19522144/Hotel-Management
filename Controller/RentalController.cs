@@ -16,6 +16,7 @@ namespace Hotel_Management.Controller
         public dynamic getAll()
         {
             var data = from c in entities.CHITIETPHIEUTHUEs
+                       orderby c.MAPHIEUTHUE descending
                        select new
                        {
                            ID = c.MAPHIEUTHUE,
@@ -93,6 +94,7 @@ namespace Hotel_Management.Controller
                      select c;
 
             var data = from c in result
+                       orderby c.MAPHIEUTHUE descending
                        select new
                        {
                            ID = c.MAPHIEUTHUE,
@@ -101,7 +103,8 @@ namespace Hotel_Management.Controller
                            CustomerName = c.KHACHHANG.TENKHACHHANG,
                            CMND = c.KHACHHANG.CMND,
                            DayStart = c.PHIEUTHUE.NGAYBDTHUE,
-                           Address = c.KHACHHANG.DIACHI
+                           Address = c.KHACHHANG.DIACHI,
+                           NOTE = c.PHIEUTHUE.GHICHU
                        };
 
             return data.ToList();

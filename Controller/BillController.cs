@@ -13,6 +13,7 @@ namespace Hotel_Management.Controller
         public dynamic getAll()
         {
             var data = from c in entities.CHITIETHOADONs
+                       orderby c.MAHOADON descending
                        select new
                        {
                            ID = c.MAHOADON,
@@ -111,6 +112,7 @@ namespace Hotel_Management.Controller
                          select c;
 
             var data = from c in result
+                       orderby c.MAHOADON descending
                        select new
                        {
                            ID = c.MAHOADON,
